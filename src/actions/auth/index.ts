@@ -1,4 +1,4 @@
-import { currentUser } from '@clerk/nextjs';
+// import currentUser from '@clerk/nextjs';
 'use server'
 
 const users = [];
