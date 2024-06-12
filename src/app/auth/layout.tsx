@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 type Props = {
@@ -9,26 +10,14 @@ const Layout = async ({ children }: Props) => {
   return (
     <div className="h-screen flex w-full justify-center">
       <div className="w-[600px] ld:w-full flex flex-col items-start p-6">
-        <Image
-          src="/images/logo.png"
-          alt="LOGO"
-          sizes="100vw"
-          style={{
-            width: "20%",
-            height: "auto",
-          }}
-          width={0}
-          height={0}
-        />
         {children}
       </div>
-      <div className="hidden lg:flex flex-1 w-full max-h-full max-w-4000px overflow-hidden relative bg-cream  flex-col pt-10 pl-24 gap-3">
+      <div className="flex flex-1 w-full flex-col p-10 border-l-2 gap-3">
         <h2 className="text-gravel md:text-4xl font-bold">
-          Welcome to Saas starter kit
+          Welcome to <Link href="/">Saas kit</Link>
         </h2>
         <p className="text-iridium md:text-sm mb-10">
-          saas starter kit can be used to support multiple projects...{" "}
-          <br />
+          saas starter kit can be used to support multiple projects... <br />
           comes with built in utilities
         </p>
         <Image
@@ -36,7 +25,7 @@ const Layout = async ({ children }: Props) => {
           alt="app image"
           loading="lazy"
           sizes="30"
-          className="absolute shrink-0 !w-[1600px] top-48"
+          className=" shrink-0 !w-[1600px]"
           width={0}
           height={0}
         />

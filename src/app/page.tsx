@@ -17,33 +17,57 @@ import { TypographyH1 } from "@/components/_typography/h1";
 import { TypographySmall } from "@/components/_typography/small";
 import { TypographyP } from "@/components/_typography/p";
 import { TypographyH2 } from "@/components/_typography/h2";
+import Feature from "@/components/features";
+import Hero from "@/components/cta-landingpage";
+import FAQ from "@/components/faq";
+import Footer from "@/components/footer";
 
 export default async function Home() {
   return (
     <main>
       <NavBar />
       <section>
-        <div className="flex items-center justify-center flex-col mt-[80px] gap-4 ">
+        <div className="flex items-center justify-center flex-col mt-[80px] gap-8 ">
           <TypographySmall>A shadcn powered ui starter kit</TypographySmall>
           <TypographyH1>SAAS Starter Kit</TypographyH1>
           <TypographyP>
             A fullstack Nextjs, typescript, shadcn starter kit to {"kick"}
-            <br /> start any saas application with a collection of auth
-            strategise to suit your needs
+            <br /> start any saas application with a collection of common saas
+            strategies and platform to suit your needs
           </TypographyP>
-          <Button className="bg-orange font-bold text-white px-4">
-            Start For Free
-          </Button>
+          <Link
+            href="/dashboard"
+            className="font-bold text-black p-4 rounded-md hover:text-black bg-white"
+          >
+            Get Started For Free
+          </Link>
           <Image
             src="/images/landing.png"
-            width={800}
+            width={1080}
             height={100}
             alt="Logo"
-            className=" object-contain border-black border-4"
+            className=" object-contain border-black border-4 m-10 rounded-lg"
           />
         </div>
       </section>
-      <section className="flex justify-center items-center flex-col gap-4 mt-10">
+      <section
+        id="about"
+        className="flex justify-center items-center flex-col gap-4 mt-10"
+      >
+        <TypographyH2>Features</TypographyH2>
+        <TypographyP>
+          This fully built starter kit comes packed with features that are
+          necessarry for building a fully functional saas app
+          <br />
+          {" you're"} not ready to commit you can get started for free.
+        </TypographyP>
+      </section>
+      <Feature />
+
+      <section
+        id="pricing"
+        className="flex justify-center items-center flex-col gap-4 mt-10"
+      >
         <TypographyH2>Choose your plan</TypographyH2>
         <TypographyP>
           Our straightforward pricing plans are tailored to meet your needs. If
@@ -51,7 +75,7 @@ export default async function Home() {
           {" you're"} not ready to commit you can get started for free.
         </TypographyP>
       </section>
-      <div className="flex  justify-center gap-4 flex-wrap mt-6">
+      <div className="flex justify-center gap-4 flex-wrap mt-6">
         {pricingCards.map((card) => (
           <Card
             key={card.title}
@@ -90,6 +114,20 @@ export default async function Home() {
           </Card>
         ))}
       </div>
+      <section
+        id="faq"
+        className="flex justify-center items-center flex-col gap-4 mt-10"
+      >
+        <TypographyH2>Have any Questions?</TypographyH2>
+        <TypographyP>
+          Our straightforward pricing plans are tailored to meet your needs. If
+          <br />
+          {" you're"} not ready to commit you can get started for free.
+        </TypographyP>
+      </section>
+      <FAQ />
+      <Hero />
+      <Footer />
     </main>
   );
 }

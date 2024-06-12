@@ -3,6 +3,7 @@ import LoginForm from "@/components/forms/sign-in/login-form";
 import { Button } from "@/components/__ui/button";
 import Link from "next/link";
 import React from "react";
+import { TypographyH2 } from "@/components/_typography/h2";
 
 const SignInPage = () => {
   return (
