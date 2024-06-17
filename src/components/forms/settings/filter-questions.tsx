@@ -5,11 +5,11 @@ import {
   CardContent,
   CardDescription,
   CardTitle,
-} from "@/components/__ui/card";
+} from "@/components/_ui/card";
 import { useFilterQuestions, useHelpDesk } from "@/hooks/settings/use-settings";
 import React from "react";
 import FormGenerator from "../form-generator";
-import { Button } from "@/components/__ui/button";
+import { Button } from "@/components/_ui/button";
 import { Loader } from "@/components/loader";
 
 type Props = {

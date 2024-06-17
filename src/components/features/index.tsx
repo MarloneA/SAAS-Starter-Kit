@@ -1,5 +1,5 @@
 // Layout
-import * as Layout from "@/components/layout";
+import * as Layout from "@/components/_ui/layout";
 import Balancer from "react-wrap-balancer";
 import Link from "next/link";
 
@@ -17,7 +17,7 @@ type FeatureText = {
 const featureText: FeatureText[] = [
   {
     icon: <Coins className="h-6 w-6" />,
-    title: "Lorem Ipsum",
+    title: "Application Dashboard",
     href: "/",
     description:
       "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
@@ -25,7 +25,39 @@ const featureText: FeatureText[] = [
   },
   {
     icon: <Coins className="h-6 w-6" />,
-    title: "Lorem Ipsum",
+    title: "Subcription and Payments",
+    href: "/",
+    description:
+      "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+    cta: "Learn More",
+  },
+  {
+    icon: <Coins className="h-6 w-6" />,
+    title: "Custom Entities",
+    href: "/",
+    description:
+      "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+    cta: "Learn More",
+  },
+  {
+    icon: <Coins className="h-6 w-6" />,
+    title: "Auth, Accounts and Users",
+    href: "/",
+    description:
+      "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+    cta: "Learn More",
+  },
+  {
+    icon: <Coins className="h-6 w-6" />,
+    title: "Roles and Permissions",
+    href: "/",
+    description:
+      "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+    cta: "Learn More",
+  },
+  {
+    icon: <Coins className="h-6 w-6" />,
+    title: "Metrics",
     href: "/",
     description:
       "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
@@ -36,7 +68,7 @@ const featureText: FeatureText[] = [
 const singleFeatureText: FeatureText[] = [
   {
     icon: <Coins className="h-6 w-6" />,
-    title: "Lorem Ipsum",
+    title: "Feature Flags",
     href: "/",
     description:
       "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
@@ -50,14 +82,10 @@ const Feature = () => {
       <Layout.Container className="not-prose">
         <div className="flex flex-col gap-6">
           <h3 className="text-4xl">
-            <Balancer>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit
-            </Balancer>
+            <Balancer>Build your Saas</Balancer>
           </h3>
           <h4 className="text-2xl font-light opacity-70">
-            <Balancer>
-              Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
-            </Balancer>
+            <Balancer>What to expect when building with Saas Kit</Balancer>
           </h4>
 
           <div className="mt-6 grid gap-6 md:mt-12 md:grid-cols-2">

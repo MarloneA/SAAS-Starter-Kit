@@ -22,20 +22,20 @@ import { Nav } from "./nav";
 import { Mail } from "@/constants/mail";
 import { useMail } from "@/hooks/mail/use-mail";
 import { cn } from "@/lib/utils";
-import { Separator } from "@/components/__ui/separator";
-import { Input } from "@/components/__ui/input";
+import { Separator } from "@/components/_ui/separator";
+import { Input } from "@/components/_ui/input";
 import {
   Tabs,
   TabsContent,
   TabsList,
   TabsTrigger,
-} from "@/components/__ui/tabs";
-import { TooltipProvider } from "@/components/__ui/tooltip";
+} from "@/components/_ui/tabs";
+import { TooltipProvider } from "@/components/_ui/tooltip";
 import {
   ResizableHandle,
   ResizablePanel,
   ResizablePanelGroup,
-} from "@/components/__ui/resizable";
+} from "@/components/_ui/resizable";
 
 interface MailProps {
   accounts: {

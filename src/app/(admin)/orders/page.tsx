@@ -20,7 +20,7 @@ import {
   Users2,
 } from "lucide-react";
 
-import { Badge } from "@/components/__ui/badge";
+import { Badge } from "@/components/_ui/badge";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -28,8 +28,8 @@ import {
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
-} from "@/components/__ui/breadcrumb";
-import { Button } from "@/components/__ui/button";
+} from "@/components/_ui/breadcrumb";
+import { Button } from "@/components/_ui/button";
 import {
   Card,
   CardContent,
@@ -37,7 +37,7 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/__ui/card";
+} from "@/components/_ui/card";
 import {
   DropdownMenu,
   DropdownMenuCheckboxItem,
@@ -46,16 +46,16 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/components/__ui/dropdown-menu";
-import { Input } from "@/components/__ui/input";
+} from "@/components/_ui/dropdown-menu";
+import { Input } from "@/components/_ui/input";
 import {
   Pagination,
   PaginationContent,
   PaginationItem,
-} from "@/components/__ui/pagination";
-import { Progress } from "@/components/__ui/progress";
-import { Separator } from "@/components/__ui/separator";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/__ui/sheet";
+} from "@/components/_ui/pagination";
+import { Progress } from "@/components/_ui/progress";
+import { Separator } from "@/components/_ui/separator";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/_ui/sheet";
 import {
   Table,
   TableBody,
@@ -63,13 +63,13 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/__ui/table";
+} from "@/components/_ui/table";
 import {
   Tabs,
   TabsContent,
   TabsList,
   TabsTrigger,
-} from "@/components/__ui/tabs";
+} from "@/components/_ui/tabs";
 
 export default function Orders() {
   return (

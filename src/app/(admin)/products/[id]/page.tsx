@@ -15,7 +15,7 @@ import {
   Users2,
 } from "lucide-react";
 
-import { Badge } from "@/components/__ui/badge";
+import { Badge } from "@/components/_ui/badge";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -23,8 +23,8 @@ import {
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
-} from "@/components/__ui/breadcrumb";
-import { Button } from "@/components/__ui/button";
+} from "@/components/_ui/breadcrumb";
+import { Button } from "@/components/_ui/button";
 import {
   Card,
   CardContent,
@@ -32,7 +32,7 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/__ui/card";
+} from "@/components/_ui/card";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -40,17 +40,17 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/components/__ui/dropdown-menu";
-import { Input } from "@/components/__ui/input";
-import { Label } from "@/components/__ui/label";
+} from "@/components/_ui/dropdown-menu";
+import { Input } from "@/components/_ui/input";
+import { Label } from "@/components/_ui/label";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/__ui/select";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/__ui/sheet";
+} from "@/components/_ui/select";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/_ui/sheet";
 import {
   Table,
   TableBody,
@@ -58,9 +58,9 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/__ui/table";
-import { Textarea } from "@/components/__ui/textarea";
-import { ToggleGroup, ToggleGroupItem } from "@/components/__ui/toggle-group";
+} from "@/components/_ui/table";
+import { Textarea } from "@/components/_ui/textarea";
+import { ToggleGroup, ToggleGroupItem } from "@/components/_ui/toggle-group";
 
 export default function ProductDetails() {
   return (

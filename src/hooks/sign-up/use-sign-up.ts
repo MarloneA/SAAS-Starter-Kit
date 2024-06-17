@@ -1,5 +1,5 @@
 'use client'
-import { useToast } from '@/components/__ui/use-toast'
+import { useToast } from '@/components/_ui/use-toast'
 import {
   UserRegistrationProps,
   UserRegistrationSchema,

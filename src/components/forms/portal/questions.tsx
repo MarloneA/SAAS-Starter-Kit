@@ -1,7 +1,7 @@
 import React from "react";
 import { FieldErrors, FieldValues, UseFormRegister } from "react-hook-form";
 import FormGenerator from "../form-generator";
-import { Button } from "@/components/__ui/button";
+import { Button } from "@/components/_ui/button";
 import { Loader } from "@/components/loader";
 
 type Props = {

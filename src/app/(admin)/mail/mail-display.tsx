@@ -16,28 +16,28 @@ import {
 import {
   DropdownMenuContent,
   DropdownMenuItem,
-} from "@/components/__ui/dropdown-menu";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/__ui/avatar";
-import { Button } from "@/components/__ui/button";
-import { Calendar } from "@/components/__ui/calendar";
+} from "@/components/_ui/dropdown-menu";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/_ui/avatar";
+import { Button } from "@/components/_ui/button";
+import { Calendar } from "@/components/_ui/calendar";
 import {
   DropdownMenu,
   DropdownMenuTrigger,
-} from "@/components/__ui/dropdown-menu";
-import { Label } from "@/components/__ui/label";
+} from "@/components/_ui/dropdown-menu";
+import { Label } from "@/components/_ui/label";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/components/__ui/popover";
-import { Separator } from "@/components/__ui/separator";
-import { Switch } from "@/components/__ui/switch";
-import { Textarea } from "@/components/__ui/textarea";
+} from "@/components/_ui/popover";
+import { Separator } from "@/components/_ui/separator";
+import { Switch } from "@/components/_ui/switch";
+import { Textarea } from "@/components/_ui/textarea";
 import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
-} from "@/components/__ui/tooltip";
+} from "@/components/_ui/tooltip";
 import { Mail } from "@/constants/mail";
 
 interface MailDisplayProps {

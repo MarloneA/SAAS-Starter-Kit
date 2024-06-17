@@ -1,4 +1,4 @@
-import * as Craft from "@/components/layout";
+import * as Craft from "@/components/_ui/layout";
 
 import { ArrowUpRight } from "lucide-react";
 
@@ -7,7 +7,7 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "../__ui/accordion";
+} from "../_ui/accordion";
 
 type FAQItem = {
   question: string;

@@ -3,7 +3,7 @@ import React from "react";
 import { loadStripe } from "@stripe/stripe-js";
 import { useStripeCustomer } from "@/hooks/billing/use-billing";
 import { Loader } from "@/components/loader";
-import { Card } from "@/components/__ui/card";
+import { Card } from "@/components/_ui/card";
 import { Elements } from "@stripe/react-stripe-js";
 import Image from "next/image";
 import { CustomerPaymentForm } from "./payment-form";

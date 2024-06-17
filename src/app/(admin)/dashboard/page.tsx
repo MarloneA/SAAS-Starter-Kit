@@ -1,20 +1,20 @@
 import { Metadata } from "next";
 import Image from "next/image";
 
-import { Button } from "@/components/__ui/button";
+import { Button } from "@/components/_ui/button";
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/components/__ui/card";
+} from "@/components/_ui/card";
 import {
   Tabs,
   TabsContent,
   TabsList,
   TabsTrigger,
-} from "@/components/__ui/tabs";
+} from "@/components/_ui/tabs";
 import { CalendarDateRangePicker } from "@/components/analytics/date-range-picker";
 import { MainNav } from "@/components/analytics/main-nav";
 import { Overview } from "@/components/analytics/overview";

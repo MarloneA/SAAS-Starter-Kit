@@ -1,6 +1,6 @@
 "use client";
 import { Loader } from "@/components/loader";
-import { Button } from "@/components/__ui/button";
+import { Button } from "@/components/_ui/button";
 import { useCompleteCustomerPayment } from "@/hooks/billing/use-billing";
 import { PaymentElement } from "@stripe/react-stripe-js";
 import React from "react";

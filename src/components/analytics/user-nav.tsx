@@ -1,5 +1,5 @@
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/__ui/avatar";
-import { Button } from "@/components/__ui/button";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/_ui/avatar";
+import { Button } from "@/components/_ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -9,7 +9,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuShortcut,
   DropdownMenuTrigger,
-} from "@/components/__ui/dropdown-menu";
+} from "@/components/_ui/dropdown-menu";
 
 export function UserNav() {
   return (

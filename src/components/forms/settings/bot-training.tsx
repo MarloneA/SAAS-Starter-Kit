@@ -1,5 +1,5 @@
 import TabsMenu from "@/components/tabs/intex";
-import { TabsContent } from "@/components/__ui/tabs";
+import { TabsContent } from "@/components/_ui/tabs";
 import { HELP_DESK_TABS_MENU } from "@/constants/menu";
 import React from "react";
 import HelpDesk from "./help-desk";

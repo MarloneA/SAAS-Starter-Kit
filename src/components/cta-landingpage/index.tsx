@@ -1,7 +1,7 @@
-import { Section, Container } from "@/components/layout";
+import { Section, Container } from "@/components/_ui/layout";
 import { ArrowRight } from "lucide-react";
-import { Button } from "../__ui/button";
-import { Badge } from "../__ui/badge";
+import { Button } from "../_ui/button";
+import { Badge } from "../_ui/badge";
 
 import Link from "next/link";
 

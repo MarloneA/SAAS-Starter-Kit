@@ -1,14 +1,14 @@
-import { Section, Container } from "../layout";
+import { Section, Container } from "../_ui/layout";
 import Image from "next/image";
 import Link from "next/link";
 import Balancer from "react-wrap-balancer";
-import { Button } from "../__ui/button";
+import { Button } from "../_ui/button";
 import {
   EnvelopeClosedIcon,
   GitHubLogoIcon,
   TwitterLogoIcon,
 } from "@radix-ui/react-icons";
-import { TypographyH2 } from "../_typography/h2";
+import { H2 } from "../_ui/typography";
 
 export default function Footer() {
   return (
@@ -17,7 +17,7 @@ export default function Footer() {
         <Container className="grid md:grid-cols-[1.5fr_0.5fr_0.5fr] gap-12">
           <div className="flex flex-col gap-6 not-prose">
             <Link href="/">
-              <TypographyH2>saas kit</TypographyH2>
+              <H2>saas kit</H2>
             </Link>
             <p>
               <Balancer>

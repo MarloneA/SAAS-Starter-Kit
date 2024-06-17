@@ -1,9 +1,9 @@
 import { Loader } from "@/components/loader";
-import { Button } from "@/components/__ui/button";
-import { Calendar } from "@/components/__ui/calendar";
-import { Card, CardDescription } from "@/components/__ui/card";
-import { Input } from "@/components/__ui/input";
-import { Label } from "@/components/__ui/label";
+import { Button } from "@/components/_ui/button";
+import { Calendar } from "@/components/_ui/calendar";
+import { Card, CardDescription } from "@/components/_ui/card";
+import { Input } from "@/components/_ui/input";
+import { Label } from "@/components/_ui/label";
 import { APPOINTMENT_TIME_SLOTS } from "@/constants/timeslots";
 import { cn } from "@/lib/utils";
 import React from "react";

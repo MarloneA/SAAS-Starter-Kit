@@ -6,10 +6,10 @@ import {
   CardContent,
   CardDescription,
   CardTitle,
-} from "@/components/__ui/card";
+} from "@/components/_ui/card";
 import Section from "@/components/section-label";
 import FormGenerator from "../form-generator";
-import { Button } from "@/components/__ui/button";
+import { Button } from "@/components/_ui/button";
 import { Loader } from "@/components/loader";
 import Accordion from "@/components/accordian";
 

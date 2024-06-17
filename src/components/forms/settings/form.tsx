@@ -1,5 +1,5 @@
 "use client";
-import { Separator } from "@/components/__ui/separator";
+import { Separator } from "@/components/_ui/separator";
 import { useSettings } from "@/hooks/settings/use-settings";
 import React from "react";
 import { DomainUpdate } from "./domain-update";
@@ -8,7 +8,7 @@ import PremiumBadge from "@/icons/premium-badge";
 import EditChatbotIcon from "./edit-chatbot-icon";
 import dynamic from "next/dynamic";
 import Image from "next/image";
-import { Button } from "@/components/__ui/button";
+import { Button } from "@/components/_ui/button";
 import { Loader } from "@/components/loader";
 
 const WelcomeMessage = dynamic(

@@ -1,5 +1,5 @@
 "use client";
-import { Button } from "@/components/__ui/button";
+import { Button } from "@/components/_ui/button";
 import { useAuthContextHook } from "@/context/use-auth-context";
 import { useSignUpForm } from "@/hooks/sign-up/use-sign-up";
 import Link from "next/link";

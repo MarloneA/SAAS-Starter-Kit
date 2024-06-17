@@ -1,22 +1,25 @@
-import { TypographyBlockquote } from "./blockquote";
-import { TypographyH1 } from "./h1";
-import { TypographyH2 } from "./h2";
-import { TypographyH3 } from "./h3";
-import { TypographyListItem } from "./li";
-import { TypographyP } from "./p";
-import { TypographyList } from "./ul";
+import {
+  H1,
+  H2,
+  H3,
+  H4,
+  P,
+  Blockquote,
+  List,
+  ListItem,
+} from "@/components/_ui/typography";
 
 export function TypographyDemo() {
   return (
     <div>
-      <TypographyH1>The Joke Tax Chronicles</TypographyH1>
-      <TypographyP>
+      <H1>The Joke Tax Chronicles</H1>
+      <P>
         Once upon a time, in a far-off land, there was a very lazy king who
         spent all day lounging on his throne. One day, his advisors came to him
         with a problem: the kingdom was running out of money.
-      </TypographyP>
-      <TypographyH2>The King's Plan</TypographyH2>
-      <TypographyP>
+      </P>
+      <H2>The King's Plan</H2>
+      <P>
         The king thought long and hard, and finally came up with
         <a
           href="#"
@@ -25,52 +28,52 @@ export function TypographyDemo() {
           a brilliant plan
         </a>
         : he would tax the jokes in the kingdom.
-      </TypographyP>
+      </P>
 
-      <TypographyBlockquote>
+      <Blockquote>
         "After all," he said, "everyone enjoys a good joke, so it's only fair
         that they should pay for the privilege."
-      </TypographyBlockquote>
+      </Blockquote>
 
-      <TypographyH3>The Joke Tax</TypographyH3>
-      <TypographyP>
+      <H3>The Joke Tax</H3>
+      <P>
         The king's subjects were not amused. They grumbled and complained, but
         the king was firm:
-      </TypographyP>
+      </P>
 
-      <TypographyList>
-        <TypographyListItem>1st level of puns: 5 gold coins</TypographyListItem>
-        <TypographyListItem>2nd level of puns: 5 gold coins</TypographyListItem>
-        <TypographyListItem>3rd level of puns: 5 gold coins</TypographyListItem>
-      </TypographyList>
+      <List>
+        <ListItem>1st level of puns: 5 gold coins</ListItem>
+        <ListItem>2nd level of puns: 5 gold coins</ListItem>
+        <ListItem>3rd level of puns: 5 gold coins</ListItem>
+      </List>
 
-      <TypographyP>
+      <P>
         As a result, people stopped telling jokes, and the kingdom fell into a
         gloom. But there was one person who refused to let the king's
         foolishness get him down: a court jester named Jokester.
-      </TypographyP>
+      </P>
 
-      <TypographyH3>Jokester's Revolt</TypographyH3>
+      <H3>Jokester's Revolt</H3>
 
-      <TypographyP>
+      <P>
         Jokester began sneaking into the castle in the middle of the night and
         leaving jokes all over the place: under the king's pillow, in his soup,
         even in the royal toilet. The king was furious, but he couldn't seem to
         stop Jokester.
-      </TypographyP>
-      <TypographyP>
+      </P>
+      <P>
         And then, one day, the people of the kingdom discovered that the jokes
         left by Jokester were so funny that they couldn't help but laugh. And
         once they started laughing, they couldn't stop.
-      </TypographyP>
+      </P>
 
-      <TypographyH3> The People's Rebellion</TypographyH3>
+      <H3> The People's Rebellion</H3>
 
-      <TypographyP>
+      <P>
         The people of the kingdom, feeling uplifted by the laughter, started to
         tell jokes and puns again, and soon the entire kingdom was in on the
         joke.
-      </TypographyP>
+      </P>
 
       <div className="my-6 w-full overflow-y-auto">
         <table className="w-full">
@@ -113,15 +116,15 @@ export function TypographyDemo() {
         </table>
       </div>
 
-      <TypographyP>
+      <P>
         The king, seeing how much happier his subjects were, realized the error
         of his ways and repealed the joke tax. Jokester was declared a hero, and
         the kingdom lived happily ever after.
-      </TypographyP>
-      <TypographyP>
+      </P>
+      <P>
         The moral of the story is: never underestimate the power of a good laugh
         and always be careful of bad ideas.
-      </TypographyP>
+      </P>
     </div>
   );
 }

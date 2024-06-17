@@ -1,10 +1,10 @@
-import { Input } from "@/components/__ui/input";
-import { Label } from "@/components/__ui/label";
+import { Input } from "@/components/_ui/input";
+import { Label } from "@/components/_ui/label";
 import { strict } from "assert";
 import { ErrorMessage } from "@hookform/error-message";
 import React from "react";
 import { FieldErrors, FieldValues, UseFormRegister } from "react-hook-form";
-import { Textarea } from "@/components/__ui/textarea";
+import { Textarea } from "@/components/_ui/textarea";
 
 type Props = {
   type: "text" | "email" | "password";

@@ -6,7 +6,7 @@ import { useFieldArray, useForm } from "react-hook-form";
 import * as z from "zod";
 
 import { cn } from "@/lib/utils";
-import { Button } from "@/components/__ui/button";
+import { Button } from "@/components/_ui/button";
 import {
   Form,
   FormControl,
@@ -15,17 +15,17 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@/components/__ui/form";
-import { Input } from "@/components/__ui/input";
+} from "@/components/_ui/form";
+import { Input } from "@/components/_ui/input";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/__ui/select";
-import { Textarea } from "@/components/__ui/textarea";
-import { toast } from "@/components/__ui/use-toast";
+} from "@/components/_ui/select";
+import { Textarea } from "@/components/_ui/textarea";
+import { toast } from "@/components/_ui/use-toast";
 
 const profileFormSchema = z.object({
   username: z

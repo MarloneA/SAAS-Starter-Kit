@@ -1,7 +1,7 @@
 "use client";
-import { Card, CardContent, CardDescription } from "@/components/__ui/card";
-import { Input } from "@/components/__ui/input";
-import { Label } from "@/components/__ui/label";
+import { Card, CardContent, CardDescription } from "@/components/_ui/card";
+import { Input } from "@/components/_ui/input";
+import { Label } from "@/components/_ui/label";
 import { cn } from "@/lib/utils";
 import { User } from "lucide-react";
 import React from "react";

@@ -9,7 +9,7 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/__ui/select";
+} from "@/components/_ui/select";
 
 interface AccountSwitcherProps {
   isCollapsed: boolean;
