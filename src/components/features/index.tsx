@@ -5,6 +5,7 @@ import Link from "next/link";
 
 // Icons
 import { Coins, ArrowRight } from "lucide-react";
+import { H2, P } from "../_ui/typography";
 
 type FeatureText = {
   icon: JSX.Element;
@@ -79,6 +80,18 @@ const singleFeatureText: FeatureText[] = [
 const Feature = () => {
   return (
     <Layout.Section>
+      <Layout.Section
+        id="about"
+        className="flex justify-center items-center flex-col gap-4 mt-10"
+      >
+        <H2>Features</H2>
+        <P>
+          This fully built starter kit comes packed with features that are
+          necessarry for building a fully functional saas app
+          <br />
+          {" you're"} not ready to commit you can get started for free.
+        </P>
+      </Layout.Section>
       <Layout.Container className="not-prose">
         <div className="flex flex-col gap-6">
           <h3 className="text-4xl">

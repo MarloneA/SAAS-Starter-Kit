@@ -28,3 +28,51 @@ export const pricingCards = [
     priceId: 'price_2347fgsdfgksdfjsdfoaiuJASDF',
   },
 ]
+
+export const techStack = [
+  {
+    link: "https://react.dev",
+    src: "/icons/react-icon.png",
+    name: "React",
+  },
+  {
+    link: "https://react.dev",
+    src: "/icons/typescript-icon.png",
+    name: "Typescript",
+  },
+  {
+    link: "https://prisma.io",
+    src: "/icons/prisma-icon.png",
+    name: "Prisma",
+  },
+  {
+    link: "https://nextjs.org",
+    src: "/icons/next-js.svg",
+    name: "Next",
+  },
+  {
+    link: "https://tailwindcss.com",
+    src: "/icons/tailwind-icon.png",
+    name: "Tailwind",
+  },
+  {
+    link: "https://tailwindcss.com",
+    src: "/icons/stripe-icon.png",
+    name: "Stripe",
+  },
+  {
+    link: "https://postmarkapp.com",
+    src: "/icons/postmark-icon.png",
+    name: "Postmark",
+  },
+];
+
+
+export const colorVariants = {
+  orange: "group-hover:bg-orange-500",
+  green: "group-hover:bg-emerald-500",
+  blue: "group-hover:bg-cyan-500",
+  yellow: "group-hover:bg-yellow-500",
+  indigo: "group-hover:bg-indigo-500",
+  purple: "group-hover:bg-purple-500",
+};

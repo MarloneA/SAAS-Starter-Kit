@@ -1,4 +1,4 @@
-import * as Craft from "@/components/_ui/layout";
+import * as Layout from "@/components/_ui/layout";
 
 import { ArrowUpRight } from "lucide-react";
 
@@ -8,6 +8,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "../_ui/accordion";
+import { H2, P } from "../_ui/typography";
 
 type FAQItem = {
   question: string;
@@ -41,8 +42,19 @@ const content: FAQItem[] = [
 
 const FAQ = () => {
   return (
-    <Craft.Section>
-      <Craft.Container>
+    <Layout.Section>
+      <Layout.Section
+        id="faq"
+        className="flex justify-center items-center flex-col gap-4 mt-10"
+      >
+        <H2>Have any Questions?</H2>
+        <P>
+          Our straightforward pricing plans are tailored to meet your needs. If
+          <br />
+          {" you're"} not ready to commit you can get started for free.
+        </P>
+      </Layout.Section>
+      <Layout.Container>
         <h3 className="!mt-0">Frequently Asked Questions</h3>
         <h4 className="text-muted-foreground">
           Can&apos;t find the answer you&apos;re looking for? Reach out to our
@@ -73,8 +85,8 @@ const FAQ = () => {
             </Accordion>
           ))}
         </div>
-      </Craft.Container>
-    </Craft.Section>
+      </Layout.Container>
+    </Layout.Section>
   );
 };
 
