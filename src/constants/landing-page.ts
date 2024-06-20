@@ -36,7 +36,7 @@ export const techStack = [
     name: "React",
   },
   {
-    link: "https://react.dev",
+    link: "https://www.typescriptlang.org/",
     src: "/icons/typescript-icon.png",
     name: "Typescript",
   },
@@ -56,7 +56,7 @@ export const techStack = [
     name: "Tailwind",
   },
   {
-    link: "https://tailwindcss.com",
+    link: "https://stripe.com/",
     src: "/icons/stripe-icon.png",
     name: "Stripe",
   },

@@ -3,16 +3,15 @@ import LoginForm from "@/components/forms/sign-in/login-form";
 import { Button } from "@/components/_ui/button";
 import Link from "next/link";
 import React from "react";
-import { TypographyH2 } from "@/components/_ui/typography/h2";
 
 const SignInPage = () => {
   return (
-    <div className="flex-1 py-36 md:px-16 w-full">
-      <div className="flex flex-col h-full gap-3">
+    <div className="flex-1 md:px-16 py-36 w-full">
+      <div className="flex flex-col gap-3 h-full">
         <SignInFormProvider>
           <div className="flex flex-col gap-3">
             <LoginForm />
-            <div className="w-full flex flex-col gap-3 items-center">
+            <div className="flex flex-col items-center gap-3 w-full">
               <Button type="submit" className="w-full">
                 Submit
               </Button>

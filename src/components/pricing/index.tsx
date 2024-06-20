@@ -18,7 +18,7 @@ export const Pricing = () => {
     <Layout.Section>
       <section
         id="pricing"
-        className="flex justify-center items-center flex-col gap-4 mt-10"
+        className="flex flex-col justify-center items-center gap-4 mt-10"
       >
         <H2>Choose your plan</H2>
         <P>
@@ -27,7 +27,7 @@ export const Pricing = () => {
           {" you're"} not ready to commit you can get started for free.
         </P>
       </section>
-      <div className="flex justify-center gap-4 flex-wrap mt-6">
+      <div className="flex flex-wrap justify-center gap-4 mt-6">
         {pricingCards.map((card) => (
           <Card
             key={card.title}
@@ -42,7 +42,7 @@ export const Pricing = () => {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <span className="text-4xl font-bold">{card.price}</span>
+              <span className="font-bold text-4xl">{card.price}</span>
               <span className="text-muted-foreground">
                 <span>/ month</span>
               </span>
@@ -58,7 +58,7 @@ export const Pricing = () => {
               </div>
               <Link
                 href={`/dashbord?plan=${card.title}`}
-                className="bg-black border-orange border-2 p-2 w-full text-white text-center font-bold rounded-md"
+                className="border-2 border-orange bg-black p-2 rounded-md w-full font-bold text-center text-white"
               >
                 Get Started
               </Link>

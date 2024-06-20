@@ -78,7 +78,7 @@ export function ProfileForm() {
     toast({
       title: "You submitted the following values:",
       description: (
-        <pre className="mt-2 w-[340px] rounded-md bg-slate-950 p-4">
+        <pre className="bg-slate-950 mt-2 p-4 rounded-md w-[340px]">
           <code className="text-white">{JSON.stringify(data, null, 2)}</code>
         </pre>
       ),

@@ -68,7 +68,7 @@ export function Mail({
             sizes
           )}`;
         }}
-        className="max-h-screen items-stretch"
+        className="items-stretch max-h-screen"
       >
         <ResizablePanel
           defaultSize={defaultLayout[0]}
@@ -178,7 +178,7 @@ export function Mail({
         <ResizablePanel defaultSize={defaultLayout[1]} minSize={30}>
           <Tabs defaultValue="all">
             <div className="flex items-center px-4 py-2">
-              <h1 className="text-xl font-bold">Inbox</h1>
+              <h1 className="font-bold text-xl">Inbox</h1>
               <TabsList className="ml-auto">
                 <TabsTrigger
                   value="all"
@@ -195,10 +195,10 @@ export function Mail({
               </TabsList>
             </div>
             <Separator />
-            <div className="bg-background/95 p-4 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+            <div className="bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 p-4">
               <form>
                 <div className="relative">
-                  <Search className="absolute left-2 top-2.5 h-4 w-4 text-muted-foreground" />
+                  <Search className="top-2.5 left-2 absolute w-4 h-4 text-muted-foreground" />
                   <Input placeholder="Search" className="pl-8" />
                 </div>
               </form>

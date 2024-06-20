@@ -9,7 +9,6 @@ import {
   PanelLeft,
   PlusCircle,
   Search,
-  Settings,
   ShoppingCart,
   Upload,
   Users2,
@@ -65,62 +64,62 @@ import { ToggleGroup, ToggleGroupItem } from "@/components/_ui/toggle-group";
 export default function ProductDetails() {
   return (
     <div className="flex flex-col sm:gap-4 sm:py-4 sm:pl-14 h-full">
-      <header className="sticky top-0 z-30 flex h-14 items-center gap-4 border-b bg-background px-4 sm:static sm:h-auto sm:border-0 sm:bg-transparent sm:px-6">
+      <header className="top-0 z-30 sm:static sticky flex items-center gap-4 sm:border-0 bg-background sm:bg-transparent px-4 sm:px-6 border-b h-14 sm:h-auto">
         <Sheet>
           <SheetTrigger asChild>
             <Button size="icon" variant="outline" className="sm:hidden">
-              <PanelLeft className="h-5 w-5" />
+              <PanelLeft className="w-5 h-5" />
               <span className="sr-only">Toggle Menu</span>
             </Button>
           </SheetTrigger>
           <SheetContent side="left" className="sm:max-w-xs">
-            <nav className="grid gap-6 text-lg font-medium">
+            <nav className="gap-6 grid font-medium text-lg">
               <Link
                 href="#"
-                className="group flex h-10 w-10 shrink-0 items-center justify-center gap-2 rounded-full bg-primary text-lg font-semibold text-primary-foreground md:text-base"
+                className="flex justify-center items-center gap-2 bg-primary rounded-full w-10 h-10 font-semibold text-lg text-primary-foreground md:text-base group shrink-0"
               >
-                <Package2 className="h-5 w-5 transition-all group-hover:scale-110" />
+                <Package2 className="group-hover:scale-110 w-5 h-5 transition-all" />
                 <span className="sr-only">Acme Inc</span>
               </Link>
               <Link
                 href="#"
                 className="flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground"
               >
-                <Home className="h-5 w-5" />
+                <Home className="w-5 h-5" />
                 Dashboard
               </Link>
               <Link
                 href="#"
                 className="flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground"
               >
-                <ShoppingCart className="h-5 w-5" />
+                <ShoppingCart className="w-5 h-5" />
                 Orders
               </Link>
               <Link
                 href="#"
                 className="flex items-center gap-4 px-2.5 text-foreground"
               >
-                <Package className="h-5 w-5" />
+                <Package className="w-5 h-5" />
                 Products
               </Link>
               <Link
                 href="#"
                 className="flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground"
               >
-                <Users2 className="h-5 w-5" />
+                <Users2 className="w-5 h-5" />
                 Customers
               </Link>
               <Link
                 href="#"
                 className="flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground"
               >
-                <LineChart className="h-5 w-5" />
+                <LineChart className="w-5 h-5" />
                 Settings
               </Link>
             </nav>
           </SheetContent>
         </Sheet>
-        <Breadcrumb className="hidden md:flex">
+        <Breadcrumb className="md:flex hidden">
           <BreadcrumbList>
             <BreadcrumbItem>
               <BreadcrumbLink asChild>
@@ -139,12 +138,12 @@ export default function ProductDetails() {
             </BreadcrumbItem>
           </BreadcrumbList>
         </Breadcrumb>
-        <div className="relative ml-auto flex-1 md:grow-0">
-          <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
+        <div className="relative flex-1 ml-auto md:grow-0">
+          <Search className="top-2.5 left-2.5 absolute w-4 h-4 text-muted-foreground" />
           <Input
             type="search"
             placeholder="Search..."
-            className="w-full rounded-lg bg-background pl-8 md:w-[200px] lg:w-[336px]"
+            className="bg-background pl-8 rounded-lg w-full md:w-[200px] lg:w-[336px]"
           />
         </div>
         <DropdownMenu>
@@ -152,14 +151,14 @@ export default function ProductDetails() {
             <Button
               variant="outline"
               size="icon"
-              className="overflow-hidden rounded-full"
+              className="rounded-full overflow-hidden"
             >
               <Image
                 src="/placeholder-user.jpg"
                 width={36}
                 height={36}
                 alt="Avatar"
-                className="overflow-hidden rounded-full"
+                className="rounded-full overflow-hidden"
               />
             </Button>
           </DropdownMenuTrigger>
@@ -173,28 +172,28 @@ export default function ProductDetails() {
           </DropdownMenuContent>
         </DropdownMenu>
       </header>
-      <main className="grid flex-1 items-start gap-4 p-4 sm:px-6 sm:py-0 md:gap-8">
-        <div className="mx-auto grid max-w-screen flex-1 auto-rows-max gap-4">
+      <main className="flex-1 items-start gap-4 md:gap-8 grid sm:px-6 sm:py-0 p-4">
+        <div className="flex-1 gap-4 grid auto-rows-max mx-auto max-w-screen">
           <div className="flex items-center gap-4">
-            <Button variant="outline" size="icon" className="h-7 w-7">
-              <ChevronLeft className="h-4 w-4" />
+            <Button variant="outline" size="icon" className="w-7 h-7">
+              <ChevronLeft className="w-4 h-4" />
               <span className="sr-only">Back</span>
             </Button>
-            <h1 className="flex-1 shrink-0 whitespace-nowrap text-xl font-semibold tracking-tight sm:grow-0">
+            <h1 className="flex-1 sm:grow-0 font-semibold text-xl tracking-tight whitespace-nowrap shrink-0">
               Pro Controller
             </h1>
             <Badge variant="outline" className="ml-auto sm:ml-0">
               In stock
             </Badge>
-            <div className="hidden items-center gap-2 md:ml-auto md:flex">
+            <div className="md:flex items-center gap-2 hidden md:ml-auto">
               <Button variant="outline" size="sm">
                 Discard
               </Button>
               <Button size="sm">Save Product</Button>
             </div>
           </div>
-          <div className="grid gap-4 md:grid-cols-[1fr_250px] lg:grid-cols-3 lg:gap-8">
-            <div className="grid auto-rows-max items-start gap-4 lg:col-span-2 lg:gap-8">
+          <div className="gap-4 lg:gap-8 grid md:grid-cols-[1fr_250px] lg:grid-cols-3">
+            <div className="items-start gap-4 lg:gap-8 grid lg:col-span-2 auto-rows-max">
               <Card x-chunk="dashboard-07-chunk-0">
                 <CardHeader>
                   <CardTitle>Product Details</CardTitle>
@@ -203,8 +202,8 @@ export default function ProductDetails() {
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <div className="grid gap-6">
-                    <div className="grid gap-3">
+                  <div className="gap-6 grid">
+                    <div className="gap-3 grid">
                       <Label htmlFor="name">Name</Label>
                       <Input
                         id="name"
@@ -213,7 +212,7 @@ export default function ProductDetails() {
                         defaultValue="Gamer Gear Pro Controller"
                       />
                     </div>
-                    <div className="grid gap-3">
+                    <div className="gap-3 grid">
                       <Label htmlFor="description">Description</Label>
                       <Textarea
                         id="description"
@@ -349,9 +348,9 @@ export default function ProductDetails() {
                     </TableBody>
                   </Table>
                 </CardContent>
-                <CardFooter className="justify-center border-t p-4">
+                <CardFooter className="justify-center p-4 border-t">
                   <Button size="sm" variant="ghost" className="gap-1">
-                    <PlusCircle className="h-3.5 w-3.5" />
+                    <PlusCircle className="w-3.5 h-3.5" />
                     Add Variant
                   </Button>
                 </CardFooter>
@@ -361,8 +360,8 @@ export default function ProductDetails() {
                   <CardTitle>Product Category</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <div className="grid gap-6 sm:grid-cols-3">
-                    <div className="grid gap-3">
+                  <div className="gap-6 grid sm:grid-cols-3">
+                    <div className="gap-3 grid">
                       <Label htmlFor="category">Category</Label>
                       <Select>
                         <SelectTrigger
@@ -382,7 +381,7 @@ export default function ProductDetails() {
                         </SelectContent>
                       </Select>
                     </div>
-                    <div className="grid gap-3">
+                    <div className="gap-3 grid">
                       <Label htmlFor="subcategory">
                         Subcategory (optional)
                       </Label>
@@ -406,14 +405,14 @@ export default function ProductDetails() {
                 </CardContent>
               </Card>
             </div>
-            <div className="grid auto-rows-max items-start gap-4 lg:gap-8">
+            <div className="items-start gap-4 lg:gap-8 grid auto-rows-max">
               <Card x-chunk="dashboard-07-chunk-3">
                 <CardHeader>
                   <CardTitle>Product Status</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <div className="grid gap-6">
-                    <div className="grid gap-3">
+                  <div className="gap-6 grid">
+                    <div className="gap-3 grid">
                       <Label htmlFor="status">Status</Label>
                       <Select>
                         <SelectTrigger id="status" aria-label="Select status">
@@ -437,19 +436,19 @@ export default function ProductDetails() {
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <div className="grid gap-2">
+                  <div className="gap-2 grid">
                     <Image
                       alt="Product image"
-                      className="aspect-square w-full rounded-md object-cover"
+                      className="rounded-md w-full aspect-square object-cover"
                       height="300"
                       src="/placeholder.svg"
                       width="300"
                     />
-                    <div className="grid grid-cols-3 gap-2">
+                    <div className="gap-2 grid grid-cols-3">
                       <button>
                         <Image
                           alt="Product image"
-                          className="aspect-square w-full rounded-md object-cover"
+                          className="rounded-md w-full aspect-square object-cover"
                           height="84"
                           src="/placeholder.svg"
                           width="84"
@@ -458,14 +457,14 @@ export default function ProductDetails() {
                       <button>
                         <Image
                           alt="Product image"
-                          className="aspect-square w-full rounded-md object-cover"
+                          className="rounded-md w-full aspect-square object-cover"
                           height="84"
                           src="/placeholder.svg"
                           width="84"
                         />
                       </button>
-                      <button className="flex aspect-square w-full items-center justify-center rounded-md border border-dashed">
-                        <Upload className="h-4 w-4 text-muted-foreground" />
+                      <button className="flex justify-center items-center border border-dashed rounded-md w-full aspect-square">
+                        <Upload className="w-4 h-4 text-muted-foreground" />
                         <span className="sr-only">Upload</span>
                       </button>
                     </div>
@@ -488,7 +487,7 @@ export default function ProductDetails() {
               </Card>
             </div>
           </div>
-          <div className="flex items-center justify-center gap-2 md:hidden">
+          <div className="flex justify-center items-center gap-2 md:hidden">
             <Button variant="outline" size="sm">
               Discard
             </Button>

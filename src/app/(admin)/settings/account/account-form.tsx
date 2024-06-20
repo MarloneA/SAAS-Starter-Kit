@@ -80,7 +80,7 @@ export function AccountForm() {
     toast({
       title: "You submitted the following values:",
       description: (
-        <pre className="mt-2 w-[340px] rounded-md bg-slate-950 p-4">
+        <pre className="bg-slate-950 mt-2 p-4 rounded-md w-[340px]">
           <code className="text-white">{JSON.stringify(data, null, 2)}</code>
         </pre>
       ),
@@ -128,11 +128,11 @@ export function AccountForm() {
                       ) : (
                         <span>Pick a date</span>
                       )}
-                      <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
+                      <CalendarIcon className="opacity-50 ml-auto w-4 h-4" />
                     </Button>
                   </FormControl>
                 </PopoverTrigger>
-                <PopoverContent className="w-auto p-0" align="start">
+                <PopoverContent className="p-0 w-auto" align="start">
                   <Calendar
                     mode="single"
                     selected={field.value}
@@ -173,11 +173,11 @@ export function AccountForm() {
                             (language) => language.value === field.value
                           )?.label
                         : "Select language"}
-                      <CaretSortIcon className="ml-2 h-4 w-4 shrink-0 opacity-50" />
+                      <CaretSortIcon className="opacity-50 ml-2 w-4 h-4 shrink-0" />
                     </Button>
                   </FormControl>
                 </PopoverTrigger>
-                <PopoverContent className="w-[200px] p-0">
+                <PopoverContent className="p-0 w-[200px]">
                   <Command>
                     <CommandInput placeholder="Search language..." />
                     <CommandEmpty>No language found.</CommandEmpty>

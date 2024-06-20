@@ -17,7 +17,7 @@ type FeatureText = {
 
 const featureText: FeatureText[] = [
   {
-    icon: <Coins className="h-6 w-6" />,
+    icon: <Coins className="w-6 h-6" />,
     title: "Application Dashboard",
     href: "/",
     description:
@@ -25,7 +25,7 @@ const featureText: FeatureText[] = [
     cta: "Learn More",
   },
   {
-    icon: <Coins className="h-6 w-6" />,
+    icon: <Coins className="w-6 h-6" />,
     title: "Subcription and Payments",
     href: "/",
     description:
@@ -33,7 +33,7 @@ const featureText: FeatureText[] = [
     cta: "Learn More",
   },
   {
-    icon: <Coins className="h-6 w-6" />,
+    icon: <Coins className="w-6 h-6" />,
     title: "Custom Entities",
     href: "/",
     description:
@@ -41,7 +41,7 @@ const featureText: FeatureText[] = [
     cta: "Learn More",
   },
   {
-    icon: <Coins className="h-6 w-6" />,
+    icon: <Coins className="w-6 h-6" />,
     title: "Auth, Accounts and Users",
     href: "/",
     description:
@@ -49,7 +49,7 @@ const featureText: FeatureText[] = [
     cta: "Learn More",
   },
   {
-    icon: <Coins className="h-6 w-6" />,
+    icon: <Coins className="w-6 h-6" />,
     title: "Roles and Permissions",
     href: "/",
     description:
@@ -57,7 +57,7 @@ const featureText: FeatureText[] = [
     cta: "Learn More",
   },
   {
-    icon: <Coins className="h-6 w-6" />,
+    icon: <Coins className="w-6 h-6" />,
     title: "Metrics",
     href: "/",
     description:
@@ -68,7 +68,7 @@ const featureText: FeatureText[] = [
 
 const singleFeatureText: FeatureText[] = [
   {
-    icon: <Coins className="h-6 w-6" />,
+    icon: <Coins className="w-6 h-6" />,
     title: "Feature Flags",
     href: "/",
     description:
@@ -82,7 +82,7 @@ const Feature = () => {
     <Layout.Section>
       <Layout.Section
         id="about"
-        className="flex justify-center items-center flex-col gap-4 mt-10"
+        className="flex flex-col justify-center items-center gap-4 mt-10"
       >
         <H2>Features</H2>
         <P>
@@ -97,26 +97,26 @@ const Feature = () => {
           <h3 className="text-4xl">
             <Balancer>Build your Saas</Balancer>
           </h3>
-          <h4 className="text-2xl font-light opacity-70">
+          <h4 className="opacity-70 font-light text-2xl">
             <Balancer>What to expect when building with Saas Kit</Balancer>
           </h4>
 
-          <div className="mt-6 grid gap-6 md:mt-12 md:grid-cols-2">
+          <div className="gap-6 grid md:grid-cols-2 mt-6 md:mt-12">
             {featureText.map(
               ({ icon, title, description, href, cta }, index) => (
                 <Link
                   href={`${href}`}
-                  className="flex flex-col justify-between gap-6 rounded-lg border p-6 transition-all hover:-mt-2 hover:mb-2"
+                  className="flex flex-col justify-between gap-6 hover:-mt-2 hover:mb-2 p-6 border rounded-lg transition-all"
                   key={index}
                 >
-                  <div className="grid gap-4">
+                  <div className="gap-4 grid">
                     {icon}
                     <h4 className="text-primary text-xl">{title}</h4>
-                    <p className="text-base opacity-75">{description}</p>
+                    <p className="opacity-75 text-base">{description}</p>
                   </div>
                   {cta && (
-                    <div className="flex h-fit items-center text-sm font-semibold">
-                      <p>{cta}</p> <ArrowRight className="ml-2 h-4 w-4" />
+                    <div className="flex items-center h-fit font-semibold text-sm">
+                      <p>{cta}</p> <ArrowRight className="ml-2 w-4 h-4" />
                     </div>
                   )}
                 </Link>
@@ -128,17 +128,17 @@ const Feature = () => {
               ({ icon, title, description, href, cta }, index) => (
                 <Link
                   href={`${href}`}
-                  className="flex flex-col bg-muted/25 justify-between gap-6 rounded-lg border p-6 transition-all hover:-mt-2 hover:mb-2"
+                  className="flex flex-col justify-between gap-6 bg-muted/25 hover:-mt-2 hover:mb-2 p-6 border rounded-lg transition-all"
                   key={index}
                 >
-                  <div className="grid gap-4">
+                  <div className="gap-4 grid">
                     {icon}
                     <h4 className="text-primary text-xl">{title}</h4>
-                    <p className="text-base opacity-75">{description}</p>
+                    <p className="opacity-75 text-base">{description}</p>
                   </div>
                   {cta && (
-                    <div className="flex h-fit items-center text-sm font-semibold">
-                      <p>{cta}</p> <ArrowRight className="ml-2 h-4 w-4" />
+                    <div className="flex items-center h-fit font-semibold text-sm">
+                      <p>{cta}</p> <ArrowRight className="ml-2 w-4 h-4" />
                     </div>
                   )}
                 </Link>
