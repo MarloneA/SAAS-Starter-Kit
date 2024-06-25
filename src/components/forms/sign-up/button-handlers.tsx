@@ -19,13 +19,13 @@ const ButtonHandler = (props: Props) => {
 
   if (currentStep === 3) {
     return (
-      <div className="w-full flex flex-col gap-3 items-center">
+      <div className="flex flex-col items-center gap-3 w-full">
         <Button type="submit" className="w-full">
           Create an account
         </Button>
         <p>
           Already have an account?
-          <Link href="/auth/sign-in" className="font-bold">
+          <Link href="/login" className="font-bold">
             Sign In
           </Link>
         </p>
@@ -35,7 +35,7 @@ const ButtonHandler = (props: Props) => {
 
   if (currentStep === 2) {
     return (
-      <div className="w-full flex flex-col gap-3 items-center">
+      <div className="flex flex-col items-center gap-3 w-full">
         <Button
           type="submit"
           className="w-full"
@@ -54,7 +54,7 @@ const ButtonHandler = (props: Props) => {
         </Button>
         <p>
           Already have an account?{" "}
-          <Link href="/auth/sign-in" className="font-bold">
+          <Link href="/login" className="font-bold">
             Sign In
           </Link>
         </p>
@@ -63,7 +63,7 @@ const ButtonHandler = (props: Props) => {
   }
 
   return (
-    <div className="w-full flex flex-col gap-3 items-center">
+    <div className="flex flex-col items-center gap-3 w-full">
       <Button
         type="submit"
         className="w-full"
@@ -73,7 +73,7 @@ const ButtonHandler = (props: Props) => {
       </Button>
       <p>
         Already have an account?{" "}
-        <Link href="/auth/sign-in" className="font-bold">
+        <Link href="/login" className="font-bold">
           Sign In
         </Link>
       </p>

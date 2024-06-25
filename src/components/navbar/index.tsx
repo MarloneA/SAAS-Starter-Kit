@@ -1,6 +1,7 @@
 import * as React from "react";
 import Link from "next/link";
 import { H2, List, ListItem } from "../_ui/typography";
+import { Icons } from "../icons";
 
 function NavBar() {
   return (
@@ -18,9 +19,15 @@ function NavBar() {
         <ListItem>
           <Link href="/#faq">FAQ</Link>
         </ListItem>
+        <ListItem>
+          <Link href="/blog">Blog</Link>
+        </ListItem>
+        <ListItem>
+          <Link href="/docs">Documentation</Link>
+        </ListItem>
       </List>
       <Link
-        href="/auth/sign-in"
+        href="#"
         className="bg-white px-4 py-2 rounded-sm text-black"
       >
         Login
