@@ -57,7 +57,7 @@ export const Pricing = () => {
                 ))}
               </div>
               <Link
-                href={`/dashbord?plan=${card.title}`}
+                href={`/pricing?plan=${card.title}`}
                 className="border-2 border-orange bg-black p-2 rounded-md w-full font-bold text-center text-white"
               >
                 Get Started

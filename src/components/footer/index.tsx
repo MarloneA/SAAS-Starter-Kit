@@ -14,7 +14,7 @@ export default function Footer() {
   return (
     <footer>
       <Section>
-        <Container className="grid md:grid-cols-[1.5fr_0.5fr_0.5fr] gap-12">
+        <Container className="gap-12 grid md:grid-cols-[1.5fr_0.5fr_0.5fr]">
           <div className="flex flex-col gap-6 not-prose">
             <Link href="/">
               <H2>saas kit</H2>
@@ -34,12 +34,12 @@ export default function Footer() {
           </div>
           <div className="flex flex-col gap-2">
             <h5>Legal</h5>
-            <Link href="/privacy-policy">Privacy Policy</Link>
-            <Link href="/terms-of-service">Terms of Service</Link>
+            <Link href="/privacy">Privacy Policy</Link>
+            <Link href="/terms">Terms of Service</Link>
             <Link href="/cookie-policy">Cookie Policy</Link>
           </div>
         </Container>
-        <Container className="border-t not-prose flex flex-col md:flex-row md:gap-2 gap-6 justify-between md:items-center">
+        <Container className="flex md:flex-row flex-col justify-between md:items-center gap-6 md:gap-2 border-t not-prose">
           <div className="flex gap-2">
             <Button variant="outline" size="icon">
               <GitHubLogoIcon />

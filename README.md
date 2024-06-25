@@ -115,6 +115,23 @@ Custom React hooks are available in the `src/hooks/` directory to help manage st
 
 React contexts are used to manage global state, such as user authentication status. These contexts are located in the `src/contexts/` directory.
 
+### Known Issues
+
+###### Error: Cannot access Image.propTypes on the server. You cannot dot into a client module from a server component. You can only pass the imported name through.
+
+This typically happens when you try to use next js Image component directly with next-MDX, not sure why it happened but has been a thing since next 13.3
+
+*fix*: add this code under useMDXComponents custom components
+  
+```javascript
+Image: (props) => <Image {...props}/>
+```
+
+
+
+Related to [github issue](https://github.com/hashicorp/next-mdx-remote/issues/405)
+
+
 ## Contributing
 
 We welcome contributions! To contribute, follow these steps:

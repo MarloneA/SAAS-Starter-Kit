@@ -83,7 +83,7 @@ export const HeroMain = () => {
           common saas strategies and platform to suit your needs
         </P>
         <Link
-          href="/dashboard"
+          href="/pricing"
           className="bg-[#16597e] p-4 rounded-md font-bold text-black hover:text-black"
         >
           Get Started For Free
