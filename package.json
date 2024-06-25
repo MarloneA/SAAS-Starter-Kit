@@ -56,7 +56,6 @@
     "mdast-util-toc": "^7.1.0",
     "mini-svg-data-uri": "^1.4.4",
     "next": "14.2.3",
-    "next-contentlayer": "^0.3.4",
     "next-themes": "^0.3.0",
     "react": "^18",
     "react-day-picker": "^8.10.1",
@@ -83,10 +82,5 @@
     "postcss": "^8",
     "tailwindcss": "^3.4.1",
     "typescript": "^5"
-  },
-  "overrides": {
-    "next-contentlayer": {
-      "next": "$next"
-    }
   }
 }

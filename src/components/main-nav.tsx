@@ -9,6 +9,8 @@ import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
 import { Icons } from "@/components/icons";
 import { MobileNav } from "@/components/mobile-nav";
+import { buttonVariants } from "./_ui/button";
+import { H4 } from "./_ui/typography";
 
 interface MainNavProps {
   items?: MainNavItem[];
@@ -20,12 +22,15 @@ export function MainNav({ items, children }: MainNavProps) {
   const [showMobileMenu, setShowMobileMenu] = React.useState<boolean>(false);
 
   return (
-    <div className="flex gap-6 md:gap-10">
+    <div className={cn("flex gap-6 md:gap-10")}>
       <Link href="/" className="md:flex items-center space-x-2 hidden">
-        <Icons.logo />
-        <span className="sm:inline-block hidden font-bold">
+        {/* <Icons.logo /> */}
+        <H4 className="font-black">
+          SAAS <span className="text-red-700">KIT</span>
+        </H4>
+        {/* <span className="sm:inline-block hidden font-bold">
           {siteConfig.name}
-        </span>
+        </span> */}
       </Link>
       {items?.length ? (
         <nav className="md:flex gap-6 hidden">
@@ -53,6 +58,17 @@ export function MainNav({ items, children }: MainNavProps) {
         {showMobileMenu ? <Icons.close /> : <Icons.logo />}
         <span className="font-bold">Menu</span>
       </button>
+      {/* <nav>
+        <Link
+          href="/login"
+          className={cn(
+            buttonVariants({ variant: "secondary", size: "sm" }),
+            "px-4"
+          )}
+        >
+          Login
+        </Link>
+      </nav> */}
       {showMobileMenu && items && (
         <MobileNav items={items}>{children}</MobileNav>
       )}

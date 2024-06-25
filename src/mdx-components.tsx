@@ -1,10 +1,15 @@
+// NOTE use ESM/CommonJS compat import here until resolved: https://github.com/facebook/react/issues/11503
 import * as React from "react";
 import type { MDXComponents } from "mdx/types";
-import { useMDXComponent } from "next-contentlayer/hooks";
+import _jsx_runtime from "react/jsx-runtime";
+// import { useMDXComponent } from "next-contentlayer/hooks";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { Callout } from "@/components/callout";
 import { MdxCard } from "@/components/mdx-card";
+
+// NOTE use ESM/CommonJS compat import here until resolved: https://github.com/facebook/react/issues/11503
+import ReactDOM from "react-dom";
 
 const components = {
   h1: ({ className, ...props }) => (
@@ -152,25 +157,51 @@ const components = {
   Card: MdxCard,
 };
 
-// TODO: implement useMDXComponent with nextjs 
+// TODO: implement useMDXComponent with nextjs
 
-// export function useMDXComponents(components: MDXComponents): MDXComponents {
-//   // This file allows you to provide custom React components
-//   // to be used in MDX files. You can import and use any
-//   // React component you want, including inline styles,
-//   // components from other libraries, and more.
-
-//   return {
-//     ...components,
-//   };
+// type MDXComponentsObj = {
+//   components: MDXComponents,
+//   Components: string
 // }
+
+export function useMDXComponents(code: string) {
+  // This file allows you to provide custom React components
+  // to be used in MDX files. You can import and use any
+  // React component you want, including inline styles,
+  // components from other libraries, and more.
+
+  type MDXContentProps = {
+    [props: string]: unknown;
+    components?: MDXComponents;
+  };
+
+  const getMDXComponent = (
+    code: string,
+    globals: Record<string, unknown> = {}
+  ): React.FC<MDXContentProps> => {
+    const scope = { React, ReactDOM, _jsx_runtime, ...globals };
+    const fn = new Function(...Object.keys(scope), code);
+    return fn(...Object.values(scope)).default;
+  };
+
+  const useMDXComponent = (
+    code: string,
+    globals: Record<string, unknown> = {}
+  ) => {
+    return React.useMemo(() => getMDXComponent(code, globals), [code, globals]);
+  };
+
+  const Component = useMDXComponent(code);
+
+  return Component;
+}
 
 interface MdxProps {
   code: string;
 }
 
 export function Mdx({ code }: MdxProps) {
-  const Component = useMDXComponent(code);
+  const Component = useMDXComponents(code);
 
   return (
     <div className="mdx">

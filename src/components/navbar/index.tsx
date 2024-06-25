@@ -27,7 +27,7 @@ function NavBar() {
         </ListItem>
       </List>
       <Link
-        href=" sign-in"
+        href="#"
         className="bg-white px-4 py-2 rounded-sm text-black"
       >
         Login

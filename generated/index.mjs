@@ -1,5 +1,3 @@
-export { isType } from 'contentlayer/client'
-
 // NOTE During development imports from `.mjs` files to improve HMR speeds.
 // During (production) builds it imports from `.json` files to improve build performance.
 import { allPages } from './Page/_index.mjs'
