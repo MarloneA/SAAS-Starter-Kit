@@ -27,7 +27,7 @@ const UserAuthFormPage = ({ className, ...props }: UserAuthFormProps) => {
           Enter your email below to create your account
         </p>
       </div>
-      {/* <UserRegistrationForm /> */}
+      <UserRegistrationForm />
       <p className="px-8 text-center text-muted-foreground text-sm">
         By clicking continue, you agree to our{" "}
         <Link

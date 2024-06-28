@@ -13,8 +13,9 @@ import { redirect, useRouter, useSearchParams } from "next/navigation";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
-import { authenticate } from "@/actions/auth";
+import { authCreate, authenticate } from "@/actions/auth";
 import { auth } from "@/auth";
+import { useFormState, useFormStatus } from "react-dom";
 
 type FormData = z.infer<typeof userAuthSchema>;
 
@@ -120,125 +121,125 @@ export function UserLoginForm() {
   );
 }
 
-// export function UserRegistrationForm() {
-//   const [errorMessage, dispatch] = useFormState(authCreate, undefined);
-//   const { pending } = useFormStatus();
+export function UserRegistrationForm() {
+  const [errorMessage, dispatch] = useFormState(authCreate, undefined);
+  const { pending } = useFormStatus();
 
-//   const handleClick = (event: React.FormEvent) => {
-//     if (pending) {
-//       event?.preventDefault();
-//     }
-//   };
+  const handleClick = (event: React.FormEvent) => {
+    if (pending) {
+      event?.preventDefault();
+    }
+  };
 
-//   if (errorMessage) {
-//     return toast({
-//       title: "Something went wrong.",
-//       description: `${errorMessage}`,
-//       variant: "destructive",
-//     });
-//   }
-//   // const {
-//   //   register,
-//   //   handleSubmit,
-//   //   formState: { errors },
-//   // } = useForm<FormData>({
-//   //   resolver: zodResolver(userAuthSchema),
-//   // });
-//   // const [isLoading, setIsLoading] = React.useState<boolean>(false);
-//   // const [isGitHubLoading, setIsGitHubLoading] = React.useState<boolean>(false);
-//   // const searchParams = useSearchParams();
+  if (errorMessage) {
+    return toast({
+      title: "Something went wrong.",
+      description: `${errorMessage}`,
+      variant: "destructive",
+    });
+  }
+  // const {
+  //   register,
+  //   handleSubmit,
+  //   formState: { errors },
+  // } = useForm<FormData>({
+  //   resolver: zodResolver(userAuthSchema),
+  // });
+  // const [isLoading, setIsLoading] = React.useState<boolean>(false);
+  // const [isGitHubLoading, setIsGitHubLoading] = React.useState<boolean>(false);
+  // const searchParams = useSearchParams();
 
-//   // async function onSubmit(data: FormData) {
-//   //   setIsLoading(true);
+  // async function onSubmit(data: FormData) {
+  //   setIsLoading(true);
 
-//   //   const signInResult = await signIn("email", {
-//   //     email: data.email.toLowerCase(),
-//   //     redirect: false,
-//   //     callbackUrl: searchParams?.get("from") || "/dashboard",
-//   //   });
+  //   const signInResult = await signIn("email", {
+  //     email: data.email.toLowerCase(),
+  //     redirect: false,
+  //     callbackUrl: searchParams?.get("from") || "/dashboard",
+  //   });
 
-//   //   setIsLoading(false);
+  //   setIsLoading(false);
 
-//   //   if (!signInResult?.ok) {
-//   //     return toast({
-//   //       title: "Something went wrong.",
-//   //       description: "Your sign in request failed. Please try again.",
-//   //       variant: "destructive",
-//   //     });
-//   //   }
+  //   if (!signInResult?.ok) {
+  //     return toast({
+  //       title: "Something went wrong.",
+  //       description: "Your sign in request failed. Please try again.",
+  //       variant: "destructive",
+  //     });
+  //   }
 
-//   //   return toast({
-//   //     title: "Check your email",
-//   //     description: "We sent you a login link. Be sure to check your spam too.",
-//   //   });
-//   // }
+  //   return toast({
+  //     title: "Check your email",
+  //     description: "We sent you a login link. Be sure to check your spam too.",
+  //   });
+  // }
 
-//   return (
-//     <div className={cn("grid gap-6")}>
-//       <form action={dispatch}>
-//         <div className="gap-2 grid">
-//           <div className="gap-1 grid">
-//             <Label className="sr-only" htmlFor="email">
-//               Email
-//             </Label>
-//             <Input
-//               id="email"
-//               placeholder="name@example.com"
-//               type="email"
-//               autoCapitalize="none"
-//               autoComplete="email"
-//               autoCorrect="off"
-//               disabled={pending}
-//               name="email"
-//             />
-//             <Input
-//               id="password"
-//               placeholder="name@example.com"
-//               type="password"
-//               required
-//               disabled={pending}
-//               name="password"
-//             />
-//             {/* {errors?.email && (
-//               <p className="px-1 text-red-600 text-xs">
-//                 {errors.email.message}
-//               </p>
-//             )} */}
-//           </div>
-//           <button
-//             className={cn(buttonVariants())}
-//             type="submit"
-//             onClick={handleClick}
-//             disabled={pending}
-//           >
-//             {pending && <Icons.spinner className="mr-2 w-4 h-4 animate-spin" />}
-//             Sign Up with Email
-//           </button>
-//         </div>
-//       </form>
-//       <div className="relative">
-//         <div className="absolute inset-0 flex items-center">
-//           <span className="border-t w-full" />
-//         </div>
-//         <div className="relative flex justify-center text-xs uppercase">
-//           <span className="bg-background px-2 text-muted-foreground">
-//             Or continue with
-//           </span>
-//         </div>
-//       </div>
-//       <button
-//         type="button"
-//         className={cn(buttonVariants({ variant: "outline" }))}
-//         onClick={() => {}}
-//         disabled={pending}
-//       >
-//         {pending ? (
-//           <Icons.spinner className="mr-2 w-4 h-4 animate-spin" />
-//         ) : (
-//           <Icons.gitHub className="mr-2 w-4 h-4" />
-//         )}{" "}
-//         Github
-//       </button>
-//     </div>
-//   );
-// }
+  return (
+    <div className={cn("grid gap-6")}>
+      <form action={dispatch}>
+        <div className="gap-2 grid">
+          <div className="gap-1 grid">
+            <Label className="sr-only" htmlFor="email">
+              Email
+            </Label>
+            <Input
+              id="email"
+              placeholder="name@example.com"
+              type="email"
+              autoCapitalize="none"
+              autoComplete="email"
+              autoCorrect="off"
+              disabled={pending}
+              name="email"
+            />
+            <Input
+              id="password"
+              placeholder="name@example.com"
+              type="password"
+              required
+              disabled={pending}
+              name="password"
+            />
+            {/* {errors?.email && (
+              <p className="px-1 text-red-600 text-xs">
+                {errors.email.message}
+              </p>
+            )} */}
+          </div>
+          <button
+            className={cn(buttonVariants())}
+            type="submit"
+            onClick={handleClick}
+            disabled={pending}
+          >
+            {pending && <Icons.spinner className="mr-2 w-4 h-4 animate-spin" />}
+            Sign Up with Email
+          </button>
+        </div>
+      </form>
+      <div className="relative">
+        <div className="absolute inset-0 flex items-center">
+          <span className="border-t w-full" />
+        </div>
+        <div className="relative flex justify-center text-xs uppercase">
+          <span className="bg-background px-2 text-muted-foreground">
+            Or continue with
+          </span>
+        </div>
+      </div>
+      <button
+        type="button"
+        className={cn(buttonVariants({ variant: "outline" }))}
+        onClick={() => {}}
+        disabled={pending}
+      >
+        {pending ? (
+          <Icons.spinner className="mr-2 w-4 h-4 animate-spin" />
+        ) : (
+          <Icons.gitHub className="mr-2 w-4 h-4" />
+        )}{" "}
+        Github
+      </button>
+    </div>
+  );
+}

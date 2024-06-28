@@ -54,6 +54,10 @@ export async function authCreate(_currentState: unknown, formData: FormData) {
       },
     });
 
+    if (user) {
+      redirect("/login")
+    }
+
     return user
   } catch (error) {
     throw error
