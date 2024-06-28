@@ -17,14 +17,22 @@ import {
   TooltipProvider,
 } from "@/components/_ui/tooltip";
 import { ChatBubbleIcon } from "@radix-ui/react-icons";
+import { auth } from "@/auth";
+import { redirect } from "next/navigation";
 
 type Props = {
   children: React.ReactNode;
 };
 
 const OwnerLayout = async ({ children }: Props) => {
+  const session = await auth();
+
+  if (!session) {
+    redirect("/login");
+  }
+
   return (
-    <div className="flex flex-col pl-20 md:pl-4 w-full h-screen">
+    <div className="flex flex-col pl-20 md:pl-4 w-full h-full">
       <div className="flex flex-col bg-muted/40 w-full min-h-screen">
         <aside className="left-0 z-10 fixed inset-y-0 sm:flex flex-col hidden bg-background border-r w-14">
           <TooltipProvider>

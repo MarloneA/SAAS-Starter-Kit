@@ -1,26 +1,52 @@
-import ButtonHandler from "@/components/forms/sign-up/button-handlers";
-import SignUpFormProvider from "@/components/forms/sign-up/form-provider";
-import HighLightBar from "@/components/forms/sign-up/highlight-bar";
-import RegistrationFormStep from "@/components/forms/sign-up/registration-step";
+import * as React from "react";
 
-import React from "react";
+import { cn } from "@/lib/utils";
+import { buttonVariants } from "@/components/_ui/button";
+import Link from "next/link";
+import { UserRegistrationForm } from "@/components/user-auth-form";
 
-type Props = {};
+interface UserAuthFormProps extends React.HTMLAttributes<HTMLDivElement> {}
 
-const SignUp = (props: Props) => {
+const UserAuthFormPage = ({ className, ...props }: UserAuthFormProps) => {
   return (
-    <div className="flex-1 md:px-16 py-36 w-full">
-      <div className="flex flex-col gap-3 h-full">
-        <SignUpFormProvider>
-          <div className="flex flex-col gap-3">
-            <RegistrationFormStep />
-            <ButtonHandler />
-          </div>
-          <HighLightBar />
-        </SignUpFormProvider>
+    <div className={cn("grid gap-6", className)} {...props}>
+      <Link
+        href="/login"
+        className={cn(
+          buttonVariants({ variant: "ghost" }),
+          "absolute right-4 top-4 md:right-8 md:top-8"
+        )}
+      >
+        Login
+      </Link>
+      <div className="flex flex-col space-y-2 text-center">
+        <h1 className="font-semibold text-2xl tracking-tight">
+          Create an account
+        </h1>
+        <p className="text-muted-foreground text-sm">
+          Enter your email below to create your account
+        </p>
       </div>
+      {/* <UserRegistrationForm /> */}
+      <p className="px-8 text-center text-muted-foreground text-sm">
+        By clicking continue, you agree to our{" "}
+        <Link
+          href="/terms"
+          className="hover:text-primary underline underline-offset-4"
+        >
+          Terms of Service
+        </Link>{" "}
+        and{" "}
+        <Link
+          href="/privacy"
+          className="hover:text-primary underline underline-offset-4"
+        >
+          Privacy Policy
+        </Link>
+        .
+      </p>
     </div>
   );
 };
 
-export default SignUp;
+export default UserAuthFormPage;

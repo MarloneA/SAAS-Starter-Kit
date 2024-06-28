@@ -70,6 +70,7 @@ import {
   TabsList,
   TabsTrigger,
 } from "@/components/_ui/tabs";
+import { UserNav } from "@/components/analytics/user-nav";
 
 export default function Orders() {
   return (
@@ -156,31 +157,7 @@ export default function Orders() {
             className="bg-background pl-8 rounded-lg w-full md:w-[200px] lg:w-[336px]"
           />
         </div>
-        <DropdownMenu>
-          <DropdownMenuTrigger asChild>
-            <Button
-              variant="outline"
-              size="icon"
-              className="rounded-full overflow-hidden"
-            >
-              <Image
-                src="/placeholder-user.jpg"
-                width={36}
-                height={36}
-                alt="Avatar"
-                className="rounded-full overflow-hidden"
-              />
-            </Button>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent align="end">
-            <DropdownMenuLabel>My Account</DropdownMenuLabel>
-            <DropdownMenuSeparator />
-            <DropdownMenuItem>Settings</DropdownMenuItem>
-            <DropdownMenuItem>Support</DropdownMenuItem>
-            <DropdownMenuSeparator />
-            <DropdownMenuItem>Logout</DropdownMenuItem>
-          </DropdownMenuContent>
-        </DropdownMenu>
+        <UserNav />
       </header>
       <main className="flex-1 items-start gap-4 md:gap-8 grid lg:grid-cols-3 xl:grid-cols-3 sm:px-6 sm:py-0 p-4">
         <div className="items-start gap-4 md:gap-8 grid lg:col-span-2 auto-rows-max">

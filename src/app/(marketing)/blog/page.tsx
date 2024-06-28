@@ -1,20 +1,27 @@
-import Image from "next/image"
-import Link from "next/link"
-import { allPosts } from "./../../../../generated/index.mjs"
-import { compareDesc } from "date-fns"
+import Image from "next/image";
+import Link from "next/link";
+import { allPosts } from "./../../../../generated/index.mjs";
+import { compareDesc } from "date-fns";
 
-import { formatDate } from "@/lib/utils"
+import { formatDate } from "@/lib/utils";
+import { auth } from "@/auth";
+import { redirect } from "next/navigation";
+import { ArrowRight } from "lucide-react";
+import { Badge } from "@/components/_ui/badge";
+import { Button } from "@/components/_ui/button";
 
 export const metadata = {
   title: "Blog",
-}
+};
 
 export default async function BlogPage() {
+  const user = await auth();
+
   const posts = allPosts
     .filter((post) => post.published)
     .sort((a, b) => {
-      return compareDesc(new Date(a.date), new Date(b.date))
-    })
+      return compareDesc(new Date(a.date), new Date(b.date));
+    });
 
   return (
     <div className="py-6 lg:py-10 max-w-4xl container">
@@ -24,9 +31,17 @@ export default async function BlogPage() {
             Blog
           </h1>
           <p className="text-muted-foreground text-xl">
-            A blog built using Contentlayer. Posts are written in MDX.
+            A blog built using Next Mdx. Posts are written in MDX.
           </p>
         </div>
+        {user && (
+          <Button className="w-fit not-prose" variant="outline">
+            <Link className="flex items-center gap-1 group" href="/content">
+              manage posts
+              <ArrowRight className="group-hover:rotate-45 w-4 transition-all" />
+            </Link>
+          </Button>
+        )}
       </div>
       <hr className="my-8" />
       {posts?.length ? (
@@ -65,5 +80,5 @@ export default async function BlogPage() {
         <p>No posts published.</p>
       )}
     </div>
-  )
+  );
 }
