@@ -1,32 +1,41 @@
-import SignInFormProvider from "@/components/forms/sign-in/form-provider";
-import LoginForm from "@/components/forms/sign-in/login-form";
-import { Button } from "@/components/_ui/button";
+import * as React from "react";
 import Link from "next/link";
-import React from "react";
 
-const SignInPage = () => {
+import { cn } from "@/lib/utils";
+import { buttonVariants } from "@/components/_ui/button";
+import { UserLoginForm } from "@/components/user-auth-form";
+import { auth } from "@/auth";
+import { redirect } from "next/navigation";
+
+interface UserAuthFormProps extends React.HTMLAttributes<HTMLDivElement> {}
+
+const UserAuthFormPage = async ({ className, ...props }: UserAuthFormProps) => {
+  const session = await auth();
+
+  if (session) {
+    redirect("/dashboard");
+  }
+
   return (
-    <div className="flex-1 md:px-16 py-36 w-full">
-      <div className="flex flex-col gap-3 h-full">
-        <SignInFormProvider>
-          <div className="flex flex-col gap-3">
-            <LoginForm />
-            <div className="flex flex-col items-center gap-3 w-full">
-              <Button type="submit" className="w-full">
-                Submit
-              </Button>
-              <p>
-                Don’t have an account?{" "}
-                <Link href="/register" className="font-bold">
-                  Create one
-                </Link>
-              </p>
-            </div>
-          </div>
-        </SignInFormProvider>
+    <div className={cn("grid gap-6", className)} {...props}>
+      <Link
+        href="/register"
+        className={cn(
+          buttonVariants({ variant: "ghost" }),
+          "absolute right-4 top-4 md:right-8 md:top-8"
+        )}
+      >
+        Register
+      </Link>
+      <div className="flex flex-col space-y-2 text-center">
+        <h1 className="font-semibold text-2xl tracking-tight">Login</h1>
+        <p className="text-muted-foreground text-sm">
+          Enter your credentials below to login to your account
+        </p>
       </div>
+      <UserLoginForm />
     </div>
   );
 };
 
-export default SignInPage;
+export default UserAuthFormPage;

@@ -54,7 +54,7 @@ export async function generateMetadata({
     return {};
   }
 
-  const url = "http://localhost:3000";
+  const url = process.env.NEXTAUTH_URL;
 
   const ogUrl = new URL(`${url}/api/og`);
   ogUrl.searchParams.set("heading", post.title);

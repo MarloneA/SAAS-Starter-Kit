@@ -27,10 +27,10 @@ export const metadata: Metadata = {
   description: "Example dashboard app built using the components.",
 };
 
-export default function Dashboard() {
+export default async function Dashboard() {
   return (
     <div className="flex flex-col sm:gap-4 sm:py-4 sm:pl-14">
-      <header className="top-0 z-30 sm:static sticky flex flex-col items-center gap-4 sm:border-0 bg-background sm:bg-transparent px-4 sm:px-6 border-b h-14 sm:h-auto">
+      <header className="top-0 z-30 sm:static sticky flex flex-col gap-4 sm:border-0 bg-background sm:bg-transparent border-b h-14 sm:h-auto">
         <div className="border-b">
           <div className="flex items-center px-4 h-16">
             <TeamSwitcher />
