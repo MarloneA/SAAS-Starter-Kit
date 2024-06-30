@@ -25,7 +25,7 @@ export function getEmailInitials(email: string) {
   let localPart = email.split('@')[0];
 
   // Split the local part by any non-alphabetic characters
-  let nameParts = localPart.split(/[^a-zA-Z]/);
+  let nameParts = localPart.split(/[^a-zA-Z0-9]/);
 
   // If the local part contains only one section, use the first two characters
   if (nameParts.length === 1) {

@@ -1,23 +1,11 @@
 'use server'
 
-import { auth, signIn } from '@/auth'
+import { auth, signIn, signOut } from '@/auth'
 import { db } from '@/lib/db';
 import { User } from '@/lib/definitions';
 import bcrypt from "bcrypt";
-import { revalidatePath } from 'next/cache';
 import { cookies } from 'next/headers'
 import { redirect } from 'next/navigation';
-
-// export async function handleLogin(sessionData) {
-//   const encryptedSessionData = encrypt(sessionData) // Encrypt your session data
-//   cookies().set('session', encryptedSessionData, {
-//     httpOnly: true,
-//     secure: process.env.NODE_ENV === 'production',
-//     maxAge: 60 * 60 * 24 * 7, // One week
-//     path: '/',
-//   })
-//   // Redirect or handle the response after setting the cookie
-// }
 
 const saltRounds = process.env.BYCRYPT_SALT_ROUNDS;
 
@@ -29,15 +17,29 @@ export const hashPassword = async (password: string) => {
 export async function authenticate(_currentState: unknown, formData: FormData) {
   try {
     const signInResult = await signIn('credentials', formData);
-    console.log('signInResult: ', signInResult);
 
     return signInResult;
 
   } catch (error) {
     throw error
   }
-  // revalidatePath('/log') // Update cached posts
-  redirect(`/dashboard`)
+}
+
+export async function authenticateGithub() {
+  try {
+    await signIn('github', { redirectTo: "/dashboard" });
+
+  } catch (error) {
+    throw error
+  }
+}
+export async function authenticateGoogle() {
+  try {
+    await signIn('google', { redirectTo: "/dashboard" });
+
+  } catch (error) {
+    throw error
+  }
 }
 
 export async function authCreate(_currentState: unknown, formData: FormData) {
@@ -82,7 +84,7 @@ export async function getUser(email: string): Promise<User | undefined> {
 // if you want to save the session in the db use createSession and getSession, otherwise you can just access them from the browser 
 // remember to set the session strategy from jwt to database if you want to use the database. checkout auth.config.ts
 
-export async function createSession(user: User) {
+export async function createSession() {
   try {
     const { user, expires } = await auth();
 
@@ -116,6 +118,5 @@ export async function checkIsAuthenticated() {
 }
 
 export async function logout() {
-  cookies().delete("authjs.callback-url");
-  cookies().delete("authjs.session-token");
+  await signOut();
 }

@@ -23,6 +23,7 @@ import {
   Twitter,
   User,
   X,
+  Mail,
   type Icon as LucideIcon,
 } from "lucide-react";
 
@@ -67,6 +68,8 @@ export const Icons = {
       ></path>
     </svg>
   ),
+  mail: Mail,
+  google: Pizza,
   twitter: Twitter,
   check: Check,
 };

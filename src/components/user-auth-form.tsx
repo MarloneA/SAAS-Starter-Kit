@@ -13,8 +13,13 @@ import { redirect, useRouter, useSearchParams } from "next/navigation";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
-import { authCreate, authenticate } from "@/actions/auth";
-import { auth } from "@/auth";
+import {
+  authCreate,
+  authenticate,
+  authenticateGithub,
+  authenticateGoogle,
+} from "@/actions/auth";
+import { auth, signIn } from "@/auth";
 import { useFormState, useFormStatus } from "react-dom";
 
 type FormData = z.infer<typeof userAuthSchema>;
@@ -54,6 +59,10 @@ export function UserLoginForm() {
     });
   }
 
+  // async function onSubmitGithub() {
+  //   await authenticateGithub();
+  // }
+
   return (
     <div className={cn("grid gap-6")}>
       <form onSubmit={handleSubmit(onSubmit)}>
@@ -73,6 +82,7 @@ export function UserLoginForm() {
               {...register("email")}
             />
             <Input
+              className="my-4"
               id="password"
               placeholder="enter password"
               type="password"
@@ -90,7 +100,7 @@ export function UserLoginForm() {
             {isLoading && (
               <Icons.spinner className="mr-2 w-4 h-4 animate-spin" />
             )}
-            Sign In with Email
+            Sign In with Credentials
           </button>
         </div>
       </form>
@@ -107,7 +117,7 @@ export function UserLoginForm() {
       <button
         type="button"
         className={cn(buttonVariants({ variant: "outline" }))}
-        onClick={() => {}}
+        onClick={() => authenticateGithub()}
         disabled={isLoading}
       >
         {isLoading ? (
@@ -116,6 +126,32 @@ export function UserLoginForm() {
           <Icons.gitHub className="mr-2 w-4 h-4" />
         )}{" "}
         Github
+      </button>
+      <button
+        type="button"
+        className={cn(buttonVariants({ variant: "outline" }))}
+        onClick={() => authenticateGoogle()}
+        disabled={isLoading}
+      >
+        {isLoading ? (
+          <Icons.spinner className="mr-2 w-4 h-4 animate-spin" />
+        ) : (
+          <Icons.google className="mr-2 w-4 h-4" />
+        )}{" "}
+        Google
+      </button>
+      <button
+        type="button"
+        className={cn(buttonVariants({ variant: "outline" }))}
+        onClick={() => {}}
+        disabled={isLoading}
+      >
+        {isLoading ? (
+          <Icons.spinner className="mr-2 w-4 h-4 animate-spin" />
+        ) : (
+          <Icons.mail className="mr-2 w-4 h-4" />
+        )}{" "}
+        email magic link
       </button>
     </div>
   );
@@ -193,8 +229,9 @@ export function UserRegistrationForm() {
               name="email"
             />
             <Input
+              className="my-4"
               id="password"
-              placeholder="name@example.com"
+              placeholder="password"
               type="password"
               required
               disabled={pending}
@@ -213,7 +250,7 @@ export function UserRegistrationForm() {
             disabled={pending}
           >
             {pending && <Icons.spinner className="mr-2 w-4 h-4 animate-spin" />}
-            Sign Up with Email
+            Sign Up with Credentials
           </button>
         </div>
       </form>
@@ -239,6 +276,33 @@ export function UserRegistrationForm() {
           <Icons.gitHub className="mr-2 w-4 h-4" />
         )}{" "}
         Github
+      </button>
+      <button
+        type="button"
+        className={cn(buttonVariants({ variant: "outline" }))}
+        onClick={() => {}}
+        disabled={pending}
+      >
+        {pending ? (
+          <Icons.spinner className="mr-2 w-4 h-4 animate-spin" />
+        ) : (
+          <Icons.google className="mr-2 w-4 h-4" />
+        )}{" "}
+        Google
+      </button>
+
+      <button
+        type="button"
+        className={cn(buttonVariants({ variant: "outline" }))}
+        onClick={() => {}}
+        disabled={pending}
+      >
+        {pending ? (
+          <Icons.spinner className="mr-2 w-4 h-4 animate-spin" />
+        ) : (
+          <Icons.mail className="mr-2 w-4 h-4" />
+        )}{" "}
+        email magic link
       </button>
     </div>
   );

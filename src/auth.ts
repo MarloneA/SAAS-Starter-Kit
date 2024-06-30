@@ -1,12 +1,17 @@
+import { Email } from 'next-auth/providers/email';
 import NextAuth from 'next-auth';
 import bcrypt from 'bcrypt';
 import CredentialsProvider from 'next-auth/providers/credentials';
+import GoogleProvider from "next-auth/providers/google";
+import GitHubProvider from "next-auth/providers/github";
+import Providers from "next-auth/providers";
 import { authConfig } from '@/auth.config';
 import { getUser } from '@/actions/auth';
 import { z } from 'zod';
 import { db } from './lib/db';
 
-export const { auth, signIn, signOut } = NextAuth({
+
+export const { handlers: { GET, POST }, auth, signIn, signOut } = NextAuth({
   ...authConfig,
   secret: process.env.NEXTAUTH_SECRET,
   session: {
@@ -30,6 +35,15 @@ export const { auth, signIn, signOut } = NextAuth({
         }
         return null;
       },
+    }),
+    GoogleProvider({
+      clientId: process.env.GOOGLE_CLIENT_ID,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+      allowDangerousEmailAccountLinking: true,
+    }),
+    GitHubProvider({
+      clientId: process.env.GITHUB_CLIENT_ID,
+      clientSecret: process.env.GITHUB_CLIENT_SECRET
     }),
   ],
   callbacks: {

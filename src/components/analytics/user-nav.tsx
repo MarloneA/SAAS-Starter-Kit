@@ -10,10 +10,8 @@ import {
   DropdownMenuShortcut,
   DropdownMenuTrigger,
 } from "@/components/_ui/dropdown-menu";
-import { auth, signOut } from "@/auth";
+import { auth } from "@/auth";
 import { getEmailInitials } from "@/lib/utils";
-import { logout } from "@/actions/auth";
-import { redirect } from "next/navigation";
 import Logout from "../logout";
 
 export async function UserNav() {
@@ -24,9 +22,12 @@ export async function UserNav() {
       <DropdownMenuTrigger asChild>
         <Button variant="ghost" className="relative rounded-full w-8 h-8">
           <Avatar className="w-8 h-8">
-            <AvatarImage src="/avatars/01.png" alt="@shadcn" />
+            <AvatarImage
+              src={session?.user?.image}
+              alt={session && getEmailInitials(session?.user?.email)}
+            />
             <AvatarFallback>
-              {getEmailInitials(session.user.email)}
+              {session && getEmailInitials(session?.user?.email)}
             </AvatarFallback>
           </Avatar>
         </Button>
@@ -35,10 +36,10 @@ export async function UserNav() {
         <DropdownMenuLabel className="font-normal">
           <div className="flex flex-col space-y-1">
             <p className="font-medium text-sm leading-none">
-              {session.user.name}
+              {session && session?.user?.name}
             </p>
             <p className="text-muted-foreground text-xs leading-none">
-              {session.user.email}
+              {session && session?.user?.email}
             </p>
           </div>
         </DropdownMenuLabel>
@@ -60,7 +61,7 @@ export async function UserNav() {
         </DropdownMenuGroup>
         <DropdownMenuSeparator />
         <DropdownMenuItem>
-          <Logout/>
+          <Logout />
           <DropdownMenuShortcut>⇧⌘Q</DropdownMenuShortcut>
         </DropdownMenuItem>
       </DropdownMenuContent>
