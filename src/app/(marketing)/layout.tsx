@@ -6,6 +6,7 @@ import { buttonVariants } from "@/components/_ui/button";
 import { MainNav } from "@/components/main-nav";
 import Footer from "@/components/footer";
 import { auth } from "@/auth";
+import { UserNav } from "@/components/analytics/user-nav";
 
 interface MarketingLayoutProps {
   children: React.ReactNode;
@@ -22,7 +23,7 @@ export default async function MarketingLayout({
         <header className="z-40 bg-background container">
           <div className="flex justify-between items-center py-6 h-20">
             <MainNav items={marketingConfig.mainNav} />
-            <nav>
+            <nav className="flex items-center gap-2">
               <Link
                 href="/dashboard"
                 className={cn(
@@ -32,6 +33,7 @@ export default async function MarketingLayout({
               >
                 Go to Dashboard
               </Link>
+              <UserNav />
             </nav>
           </div>
         </header>
