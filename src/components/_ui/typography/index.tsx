@@ -148,16 +148,7 @@ export function P({
   children: React.ReactNode;
   className?: String;
 }>) {
-  return (
-    <p
-      className={cn(
-        "leading-7 [&:not(:first-child)]:mt-6 text-center",
-        className
-      )}
-    >
-      {children}
-    </p>
-  );
+  return <p className={cn("leading-7 text-center", className)}>{children}</p>;
 }
 
 export function Small({

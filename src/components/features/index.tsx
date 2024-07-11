@@ -1,11 +1,8 @@
-// Layout
 import * as Layout from "@/components/_ui/layout";
-import Balancer from "react-wrap-balancer";
-import Link from "next/link";
-
-// Icons
 import { Coins, ArrowRight } from "lucide-react";
 import { H2, P } from "../_ui/typography";
+import Balancer from "react-wrap-balancer";
+import Link from "next/link";
 
 type FeatureText = {
   icon: JSX.Element;

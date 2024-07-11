@@ -1,5 +1,6 @@
 import * as Layout from "@/components/_ui/layout";
-import { Hero, HeroMain } from "@/components/cta-landingpage";
+import { CallToAction } from "@/components/callToAction";
+import { Hero } from "@/components/landingpage";
 import { Pricing } from "@/components/pricing";
 import FAQ from "@/components/faq";
 import Feature from "@/components/features";
@@ -10,11 +11,11 @@ export default async function Home() {
   return (
     <Layout.Main>
       <NavBar />
-      <HeroMain />
+      <Hero />
       <Feature />
       <Pricing />
       <FAQ />
-      <Hero />
+      <CallToAction />
       <Footer />
     </Layout.Main>
   );

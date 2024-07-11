@@ -1,11 +1,11 @@
 import * as React from "react";
-import Link from "next/link";
-import { MainNav } from "@/components/main-nav";
-import { marketingConfig } from "@/config/marketing";
+import { auth } from "@/auth";
 import { buttonVariants } from "@/components/_ui/button";
 import { cn } from "@/lib/utils";
-import { auth } from "@/auth";
+import { MainNav } from "@/components/main-nav";
+import { marketingConfig } from "@/config/marketing";
 import { UserNav } from "../analytics/user-nav";
+import Link from "next/link";
 
 async function NavBar() {
   const session = await auth();
@@ -36,7 +36,6 @@ async function NavBar() {
     <header className="z-40 bg-background container">
       <div className="flex justify-between items-center py-6 h-20">
         <MainNav items={marketingConfig.mainNav} />
-
         <nav>
           <Link
             href="/login"
