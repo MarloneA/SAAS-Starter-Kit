@@ -1,5 +1,4 @@
 import { Section, Container } from "../_ui/layout";
-import Image from "next/image";
 import Link from "next/link";
 import Balancer from "react-wrap-balancer";
 import { Button } from "../_ui/button";
@@ -42,7 +41,9 @@ export default function Footer() {
         <Container className="flex md:flex-row flex-col justify-between md:items-center gap-6 md:gap-2 border-t not-prose">
           <div className="flex gap-2">
             <Button variant="outline" size="icon">
-              <GitHubLogoIcon />
+              <a href="https://github.com/MarloneA/SAAS-Starter-Kit">
+                <GitHubLogoIcon />
+              </a>
             </Button>
             <Button variant="outline" size="icon">
               <TwitterLogoIcon />

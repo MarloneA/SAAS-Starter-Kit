@@ -2,41 +2,12 @@ import { ArrowRight } from "lucide-react";
 import { Badge } from "../_ui/badge";
 import { Button } from "../_ui/button";
 import { H1, P } from "../_ui/typography";
-import { Section, Container } from "@/components/_ui/layout";
+import { Section } from "@/components/_ui/layout";
 import { techStack } from "@/constants/landing-page";
 import Image from "next/image";
 import Link from "next/link";
 
 export const Hero = () => {
-  return (
-    <Section className="relative backdrop-blur-sm">
-      <Container className="flex flex-col gap-8">
-        <Badge className="w-fit not-prose" variant="outline">
-          <Link className="flex items-center gap-1 group" href="/#pricing">
-            Lorem ipsum dolor sit amet
-            <ArrowRight className="group-hover:-rotate-45 w-4 transition-all" />
-          </Link>
-        </Badge>
-        <h1 className="!mb-0">
-          Building a saas should be about the product not the other stuff.
-          that's where we come in?
-        </h1>
-        <h3 className="bg-muted/50 p-4 border rounded-md text-muted-foreground">
-          Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </h3>
-
-        <div className="flex gap-4">
-          <Button>Get Started for free</Button>
-          <Button variant="outline">Checkout the code</Button>
-        </div>
-      </Container>
-    </Section>
-  );
-};
-
-export const HeroMain = () => {
   return (
     <Section>
       <div className="flex flex-col justify-center items-center gap-8">
@@ -50,7 +21,7 @@ export const HeroMain = () => {
             <ArrowRight className="group-hover:-rotate-45 w-4 transition-all" />
           </Link>
         </Badge>
-        <H1 className="inline-flex flex-col gap-1 bg-clip-text bg-gradient-to-r from-20% from-black from-black dark:from-slate-300 to-slate-600 to-slate-600 dark:to-slate-200 pb-1 font-black font-display text-4xl text-center text-transparent sm:text-5xl md:text-6xl lg:text-6xl xl:text-6xl leading-none transition">
+        <H1 className="inline-flex flex-col gap-1 bg-clip-text bg-gradient-to-r from-20% from-black dark:from-slate-300 to-slate-600 dark:to-slate-200 pb-1 font-black font-display text-4xl text-center text-transparent sm:text-5xl md:text-6xl lg:text-6xl xl:text-6xl leading-none transition">
           <div className="md:block hidden">
             <span> Next js B2B2C App</span>
             <div>
@@ -77,11 +48,11 @@ export const HeroMain = () => {
             </div>
           </div>
         </H1>
-        <P className="!mt-0 text-[#94a3b8]">
+        <P className="!mt-0 mb-4 text-[#94a3b8]">
           A fullstack Nextjs, typescript, shadcn starter kit built to {"launch"}
-          <br /> production level applications. Equiping you with a
-          collection of common saas strategies <br /> and platform specific
-          components to suit your needs
+          <br /> production level applications. Equiping you with a collection
+          of common saas strategies <br /> and platform specific components to
+          suit your needs
         </P>
         <div className="flex gap-2">
           <Link href="/pricing">
@@ -119,7 +90,7 @@ export const HeroMain = () => {
 
         <Image
           src="/images/landing.png"
-          width={1200}
+          width={1330}
           height={100}
           alt="Logo"
           className="border-4 m-10 border-black rounded-lg object-contain"
