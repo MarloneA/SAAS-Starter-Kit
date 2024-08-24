@@ -12,6 +12,8 @@ import {
 import Link from "next/link";
 import { Check } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { Icons } from "../icons";
+import { Badge } from "../_ui/badge";
 
 export const Pricing = () => {
   return (
@@ -32,11 +34,16 @@ export const Pricing = () => {
           <Card
             key={card.title}
             className={cn("w-[300px] flex flex-col justify-between", {
-              "border-2 border-primary": card.title === "Unlimited",
+              "border-2 border-primary bg-[#ffff0021]": card.title === "Plus",
             })}
           >
             <CardHeader>
-              <CardTitle className="text-orange">{card.title}</CardTitle>
+              <div className="flex justify-between">
+                <CardTitle className="text-orange">{card.title}</CardTitle>
+                {card.title === "Plus" && (
+                  <Badge className="bg-white text-black">Best Value</Badge>
+                )}
+              </div>
               <CardDescription>
                 {pricingCards.find((c) => c.title === card.title)?.description}
               </CardDescription>
@@ -44,15 +51,19 @@ export const Pricing = () => {
             <CardContent>
               <span className="font-bold text-4xl">{card.price}</span>
               <span className="text-muted-foreground">
-                <span>/ month</span>
+                <span>/ {card.duration} </span>
               </span>
             </CardContent>
             <CardFooter className="flex flex-col items-start gap-4">
               <div>
                 {card.features.map((feature) => (
-                  <div key={feature} className="flex gap-2">
-                    <Check />
-                    <p>{feature}</p>
+                  <div key={feature.feature} className="flex gap-2">
+                    {feature.available ? (
+                      <Icons.check color="green" className="mr-2 w-4 h-4" />
+                    ) : (
+                      <Icons.close color="gray" className="mr-2 w-4 h-4" />
+                    )}
+                    <p>{feature.feature}</p>
                   </div>
                 ))}
               </div>

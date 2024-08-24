@@ -50,7 +50,7 @@ export const Hero = () => {
         </H1>
         <P className="!mt-0 mb-4 text-[#94a3b8]">
           A fullstack Nextjs, typescript, shadcn starter kit built to {"launch"}
-          <br /> production level applications. Equiping you with a collection
+          <br /> production level applications. Equipping you with a collection
           of common saas strategies <br /> and platform specific components to
           suit your needs
         </P>

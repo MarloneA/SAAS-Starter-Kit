@@ -18,17 +18,11 @@ const FAQ = () => {
         className="flex flex-col justify-center items-center gap-4 mt-10"
       >
         <H2>Have any Questions?</H2>
-        <P>
-          Our straightforward pricing plans are tailored to meet your needs. If
-          <br />
-          {" you're"} not ready to commit you can get started for free.
-        </P>
       </Layout.Section>
       <Layout.Container>
         <h3 className="!mt-0">Frequently Asked Questions</h3>
         <h4 className="text-muted-foreground">
-          Can&apos;t find the answer you&apos;re looking for? Reach out to our
-          customer support team.
+          Can&apos;t find the answer you&apos;re looking for? Reach out to support@starterkit.com.
         </h4>
         <div className="flex flex-col gap-4 mt-4 md:mt-8 not-prose">
           {content.map((item, index) => (

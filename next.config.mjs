@@ -1,4 +1,4 @@
-import remarkGfm from 'remark-gfm'
+import remarkGfm from "remark-gfm";
 import createMDX from "@next/mdx";
 
 /** @type {import('next').NextConfig} */
@@ -18,6 +18,8 @@ const nextConfig = {
     // !! WARN !!
     ignoreBuildErrors: true,
   },
+  // use this to specifiy to next js where to create the build output when running with docker compose
+  output: "standalone",
 };
 
 const withMDX = createMDX({

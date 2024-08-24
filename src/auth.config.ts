@@ -4,5 +4,6 @@ export const authConfig = {
   pages: {
     signIn: '/login',
   },
-  providers: []
+  providers: [],
+  trustHost: true
 } satisfies NextAuthConfig;

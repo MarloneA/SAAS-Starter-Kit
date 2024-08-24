@@ -7,7 +7,7 @@ import {
   GitHubLogoIcon,
   TwitterLogoIcon,
 } from "@radix-ui/react-icons";
-import { H2 } from "../_ui/typography";
+import { H2, H4 } from "../_ui/typography";
 
 export default function Footer() {
   return (
@@ -15,8 +15,10 @@ export default function Footer() {
       <Section>
         <Container className="gap-12 grid md:grid-cols-[1.5fr_0.5fr_0.5fr]">
           <div className="flex flex-col gap-6 not-prose">
-            <Link href="/">
-              <H2>saas kit</H2>
+            <Link href="/" className="md:flex items-center space-x-2 hidden">
+              <H4 className="font-black">
+                SAAS <span className="text-red-700">KIT</span>
+              </H4>
             </Link>
             <p>
               <Balancer>
@@ -28,8 +30,11 @@ export default function Footer() {
           <div className="flex flex-col gap-2">
             <h5>Website</h5>
             <Link href="/">Home</Link>
-            <Link href="/">Features</Link>
-            <Link href="/">Pricing</Link>
+            <Link href="/#about">Features</Link>
+            <Link href="/#pricing">Pricing</Link>
+            <Link href="/#faq">FAQ</Link>
+            <Link href="/blog">Blog</Link>
+            <Link href="/docs">Documentation</Link>
           </div>
           <div className="flex flex-col gap-2">
             <h5>Legal</h5>

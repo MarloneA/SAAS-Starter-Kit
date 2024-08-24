@@ -1,14 +1,23 @@
-import Link from "next/link"
+"use client";
 
-import { cn } from "@/lib/utils"
-import { buttonVariants } from "@/components/_ui/button"
-import { Icons } from "@/components/icons"
+import Link from "next/link";
 
-export const metadata = {
-  title: "Pricing",
-}
+import { cn } from "@/lib/utils";
+import { buttonVariants } from "@/components/_ui/button";
+import { Icons } from "@/components/icons";
+import { useSearchParams } from "next/navigation";
+import { pricingCards } from "@/constants/landing-page";
+
+// export const metadata = {
+//   title: "Pricing",
+// };
 
 export default function PricingPage() {
+  const searchParams = useSearchParams();
+  const plan = searchParams.get("plan");
+  const cards = pricingCards.filter((card) => card.title === plan);
+  const features = cards[0].features || [];
+
   return (
     <section className="flex flex-col gap-6 py-8 md:py-12 lg:py-24 md:max-w-[64rem] container">
       <div className="flex flex-col gap-4 mx-auto w-full md:max-w-[58rem]">
@@ -22,35 +31,27 @@ export default function PricingPage() {
       <div className="items-start gap-10 grid md:grid-cols-[1fr_200px] p-10 border rounded-lg w-full">
         <div className="gap-6 grid">
           <h3 className="font-bold text-xl sm:text-2xl">
-            What&apos;s included in the PRO plan
+            {`What's included in the ${plan} plan`}
           </h3>
           <ul className="gap-3 grid sm:grid-cols-2 text-muted-foreground text-sm">
-            <li className="flex items-center">
-              <Icons.check className="mr-2 w-4 h-4" /> Unlimited Posts
-            </li>
-            <li className="flex items-center">
-              <Icons.check className="mr-2 w-4 h-4" /> Unlimited Users
-            </li>
+            {features.map((pricing, index) => (
+              <li key={index} className="flex items-center">
+                {pricing.available ? (
+                  <Icons.check className="mr-2 w-4 h-4" />
+                ) : (
+                  <Icons.close className="mr-2 w-4 h-4" />
+                )}
 
-            <li className="flex items-center">
-              <Icons.check className="mr-2 w-4 h-4" /> Custom domain
-            </li>
-            <li className="flex items-center">
-              <Icons.check className="mr-2 w-4 h-4" /> Dashboard Analytics
-            </li>
-            <li className="flex items-center">
-              <Icons.check className="mr-2 w-4 h-4" /> Access to Discord
-            </li>
-            <li className="flex items-center">
-              <Icons.check className="mr-2 w-4 h-4" /> Premium Support
-            </li>
+                {pricing.feature}
+              </li>
+            ))}
           </ul>
         </div>
         <div className="flex flex-col gap-4 text-center">
           <div>
-            <h4 className="font-bold text-7xl">$19</h4>
+            <h4 className="font-bold text-7xl">{cards[0].price}</h4>
             <p className="font-medium text-muted-foreground text-sm">
-              Billed Monthly
+              {`Billed ${cards[0].duration}`}
             </p>
           </div>
           <Link href="/login" className={cn(buttonVariants({ size: "lg" }))}>
@@ -60,10 +61,13 @@ export default function PricingPage() {
       </div>
       <div className="flex flex-col gap-4 mx-auto w-full max-w-[58rem]">
         <p className="max-w-[85%] text-muted-foreground leading-normal sm:leading-7">
-          Taxonomy is a demo app.{" "}
-          <strong>You can test the upgrade and won&apos;t be charged.</strong>
+          Not Ready to commit.{" "}
+          <strong>
+            You can try out the free version{" "}
+            <Link href="/pricing?plan=Free">here</Link>.
+          </strong>
         </p>
       </div>
     </section>
-  )
+  );
 }
