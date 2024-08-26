@@ -55,11 +55,11 @@ export const Hero = () => {
           suit your needs
         </P>
         <div className="flex gap-2">
-          <Link href="/pricing">
+          <Link href="#pricing">
             <Button>Get Started for free</Button>
           </Link>
           <Link href="/guides">
-            <Button variant="outline">Checkout the Guides</Button>
+            <Button variant="outline">Checkout the Demo</Button>
           </Link>
         </div>
         <div className="flex justify-center items-center w-full group">

@@ -66,6 +66,7 @@ export async function PATCH(
       data: {
         title: body.title,
         content: body.content,
+        published: body.published
       },
     })
 

@@ -1,5 +1,7 @@
 import * as Layout from "@/components/_ui/layout";
 import { Coins, ArrowRight } from "lucide-react";
+
+import { Button } from "../_ui/button";
 import { H2, P } from "../_ui/typography";
 import Balancer from "react-wrap-balancer";
 import Link from "next/link";
@@ -117,12 +119,15 @@ const Feature = () => {
         <H2>Features</H2>
         <P>
           This fully built starter kit comes packed with features that are
-          necessarry for building a fully functional saas app
+          necessarry for building a fully functional application.
           <br />
-          {" you're"} not ready to commit you can get started for free.
+          if {" you're"} not ready to commit you can get started for free.
         </P>
+        <Button>
+          <Link href="#pricing">Try out Saas Kit for free</Link>
+        </Button>
       </Layout.Section>
-      <Layout.Container className="not-prose ">
+      <Layout.Container className="not-prose max-w-7xl">
         <div className="flex flex-col gap-6">
           <h3 className="text-4xl">
             <Balancer>Build your Saas</Balancer>

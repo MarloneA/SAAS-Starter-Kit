@@ -126,7 +126,7 @@ export function Editor({ post }: EditorProps) {
         <div className="flex justify-between items-center w-full">
           <div className="flex items-center space-x-10">
             <Link
-              href="/dashboard"
+              href="/content"
               className={cn(buttonVariants({ variant: "ghost" }))}
             >
               <>

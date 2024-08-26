@@ -29,7 +29,9 @@ export const CallToAction = () => {
         </h3>
 
         <div className="flex gap-4">
-          <Button>Get Started for free</Button>
+          <Button>
+            <Link href="#pricing">Get Started for free</Link>
+          </Button>
           <Button variant="outline">Checkout the demo</Button>
         </div>
       </Container>
