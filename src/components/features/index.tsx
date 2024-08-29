@@ -124,7 +124,7 @@ const Feature = () => {
           if {" you're"} not ready to commit you can get started for free.
         </P>
         <Button>
-          <Link href="#pricing">Try out Saas Kit for free</Link>
+          <Link href="#pricing">Try out Livery for free</Link>
         </Button>
       </Layout.Section>
       <Layout.Container className="not-prose max-w-7xl">
@@ -133,7 +133,7 @@ const Feature = () => {
             <Balancer>Build your Saas</Balancer>
           </h3>
           <h4 className="opacity-70 font-light text-2xl">
-            <Balancer>What to expect when building with Saas Kit</Balancer>
+            <Balancer>What to expect when building with Livery</Balancer>
           </h4>
 
           <div className="gap-6 grid md:grid-cols-2 mt-6 md:mt-12">

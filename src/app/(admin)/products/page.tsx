@@ -252,6 +252,7 @@ const products = [
     price: "$499.99",
     quantity: 25,
     date: "2023-07-12 10:42 AM",
+    image: "/images/product/lemonade.jpg",
   },
   {
     id: "2",
@@ -260,6 +261,7 @@ const products = [
     price: "$129.99",
     quantity: 100,
     date: "2023-10-18 03:21 PM",
+    image: "/images/product/headphones.jpg",
   },
   {
     id: "3",
@@ -268,6 +270,7 @@ const products = [
     price: "$39.99",
     quantity: 50,
     date: "2023-11-29 08:15 AM",
+    image: "/images/product/lamp.jpg",
   },
   {
     id: "4",
@@ -276,6 +279,7 @@ const products = [
     price: "$2.99",
     quantity: 0,
     date: "2023-12-25 11:59 PM",
+    image: "/images/product/redbull.jpg",
   },
   {
     id: "5",
@@ -284,6 +288,7 @@ const products = [
     price: "$59.99",
     quantity: 75,
     date: "2024-01-01 12:00 AM",
+    image: "/images/product/controller.jpg",
   },
   {
     id: "6",
@@ -292,6 +297,7 @@ const products = [
     price: "$199.99",
     quantity: 30,
     date: "2024-02-14 02:14 PM",
+    image: "/images/product/mic.jpg",
   },
 ];
 
@@ -302,13 +308,18 @@ const ProductTableRow = ({ product }) => (
         alt="Product image"
         className="rounded-md aspect-square object-cover"
         height="64"
-        src="/placeholder.svg"
+        src={product.image}
         width="64"
       />
     </TableCell>
     <TableCell className="font-medium">{product.name}</TableCell>
     <TableCell>
-      <Badge variant={product.status === "Draft" ? "outline" : "secondary"}>
+      <Badge
+        className={`${
+          product.status === "Active" ? "bg-green-800" : "bg-gray-600"
+        }`}
+        variant={product.status === "Draft" ? "outline" : "secondary"}
+      >
         {product.status}
       </Badge>
     </TableCell>

@@ -122,7 +122,7 @@ export const pricingFeaturesEnterprise = [
 export const pricingCards = [
   {
     title: 'Free',
-    description: 'Perfect for trying out Saas kit',
+    description: 'Perfect for trying out Livery',
     price: '$0',
     duration: 'free',
     highlight: 'Key features',

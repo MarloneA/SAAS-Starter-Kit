@@ -10,10 +10,10 @@ import {
   CardTitle,
 } from "../_ui/card";
 import Link from "next/link";
-import { Check } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Icons } from "../icons";
 import { Badge } from "../_ui/badge";
+import { Button } from "../_ui/button";
 
 export const Pricing = () => {
   return (
@@ -68,10 +68,12 @@ export const Pricing = () => {
                 ))}
               </div>
               <Link
+                className="w-full flex justify-center"
                 href={`/pricing?plan=${card.title}`}
-                className="border-2 border-orange bg-black p-2 rounded-md w-full font-bold text-center text-white"
               >
-                Get Started
+                <Button className="w-full" variant="outline">
+                  Get Started
+                </Button>
               </Link>
             </CardFooter>
           </Card>

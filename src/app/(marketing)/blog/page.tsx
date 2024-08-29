@@ -5,9 +5,7 @@ import { compareDesc } from "date-fns";
 
 import { formatDate } from "@/lib/utils";
 import { auth } from "@/auth";
-import { redirect } from "next/navigation";
 import { ArrowRight } from "lucide-react";
-import { Badge } from "@/components/_ui/badge";
 import { Button } from "@/components/_ui/button";
 
 export const metadata = {
@@ -24,7 +22,7 @@ export default async function BlogPage() {
     });
 
   return (
-    <div className="py-6 lg:py-10 max-w-4xl container">
+    <div className="py-6 lg:py-10 max-w-8xl container">
       <div className="flex md:flex-row flex-col md:justify-between items-start gap-4 md:gap-8">
         <div className="flex-1 space-y-4">
           <h1 className="inline-block font-heading text-4xl lg:text-5xl tracking-tight">
@@ -45,7 +43,7 @@ export default async function BlogPage() {
       </div>
       <hr className="my-8" />
       {posts?.length ? (
-        <div className="gap-10 grid sm:grid-cols-2">
+        <div className="gap-10 grid sm:grid-cols-3">
           {posts.map((post, index) => (
             <article
               key={post._id}

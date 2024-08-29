@@ -17,13 +17,13 @@ export default function Footer() {
           <div className="flex flex-col gap-6 not-prose">
             <Link href="/" className="md:flex items-center space-x-2 hidden">
               <H4 className="font-black">
-                SAAS <span className="text-red-700">KIT</span>
+                <span className="text-red-700">LIVE</span>RY
               </H4>
             </Link>
             <p>
               <Balancer>
-                Saas kit is a collection of Next.js, React, Typescript
-                components for bootstraping your next saas application.
+                Livery is a collection of Next.js, React, Typescript components
+                for bootstraping your next saas application.
               </Balancer>
             </p>
           </div>
@@ -58,7 +58,7 @@ export default function Footer() {
             </Button>
           </div>
           <p className="text-muted-foreground">
-            © <a href="#">Saas kit</a>. All rights reserved. 2024.
+            © <a href="#">Livery</a>. All rights reserved. 2024.
           </p>
         </Container>
       </Section>

@@ -1,4 +1,4 @@
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Play, PlayCircle } from "lucide-react";
 import { Badge } from "../_ui/badge";
 import { Button } from "../_ui/button";
 import { H1, P } from "../_ui/typography";
@@ -6,6 +6,7 @@ import { Section } from "@/components/_ui/layout";
 import { techStack } from "@/constants/landing-page";
 import Image from "next/image";
 import Link from "next/link";
+import { YoutubeButtonDialog } from "./youtube-dialog";
 
 export const Hero = () => {
   return (
@@ -58,9 +59,7 @@ export const Hero = () => {
           <Link href="#pricing">
             <Button>Get Started for free</Button>
           </Link>
-          <Link href="/guides">
-            <Button variant="outline">Checkout the Demo</Button>
-          </Link>
+          <YoutubeButtonDialog />
         </div>
         <div className="flex justify-center items-center w-full group">
           <div
@@ -78,6 +77,8 @@ export const Hero = () => {
                     className="h-10 md:h-12 object-cover"
                     src={src}
                     alt={name}
+                    // width={40}
+                    // height={40}
                   />
                   <div className="sm:flex justify-center hidden opacity-50 mx-auto font-medium text-center text-muted-foreground text-xs truncate">
                     {name}

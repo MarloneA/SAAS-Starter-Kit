@@ -24,7 +24,7 @@ const BlogPosts = () => {
       </section>
 
       <div className="gap-10 grid sm:grid-cols-3 max-w-6xl container">
-        {posts.map((post, index) => (
+        {posts.slice(0, 3).map((post, index) => (
           <article
             key={post._id}
             className="relative flex flex-col space-y-2 group"

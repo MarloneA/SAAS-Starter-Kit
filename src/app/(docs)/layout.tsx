@@ -1,12 +1,9 @@
-import Link from "next/link";
-
 import { docsConfig } from "@/config/docs";
-import { siteConfig } from "@/config/site";
-import { Icons } from "@/components/icons";
 import { MainNav } from "@/components/main-nav";
 import { DocsSearch } from "@/components/search";
 import { DocsSidebarNav } from "@/components/sidebar-nav";
 import Footer from "@/components/footer";
+import { UserNav } from "@/components/analytics/user-nav";
 
 interface DocsLayoutProps {
   children: React.ReactNode;
@@ -24,16 +21,7 @@ export default function DocsLayout({ children }: DocsLayoutProps) {
             <div className="flex-1 sm:grow-0">
               <DocsSearch />
             </div>
-            <nav className="flex space-x-4">
-              <Link
-                href={siteConfig.links.github}
-                target="_blank"
-                rel="noreferrer"
-              >
-                <Icons.gitHub className="w-7 h-7" />
-                <span className="sr-only">GitHub</span>
-              </Link>
-            </nav>
+            <UserNav />
           </div>
         </div>
       </header>

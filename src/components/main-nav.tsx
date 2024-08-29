@@ -26,7 +26,7 @@ export function MainNav({ items, children }: MainNavProps) {
       <Link href="/" className="md:flex items-center space-x-2 hidden">
         {/* <Icons.logo /> */}
         <H4 className="font-black">
-          SAAS <span className="text-red-700">KIT</span>
+          <span className="text-red-700">LIVE</span>RY
         </H4>
         {/* <span className="sm:inline-block hidden font-bold">
           {siteConfig.name}

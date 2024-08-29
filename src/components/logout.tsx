@@ -1,7 +1,6 @@
 "use client";
 
-import { logout } from "@/actions/auth";
-import { signOut } from "@/auth";
+import { logout } from "../actions/auth";
 import { useRouter } from "next/navigation";
 
 export default function Logout() {
@@ -9,6 +8,7 @@ export default function Logout() {
 
   return (
     <button
+      className="w-full text-left"
       onClick={async () => {
         await logout();
         router.push("/login");
@@ -18,4 +18,3 @@ export default function Logout() {
     </button>
   );
 }
-

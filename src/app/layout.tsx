@@ -10,7 +10,7 @@ const fontSans = FontSans({
 });
 
 export const metadata: Metadata = {
-  title: "Saas Kit",
+  title: "Livery",
   description: "App development framework",
 };
 

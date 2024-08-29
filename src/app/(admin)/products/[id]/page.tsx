@@ -242,7 +242,7 @@ export default function ProductDetails() {
                     </TableHeader>
                     <TableBody>
                       <TableRow>
-                        <TableCell className="font-semibold">
+                        <TableCell className="font-semibold w-72">
                           GGPC-001
                         </TableCell>
                         <TableCell>
@@ -441,7 +441,7 @@ export default function ProductDetails() {
                       alt="Product image"
                       className="rounded-md w-full aspect-square object-cover"
                       height="300"
-                      src="/placeholder.svg"
+                      src="/images/product/lamp.jpg"
                       width="300"
                     />
                     <div className="gap-2 grid grid-cols-3">
@@ -450,7 +450,7 @@ export default function ProductDetails() {
                           alt="Product image"
                           className="rounded-md w-full aspect-square object-cover"
                           height="84"
-                          src="/placeholder.svg"
+                          src="/images/product/mic.jpg"
                           width="84"
                         />
                       </button>
@@ -459,7 +459,7 @@ export default function ProductDetails() {
                           alt="Product image"
                           className="rounded-md w-full aspect-square object-cover"
                           height="84"
-                          src="/placeholder.svg"
+                          src="/images/product/headphones.jpg"
                           width="84"
                         />
                       </button>
