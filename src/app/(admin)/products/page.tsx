@@ -16,7 +16,7 @@ import {
   Users2,
 } from "lucide-react";
 
-import { Badge } from "@/components/_ui/badge";
+import { Badge } from "@/components/_ui/primitives/badge";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -24,8 +24,8 @@ import {
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
-} from "@/components/_ui/breadcrumb";
-import { Button } from "@/components/_ui/button";
+} from "@/components/_ui/primitives/breadcrumb";
+import { Button } from "@/components/_ui/primitives/button";
 import {
   Card,
   CardContent,
@@ -33,7 +33,7 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/_ui/card";
+} from "@/components/_ui/primitives/card";
 import {
   DropdownMenu,
   DropdownMenuCheckboxItem,
@@ -42,9 +42,13 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/components/_ui/dropdown-menu";
-import { Input } from "@/components/_ui/input";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/_ui/sheet";
+} from "@/components/_ui/primitives/dropdown-menu";
+import { Input } from "@/components/_ui/primitives/input";
+import {
+  Sheet,
+  SheetContent,
+  SheetTrigger,
+} from "@/components/_ui/primitives/sheet";
 import {
   Table,
   TableBody,
@@ -52,14 +56,15 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/_ui/table";
+} from "@/components/_ui/primitives/table";
 import {
   Tabs,
   TabsContent,
   TabsList,
   TabsTrigger,
-} from "@/components/_ui/tabs";
-import { UserNav } from "@/components/analytics/user-nav";
+} from "@/components/_ui/primitives/tabs";
+import { UserNav } from "@/components/templates/analytics/user-nav";
+import { products } from "@/lib/constants/products";
 
 export default function Products() {
   return (
@@ -243,63 +248,6 @@ export default function Products() {
     </div>
   );
 }
-
-const products = [
-  {
-    id: "1",
-    name: "Laser Lemonade Machine",
-    status: "Draft",
-    price: "$499.99",
-    quantity: 25,
-    date: "2023-07-12 10:42 AM",
-    image: "/images/product/lemonade.jpg",
-  },
-  {
-    id: "2",
-    name: "Hypernova Headphones",
-    status: "Active",
-    price: "$129.99",
-    quantity: 100,
-    date: "2023-10-18 03:21 PM",
-    image: "/images/product/headphones.jpg",
-  },
-  {
-    id: "3",
-    name: "AeroGlow Desk Lamp",
-    status: "Active",
-    price: "$39.99",
-    quantity: 50,
-    date: "2023-11-29 08:15 AM",
-    image: "/images/product/lamp.jpg",
-  },
-  {
-    id: "4",
-    name: "TechTonic Energy Drink",
-    status: "Draft",
-    price: "$2.99",
-    quantity: 0,
-    date: "2023-12-25 11:59 PM",
-    image: "/images/product/redbull.jpg",
-  },
-  {
-    id: "5",
-    name: "Gamer Gear Pro Controller",
-    status: "Active",
-    price: "$59.99",
-    quantity: 75,
-    date: "2024-01-01 12:00 AM",
-    image: "/images/product/controller.jpg",
-  },
-  {
-    id: "6",
-    name: "Luminous VR Headset",
-    status: "Active",
-    price: "$199.99",
-    quantity: 30,
-    date: "2024-02-14 02:14 PM",
-    image: "/images/product/mic.jpg",
-  },
-];
 
 const ProductTableRow = ({ product }) => (
   <TableRow>

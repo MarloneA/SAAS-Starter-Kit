@@ -5,8 +5,8 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
 
-import { Button } from "@/components/_ui/button";
-import { Checkbox } from "@/components/_ui/checkbox";
+import { Button } from "@/components/_ui/primitives/button";
+import { Checkbox } from "@/components/_ui/primitives/checkbox";
 import {
   Form,
   FormControl,
@@ -15,10 +15,13 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@/components/_ui/form";
-import { RadioGroup, RadioGroupItem } from "@/components/_ui/radio-group";
-import { Switch } from "@/components/_ui/switch";
-import { toast } from "@/components/_ui/use-toast";
+} from "@/components/_ui/primitives/form";
+import {
+  RadioGroup,
+  RadioGroupItem,
+} from "@/components/_ui/primitives/radio-group";
+import { Switch } from "@/components/_ui/primitives/switch";
+import { toast } from "@/components/_ui/primitives/use-toast";
 
 const notificationsFormSchema = z.object({
   type: z.enum(["all", "mentions", "none"], {

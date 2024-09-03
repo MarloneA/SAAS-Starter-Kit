@@ -3,7 +3,7 @@ import { allPages } from "./../../../../generated/Page/_index.mjs";
 
 import { Mdx } from "@/mdx-components";
 
-import "@/styles/mdx.css";
+import "@/lib/styles/mdx.css";
 import { Metadata } from "next";
 
 // import { env } from "@/env.mjs"

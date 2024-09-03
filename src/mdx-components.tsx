@@ -5,8 +5,8 @@ import _jsx_runtime from "react/jsx-runtime";
 // import { useMDXComponent } from "next-contentlayer/hooks";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
-import { Callout } from "@/components/callout";
-import { MdxCard } from "@/components/mdx-card";
+import { Callout } from "@/components/widgets/callout";
+import { MdxCard } from "@/components/widgets/mdx-card";
 
 // NOTE use ESM/CommonJS compat import here until resolved: https://github.com/facebook/react/issues/11503
 import ReactDOM from "react-dom";

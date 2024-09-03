@@ -1,14 +1,8 @@
 import * as z from "zod"
 
-import { db } from "@/lib/db"
 import { RequiresProPlanError } from "@/lib/exceptions"
-import { getUserSubscriptionPlan } from "@/lib/subscription"
 import { auth } from "@/auth"
-
-const postCreateSchema = z.object({
-  title: z.string(),
-  content: z.string().optional(),
-})
+import * as service from "@/server/services/posts"
 
 export async function GET() {
   try {
@@ -19,17 +13,7 @@ export async function GET() {
     }
 
     const { user } = session
-    const posts = await db.post.findMany({
-      select: {
-        id: true,
-        title: true,
-        published: true,
-        createdAt: true,
-      },
-      where: {
-        authorId: user.id,
-      },
-    })
+    const posts = await service.getAllPosts(user)
 
     return new Response(JSON.stringify(posts))
   } catch (error) {
@@ -46,35 +30,7 @@ export async function POST(req: Request) {
     }
 
     const { user } = session
-    const subscriptionPlan = await getUserSubscriptionPlan(user.id)
-
-    // If user is on a free plan.
-    // Check if user has reached limit of 3 posts.
-    // if (!subscriptionPlan?.isPro) {
-    //   const count = await db.post.count({
-    //     where: {
-    //       authorId: user.id,
-    //     },
-    //   })
-
-    //   if (count >= 3) {
-    //     throw new RequiresProPlanError()
-    //   }
-    // }
-
-    const json = await req.json()
-    const body = postCreateSchema.parse(json)
-
-    const post = await db.post.create({
-      data: {
-        title: body.title,
-        content: body.content,
-        authorId: session.user.id,
-      },
-      select: {
-        id: true,
-      },
-    })
+    const post = await service.createPost({ user, req })
 
     return new Response(JSON.stringify(post))
   } catch (error) {

@@ -20,6 +20,17 @@ const nextConfig = {
   },
   // use this to specifiy to next js where to create the build output when running with docker compose
   output: "standalone",
+  images: {
+    formats: ["image/avif", "image/webp"],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "assets.aceternity.com",
+        port: "",
+        pathname: "/**",
+      },
+    ],
+  },
 };
 
 const withMDX = createMDX({

@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 
-import { Separator } from "@/components/_ui/separator";
+import { Separator } from "@/components/_ui/primitives/separator";
 import { SidebarNav } from "./components/sidebar-nav";
 
 export const metadata: Metadata = {

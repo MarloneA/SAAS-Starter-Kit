@@ -16,29 +16,33 @@ import {
 import {
   DropdownMenuContent,
   DropdownMenuItem,
-} from "@/components/_ui/dropdown-menu";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/_ui/avatar";
-import { Button } from "@/components/_ui/button";
-import { Calendar } from "@/components/_ui/calendar";
+} from "@/components/_ui/primitives/dropdown-menu";
+import {
+  Avatar,
+  AvatarFallback,
+  AvatarImage,
+} from "@/components/_ui/primitives/avatar";
+import { Button } from "@/components/_ui/primitives/button";
+import { Calendar } from "@/components/_ui/primitives/calendar";
 import {
   DropdownMenu,
   DropdownMenuTrigger,
-} from "@/components/_ui/dropdown-menu";
-import { Label } from "@/components/_ui/label";
+} from "@/components/_ui/primitives/dropdown-menu";
+import { Label } from "@/components/_ui/primitives/label";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/components/_ui/popover";
-import { Separator } from "@/components/_ui/separator";
-import { Switch } from "@/components/_ui/switch";
-import { Textarea } from "@/components/_ui/textarea";
+} from "@/components/_ui/primitives/popover";
+import { Separator } from "@/components/_ui/primitives/separator";
+import { Switch } from "@/components/_ui/primitives/switch";
+import { Textarea } from "@/components/_ui/primitives/textarea";
 import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
-} from "@/components/_ui/tooltip";
-import { Mail } from "@/constants/mail";
+} from "@/components/_ui/primitives/tooltip";
+import { Mail } from "@/lib/constants/mail";
 
 interface MailDisplayProps {
   mail: Mail | null;

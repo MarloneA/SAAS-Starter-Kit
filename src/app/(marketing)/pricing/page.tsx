@@ -3,10 +3,10 @@
 import Link from "next/link";
 
 import { cn } from "@/lib/utils";
-import { buttonVariants } from "@/components/_ui/button";
-import { Icons } from "@/components/icons";
+import { buttonVariants } from "@/components/_ui/primitives/button";
+import { Icons } from "@/components/_ui/icons";
 import { useSearchParams } from "next/navigation";
-import { pricingCards } from "@/constants/landing-page";
+import { pricingCards } from "@/lib/constants/landing-page";
 
 // export const metadata = {
 //   title: "Pricing",

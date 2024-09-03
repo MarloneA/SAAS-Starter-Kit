@@ -2,7 +2,7 @@
 
 import { auth, signIn, signOut } from '@/auth'
 import { db } from '@/lib/db';
-import { User } from '@/lib/definitions';
+import { User } from '@/lib/types/definitions';
 import bcrypt from "bcrypt";
 import { cookies } from 'next/headers'
 import { redirect } from 'next/navigation';

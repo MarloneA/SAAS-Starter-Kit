@@ -2,8 +2,8 @@ import * as React from "react";
 import Link from "next/link";
 
 import { cn } from "@/lib/utils";
-import { buttonVariants } from "@/components/_ui/button";
-import { UserLoginForm } from "@/components/user-auth-form";
+import { buttonVariants } from "@/components/_ui/primitives/button";
+import { UserLoginForm } from "@/components/widgets/user-auth-form";
 import { auth } from "@/auth";
 import { redirect } from "next/navigation";
 

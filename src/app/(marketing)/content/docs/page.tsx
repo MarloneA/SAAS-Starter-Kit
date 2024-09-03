@@ -1,13 +1,13 @@
 import { redirect } from "next/navigation";
 
 import { db } from "@/lib/db";
-import { EmptyPlaceholder } from "@/components/empty-placeholder";
-import { DashboardHeader } from "@/components/header";
-import { PostItem } from "@/components/post-item";
-import { DashboardShell } from "@/components/shell";
+import { EmptyPlaceholder } from "@/components/widgets/empty-placeholder";
+import { DashboardHeader } from "@/components/widgets/header";
+import { PostItem } from "@/components/widgets/post-item";
+import { DashboardShell } from "@/components/widgets/shell";
 import { auth } from "@/auth";
-import { GuideCreateButton } from "@/components/guide-create-button";
-import { DocsCreateButton } from "@/components/docs-create-button";
+import { GuideCreateButton } from "@/components/widgets/guide-create-button";
+import { DocsCreateButton } from "@/components/widgets/docs-create-button";
 
 export const metadata = {
   title: "Content Dashboard",

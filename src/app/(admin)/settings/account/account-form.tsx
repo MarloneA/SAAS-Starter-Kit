@@ -7,15 +7,15 @@ import { useForm } from "react-hook-form";
 import * as z from "zod";
 
 import { cn } from "@/lib/utils";
-import { Button } from "@/components/_ui/button";
-import { Calendar } from "@/components/_ui/calendar";
+import { Button } from "@/components/_ui/primitives/button";
+import { Calendar } from "@/components/_ui/primitives/calendar";
 import {
   Command,
   CommandEmpty,
   CommandGroup,
   CommandInput,
   CommandItem,
-} from "@/components/_ui/command";
+} from "@/components/_ui/primitives/command";
 import {
   Form,
   FormControl,
@@ -24,14 +24,14 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@/components/_ui/form";
-import { Input } from "@/components/_ui/input";
+} from "@/components/_ui/primitives/form";
+import { Input } from "@/components/_ui/primitives/input";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/components/_ui/popover";
-import { toast } from "@/components/_ui/use-toast";
+} from "@/components/_ui/primitives/popover";
+import { toast } from "@/components/_ui/primitives/use-toast";
 
 const languages = [
   { label: "English", value: "en" },

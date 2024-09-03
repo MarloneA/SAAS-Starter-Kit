@@ -1,12 +1,12 @@
 import * as Layout from "@/components/_ui/layout";
-import { CallToAction } from "@/components/callToAction";
-import { Hero } from "@/components/landingpage";
-import { Pricing } from "@/components/pricing";
-import FAQ from "@/components/faq";
-import Feature from "@/components/features";
-import Footer from "@/components/footer";
-import NavBar from "@/components/navbar";
-import BlogPosts from "@/components/blogposts";
+import { CallToAction } from "@/components/templates/callToAction";
+import { Hero } from "@/components/templates/landingpage";
+import { Pricing } from "@/components/templates/pricing";
+import FAQ from "@/components/templates/faq";
+import Feature from "@/components/templates/features";
+import Footer from "@/components/templates/footer";
+import NavBar from "@/components/templates/navbar";
+import BlogPosts from "@/components/templates/blogposts";
 
 export default async function Home() {
   return (

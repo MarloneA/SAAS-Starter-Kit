@@ -1,11 +1,11 @@
 import { redirect } from "next/navigation";
 
 import { db } from "@/lib/db";
-import { EmptyPlaceholder } from "@/components/empty-placeholder";
-import { DashboardHeader } from "@/components/header";
-import { PostCreateButton } from "@/components/post-create-button";
-import { PostItem } from "@/components/post-item";
-import { DashboardShell } from "@/components/shell";
+import { EmptyPlaceholder } from "@/components/widgets/empty-placeholder";
+import { DashboardHeader } from "@/components/widgets/header";
+import { PostCreateButton } from "@/components/widgets/post-create-button";
+import { PostItem } from "@/components/widgets/post-item";
+import { DashboardShell } from "@/components/widgets/shell";
 import { auth } from "@/auth";
 
 export const metadata = {

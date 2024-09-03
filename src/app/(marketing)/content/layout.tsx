@@ -1,9 +1,9 @@
 import { notFound } from "next/navigation";
 
 import { dashboardConfig } from "@/config/dashboard";
-import { MainNav } from "@/components/main-nav";
-import { DashboardNav } from "@/components/nav";
-import { UserAccountNav } from "@/components/user-account-nav";
+import { MainNav } from "@/components/widgets/main-nav";
+import { DashboardNav } from "@/components/widgets/nav";
+import { UserAccountNav } from "@/components/widgets/user-account-nav";
 import { auth } from "@/auth";
 
 interface DashboardLayoutProps {

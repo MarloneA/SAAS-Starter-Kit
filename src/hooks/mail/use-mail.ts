@@ -1,4 +1,4 @@
-import { Mail, mails } from "@/constants/mail"
+import { Mail, mails } from "@/lib/constants/mail"
 import { atom, useAtom } from "jotai"
 
 

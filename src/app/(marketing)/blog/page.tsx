@@ -6,7 +6,7 @@ import { compareDesc } from "date-fns";
 import { formatDate } from "@/lib/utils";
 import { auth } from "@/auth";
 import { ArrowRight } from "lucide-react";
-import { Button } from "@/components/_ui/button";
+import { Button } from "@/components/_ui/primitives/button";
 
 export const metadata = {
   title: "Blog",

@@ -19,23 +19,23 @@ import { AccountSwitcher } from "./account-switcher";
 import { MailDisplay } from "./mail-display";
 import { MailList } from "./mail-list";
 import { Nav } from "./nav";
-import { Mail } from "@/constants/mail";
+import { Mail } from "@/lib/constants/mail";
 import { useMail } from "@/hooks/mail/use-mail";
 import { cn } from "@/lib/utils";
-import { Separator } from "@/components/_ui/separator";
-import { Input } from "@/components/_ui/input";
+import { Separator } from "@/components/_ui/primitives/separator";
+import { Input } from "@/components/_ui/primitives/input";
 import {
   Tabs,
   TabsContent,
   TabsList,
   TabsTrigger,
-} from "@/components/_ui/tabs";
-import { TooltipProvider } from "@/components/_ui/tooltip";
+} from "@/components/_ui/primitives/tabs";
+import { TooltipProvider } from "@/components/_ui/primitives/tooltip";
 import {
   ResizableHandle,
   ResizablePanel,
   ResizablePanelGroup,
-} from "@/components/_ui/resizable";
+} from "@/components/_ui/primitives/resizable";
 
 interface MailProps {
   accounts: {

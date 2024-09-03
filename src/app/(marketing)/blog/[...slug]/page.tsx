@@ -3,18 +3,18 @@ import { allAuthors, allPosts } from "./../../../../../generated/index.mjs";
 
 import { Mdx } from "@/mdx-components";
 
-import "@/styles/mdx.css";
+import "@/lib/styles/mdx.css";
 import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 
 // import { env } from "@/env.mjs"
 import { absoluteUrl, cn, formatDate } from "@/lib/utils";
-import { buttonVariants } from "@/components/_ui/button";
-import { Icons } from "@/components/icons";
-import { DocsPager } from "@/components/pager";
-import { DocsPageHeader } from "@/components/page-header";
-import { DashboardTableOfContents } from "@/components/toc";
+import { buttonVariants } from "@/components/_ui/primitives/button";
+import { Icons } from "@/components/_ui/icons";
+import { DocsPager } from "@/components/widgets/pager";
+import { DocsPageHeader } from "@/components/widgets/page-header";
+import { DashboardTableOfContents } from "@/components/widgets/toc";
 import { getTableOfContents } from "@/lib/toc";
 
 interface PostPageProps {
