@@ -1,8 +1,7 @@
 import * as z from "zod"
 
-import { db } from "@/lib/db"
 import { postPatchSchema } from "@/lib/validations/post"
-import { auth } from "@/auth"
+import * as service from "@/server/services/posts"
 
 const routeContextSchema = z.object({
   params: z.object({
@@ -17,18 +16,15 @@ export async function DELETE(
   try {
     // Validate the route params.
     const { params } = routeContextSchema.parse(context)
+    const isAuthorized = await service.verifyCurrentUserHasAccessToPost(params.postId)
 
     // Check if the user has access to this post.
-    if (!(await verifyCurrentUserHasAccessToPost(params.postId))) {
+    if (!isAuthorized) {
       return new Response(null, { status: 403 })
     }
 
     // Delete the post.
-    await db.post.delete({
-      where: {
-        id: params.postId as string,
-      },
-    })
+    await service.deletePost({ params })
 
     return new Response(null, { status: 204 })
   } catch (error) {
@@ -47,9 +43,10 @@ export async function PATCH(
   try {
     // Validate route params.
     const { params } = routeContextSchema.parse(context)
+    const isAuthorized = await service.verifyCurrentUserHasAccessToPost(params.postId)
 
     // Check if the user has access to this post.
-    if (!(await verifyCurrentUserHasAccessToPost(params.postId))) {
+    if (!isAuthorized) {
       return new Response(null, { status: 403 })
     }
 
@@ -57,18 +54,7 @@ export async function PATCH(
     const json = await req.json()
     const body = postPatchSchema.parse(json)
 
-    // Update the post.
-    // TODO: Implement sanitization for content.
-    await db.post.update({
-      where: {
-        id: params.postId,
-      },
-      data: {
-        title: body.title,
-        content: body.content,
-        published: body.published
-      },
-    })
+    await service.update({ body, params })
 
     return new Response(null, { status: 200 })
   } catch (error) {
@@ -78,16 +64,4 @@ export async function PATCH(
 
     return new Response(null, { status: 500 })
   }
-}
-
-async function verifyCurrentUserHasAccessToPost(postId: string) {
-  const session = await auth();
-  const count = await db.post.count({
-    where: {
-      id: postId,
-      authorId: session?.user.id,
-    },
-  })
-
-  return count > 0
 }

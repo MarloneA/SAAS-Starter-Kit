@@ -2,11 +2,11 @@ import Link from "next/link";
 
 import { marketingConfig } from "@/config/marketing";
 import { cn } from "@/lib/utils";
-import { buttonVariants } from "@/components/_ui/button";
-import { MainNav } from "@/components/main-nav";
-import Footer from "@/components/footer";
+import { buttonVariants } from "@/components/_ui/primitives/button";
+import { MainNav } from "@/components/widgets/main-nav";
+import Footer from "@/components/templates/footer";
 import { auth } from "@/auth";
-import { UserNav } from "@/components/analytics/user-nav";
+import { UserNav } from "@/components/templates/analytics/user-nav";
 
 interface MarketingLayoutProps {
   children: React.ReactNode;

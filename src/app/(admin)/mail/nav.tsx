@@ -4,12 +4,12 @@ import Link from "next/link";
 import { LucideIcon } from "lucide-react";
 
 import { cn } from "@/lib/utils";
-import { buttonVariants } from "@/components/_ui/button";
+import { buttonVariants } from "@/components/_ui/primitives/button";
 import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
-} from "@/components/_ui/tooltip";
+} from "@/components/_ui/primitives/tooltip";
 
 interface NavProps {
   isCollapsed: boolean;

@@ -1,9 +1,9 @@
 import { docsConfig } from "@/config/docs";
-import { MainNav } from "@/components/main-nav";
-import { DocsSearch } from "@/components/search";
-import { DocsSidebarNav } from "@/components/sidebar-nav";
-import Footer from "@/components/footer";
-import { UserNav } from "@/components/analytics/user-nav";
+import { MainNav } from "@/components/widgets/main-nav";
+import { DocsSearch } from "@/components/widgets/search";
+import { DocsSidebarNav } from "@/components/widgets/sidebar-nav";
+import { UserNav } from "@/components/templates/analytics/user-nav";
+import Footer from "@/components/templates/footer";
 
 interface DocsLayoutProps {
   children: React.ReactNode;

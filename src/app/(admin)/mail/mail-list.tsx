@@ -2,9 +2,9 @@ import { ComponentProps } from "react";
 import formatDistanceToNow from "date-fns/formatDistanceToNow";
 
 import { cn } from "@/lib/utils";
-import { Badge } from "@/components/_ui/badge";
-import { ScrollArea } from "@/components/_ui/scroll-area";
-import { Mail } from "@/constants/mail";
+import { Badge } from "@/components/_ui/primitives/badge";
+import { ScrollArea } from "@/components/_ui/primitives/scroll-area";
+import { Mail } from "@/lib/constants/mail";
 import { useMail } from "@/hooks/mail/use-mail";
 
 interface MailListProps {

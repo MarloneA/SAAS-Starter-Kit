@@ -1,7 +1,7 @@
 import { notFound, redirect } from "next/navigation";
 import { Post, User } from "@prisma/client";
 import { db } from "@/lib/db";
-import { Editor } from "@/components/editor";
+import { Editor } from "@/components/widgets/editor";
 import { auth } from "@/auth";
 
 async function getPostForUser(postId: Post["id"], userId: User["id"]) {

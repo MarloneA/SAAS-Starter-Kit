@@ -3,11 +3,11 @@ import { allDocuments as allDocs } from "../../../../../generated/index.mjs";
 
 import { getTableOfContents } from "@/lib/toc";
 import { Mdx } from "@/mdx-components";
-import { DocsPageHeader } from "@/components/page-header";
-import { DocsPager } from "@/components/pager";
-import { DashboardTableOfContents } from "@/components/toc";
+import { DocsPageHeader } from "@/components/widgets/page-header";
+import { DocsPager } from "@/components/widgets/pager";
+import { DashboardTableOfContents } from "@/components/widgets/toc";
 
-import "@/styles/mdx.css";
+import "@/lib/styles/mdx.css";
 import { Metadata } from "next";
 
 // import { env } from "@/env.mjs";

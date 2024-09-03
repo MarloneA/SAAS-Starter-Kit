@@ -1,6 +1,6 @@
-import { CardSkeleton } from "@/components/card-skeleton";
-import { DashboardHeader } from "@/components/header";
-import { DashboardShell } from "@/components/shell";
+import { CardSkeleton } from "@/components/widgets/card-skeleton";
+import { DashboardHeader } from "@/components/widgets/header";
+import { DashboardShell } from "@/components/widgets/shell";
 
 export default function DashboardBillingLoading() {
   return (

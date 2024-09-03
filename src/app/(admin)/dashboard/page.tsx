@@ -1,21 +1,21 @@
 import { Metadata } from "next";
 
-import { Button } from "@/components/_ui/button";
+import { Button } from "@/components/_ui/primitives/button";
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/components/_ui/card";
+} from "@/components/_ui/primitives/card";
 import {
   Tabs,
   TabsContent,
   TabsList,
   TabsTrigger,
-} from "@/components/_ui/tabs";
-import { CalendarDateRangePicker } from "@/components/analytics/date-range-picker";
-import { MainNav } from "@/components/analytics/main-nav";
+} from "@/components/_ui/primitives/tabs";
+import { CalendarDateRangePicker } from "@/components/templates/analytics/date-range-picker";
+import { MainNav } from "@/components/templates/analytics/main-nav";
 import {
   AreaChartAnalytics,
   AreaChartAnalyticsSmall,
@@ -28,18 +28,21 @@ import {
   PieChartAnalytics,
   RadarChartAnalytics,
   RadialBarChartAnalytics,
-} from "@/components/analytics/overview";
-import { RecentSales } from "@/components/analytics/recent-sales";
-import { Search } from "@/components/analytics/search";
-import TeamSwitcher from "@/components/analytics/team-switcher";
-import { UserNav } from "@/components/analytics/user-nav";
-import { LineChartStepAnalytics, LineChartStepAnalyticsSmall } from "@/components/analytics/chart-modules/line-chat-step";
-import { BarChartNegativeAnalytics } from "@/components/analytics/chart-modules/bar-chart-negative";
+} from "@/components/templates/analytics/overview";
+import { RecentSales } from "@/components/templates/analytics/recent-sales";
+import { Search } from "@/components/templates/analytics/search";
+import TeamSwitcher from "@/components/templates/analytics/team-switcher";
+import { UserNav } from "@/components/templates/analytics/user-nav";
+import {
+  LineChartStepAnalytics,
+  LineChartStepAnalyticsSmall,
+} from "@/components/templates/analytics/chart-modules/line-chat-step";
+import { BarChartNegativeAnalytics } from "@/components/templates/analytics/chart-modules/bar-chart-negative";
 import {
   RadialChartAnalytics,
   RadialChartStackedAnalytics,
   RadialChartStackedAnalyticsSmall,
-} from "@/components/analytics/chart-modules/radial-chart";
+} from "@/components/templates/analytics/chart-modules/radial-chart";
 
 export const metadata: Metadata = {
   title: "Dashboard",

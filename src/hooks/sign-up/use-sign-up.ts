@@ -1,9 +1,9 @@
 'use client'
-import { useToast } from '@/components/_ui/use-toast'
+import { useToast } from '@/components/_ui/primitives/use-toast'
 import {
   UserRegistrationProps,
   UserRegistrationSchema,
-} from '@/schemas/auth.schema'
+} from '@/lib/schemas/auth.schema'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useSignUp } from '@clerk/nextjs'
 import { useRouter } from 'next/navigation'

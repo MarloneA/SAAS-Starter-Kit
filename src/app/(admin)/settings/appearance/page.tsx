@@ -1,4 +1,4 @@
-import { Separator } from "@/components/_ui/separator";
+import { Separator } from "@/components/_ui/primitives/separator";
 import { AppearanceForm } from "./appearance-form";
 
 export default function SettingsAppearancePage() {

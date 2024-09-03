@@ -3,17 +3,17 @@ import { notFound } from "next/navigation";
 import { allGuides } from "./../../../../../generated/Guide/_index.mjs";
 
 import { getTableOfContents } from "@/lib/toc";
-import { Icons } from "@/components/icons";
+import { Icons } from "@/components/_ui/icons";
 import { Mdx } from "@/mdx-components";
-import { DocsPageHeader } from "@/components/page-header";
-import { DashboardTableOfContents } from "@/components/toc";
+import { DocsPageHeader } from "@/components/widgets/page-header";
+import { DashboardTableOfContents } from "@/components/widgets/toc";
 
-import "@/styles/mdx.css";
+import "@/lib/styles/mdx.css";
 import { Metadata } from "next";
 
 // import { env } from "@/env.mjs"
 import { absoluteUrl, cn } from "@/lib/utils";
-import { buttonVariants } from "@/components/_ui/button";
+import { buttonVariants } from "@/components/_ui/primitives/button";
 
 interface GuidePageProps {
   params: {

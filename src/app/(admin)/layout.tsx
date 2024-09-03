@@ -5,6 +5,7 @@ import {
   Home,
   Package,
   Package2,
+  Radio,
   Settings,
   ShoppingCart,
   Users2,
@@ -15,7 +16,7 @@ import {
   TooltipContent,
   TooltipTrigger,
   TooltipProvider,
-} from "@/components/_ui/tooltip";
+} from "@/components/_ui/primitives/tooltip";
 import { ChatBubbleIcon } from "@radix-ui/react-icons";
 import { auth } from "@/auth";
 import { redirect } from "next/navigation";
@@ -41,7 +42,7 @@ const OwnerLayout = async ({ children }: Props) => {
                 href="/"
                 className="flex justify-center items-center gap-2 bg-primary rounded-full w-9 md:w-8 h-9 md:h-8 font-semibold text-lg text-primary-foreground md:text-base group shrink-0"
               >
-                <Package2 className="group-hover:scale-110 w-4 h-4 transition-all" />
+                <Radio className="group-hover:scale-110 w-4 h-4 transition-all" />
                 <span className="sr-only">Acme Inc</span>
               </Link>
               <Tooltip>
