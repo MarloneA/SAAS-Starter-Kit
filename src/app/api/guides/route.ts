@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 import * as z from "zod"
 
 import { RequiresProPlanError } from "@/lib/exceptions"
@@ -44,4 +45,14 @@ export async function POST(req: Request) {
 
     return new Response(null, { status: 500 })
   }
+=======
+import { createGuideHandler, getGuidesHandler } from "@/server/controllers/guides";
+
+export async function GET() {
+  return await getGuidesHandler();
+}
+
+export async function POST(req: Request) {
+  return await createGuideHandler(req);
+>>>>>>> Stashed changes
 }

@@ -1,4 +1,5 @@
 import * as z from "zod"
+<<<<<<< Updated upstream
 
 import { postPatchSchema } from "@/lib/validations/post"
 import * as service from "@/server/services/posts"
@@ -8,11 +9,16 @@ const routeContextSchema = z.object({
     postId: z.string(),
   }),
 })
+=======
+import { routeContextSchema } from "@/lib/schemas/post.schema";
+import { deleteGuideHandler, updateGuideHandler } from "@/server/controllers/guides";
+>>>>>>> Stashed changes
 
 export async function DELETE(
   req: Request,
   context: z.infer<typeof routeContextSchema>
 ) {
+<<<<<<< Updated upstream
   try {
     // Validate the route params.
     const { params } = routeContextSchema.parse(context)
@@ -34,12 +40,16 @@ export async function DELETE(
 
     return new Response(null, { status: 500 })
   }
+=======
+  return await deleteGuideHandler(req, context);
+>>>>>>> Stashed changes
 }
 
 export async function PATCH(
   req: Request,
   context: z.infer<typeof routeContextSchema>
 ) {
+<<<<<<< Updated upstream
   try {
     // Validate route params.
     const { params } = routeContextSchema.parse(context)
@@ -64,4 +74,7 @@ export async function PATCH(
 
     return new Response(null, { status: 500 })
   }
+=======
+  return await updateGuideHandler(req, context);
+>>>>>>> Stashed changes
 }
