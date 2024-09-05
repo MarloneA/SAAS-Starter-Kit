@@ -2,11 +2,16 @@ import React from "react";
 
 import Link from "next/link";
 import {
+  Camera,
+  Database,
   Home,
+  Mail,
   Package,
   Package2,
+  Paperclip,
   Radio,
   Settings,
+  Sheet,
   ShoppingCart,
   Users2,
 } from "lucide-react";
@@ -61,7 +66,7 @@ const OwnerLayout = async ({ children }: Props) => {
                 <TooltipTrigger asChild>
                   <Link
                     href="/orders"
-                    className="flex justify-center items-center bg-accent rounded-lg w-9 md:w-8 h-9 md:h-8 text-accent-foreground hover:text-foreground transition-colors"
+                    className="flex justify-center items-center active:bg-accent rounded-lg w-9 md:w-8 h-9 md:h-8 text-muted-foreground active:text-accent-foreground hover:text-foreground transition-colors"
                   >
                     <ShoppingCart className="w-5 h-5" />
                     <span className="sr-only">Orders</span>
@@ -99,11 +104,47 @@ const OwnerLayout = async ({ children }: Props) => {
                     href="/mail"
                     className="flex justify-center items-center rounded-lg w-9 md:w-8 h-9 md:h-8 text-muted-foreground hover:text-foreground transition-colors"
                   >
+                    <Mail className="w-5 h-5" />
+                    <span className="sr-only">Email Client</span>
+                  </Link>
+                </TooltipTrigger>
+                <TooltipContent side="right">Email Client</TooltipContent>
+              </Tooltip>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <Link
+                    href="/canvas"
+                    className="flex justify-center items-center rounded-lg w-9 md:w-8 h-9 md:h-8 text-muted-foreground hover:text-foreground transition-colors"
+                  >
+                    <Sheet className="w-5 h-5" />
+                    <span className="sr-only">Canvas</span>
+                  </Link>
+                </TooltipTrigger>
+                <TooltipContent side="right">Canvas</TooltipContent>
+              </Tooltip>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <Link
+                    href="/chat"
+                    className="flex justify-center items-center rounded-lg w-9 md:w-8 h-9 md:h-8 text-muted-foreground hover:text-foreground transition-colors"
+                  >
                     <ChatBubbleIcon className="w-5 h-5" />
                     <span className="sr-only">Chat</span>
                   </Link>
                 </TooltipTrigger>
                 <TooltipContent side="right">Chat</TooltipContent>
+              </Tooltip>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <Link
+                    href="/entity"
+                    className="flex justify-center items-center rounded-lg w-9 md:w-8 h-9 md:h-8 text-muted-foreground hover:text-foreground transition-colors"
+                  >
+                    <Database className="w-5 h-5" />
+                    <span className="sr-only">Entity</span>
+                  </Link>
+                </TooltipTrigger>
+                <TooltipContent side="right">Entity Builder</TooltipContent>
               </Tooltip>
             </nav>
             <nav className="flex flex-col items-center gap-4 mt-auto px-2 sm:py-5">
