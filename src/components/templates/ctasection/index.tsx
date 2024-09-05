@@ -4,7 +4,7 @@ import { Button } from "@/components/_ui/primitives/button";
 import { Section, Container } from "@/components/_ui/layout";
 import Link from "next/link";
 
-export const CallToAction = () => {
+export const CTASection = () => {
   return (
     <Section className="relative backdrop-blur-sm">
       <Container className="flex flex-col gap-8">

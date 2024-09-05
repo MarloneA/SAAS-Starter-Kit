@@ -125,7 +125,7 @@ const OwnerLayout = async ({ children }: Props) => {
               <Tooltip>
                 <TooltipTrigger asChild>
                   <Link
-                    href="/chat"
+                    href="/messenger"
                     className="flex justify-center items-center rounded-lg w-9 md:w-8 h-9 md:h-8 text-muted-foreground hover:text-foreground transition-colors"
                   >
                     <ChatBubbleIcon className="w-5 h-5" />

@@ -139,33 +139,24 @@ const Feature = () => {
           <div className="gap-6 grid md:grid-cols-2 mt-6 md:mt-12">
             {featureText.map(
               ({ icon, title, description, href, cta, img }, index) => (
-                <Link
-                  href={`${href}`}
-                  className={`flex flex-col justify-between gap-6 hover:-mt-2 hover:mb-2 p-6 border rounded-lg transition-all  ${
-                    index % 2 === 0 ? "bg-[#0a1433]" : "bg-[#0a1433]"
-                  }`}
-                  key={index}
-                >
-                  <Card>
-                    <div className="gap-4 grid">
-                      {/* {icon} */}
-                      <CardHeader className="text-primary text-xl">
-                        {title}
-                      </CardHeader>
-                      <CardContent>
-                        <Image src={img} width={804} height={452} alt="title" />
-                      </CardContent>
-                      <CardContent className="opacity-75 text-base">
-                        {description}
-                      </CardContent>
-                    </div>
-                    {cta && (
-                      <CardFooter className="flex items-center h-fit font-semibold text-sm">
-                        <p>{cta}</p> <ArrowRight className="ml-2 w-4 h-4" />
-                      </CardFooter>
-                    )}
-                  </Card>
-                </Link>
+                <Card key={index}>
+                  <div className="gap-4 grid">
+                    <CardHeader className="text-primary text-xl">
+                      {title}
+                    </CardHeader>
+                    <CardContent>
+                      <Image src={img} width={804} height={452} alt="title" />
+                    </CardContent>
+                    <CardContent className="opacity-75 text-base">
+                      {description}
+                    </CardContent>
+                  </div>
+                  {cta && (
+                    <CardFooter className="flex items-center h-fit font-semibold text-sm">
+                      <p>{cta}</p> <ArrowRight className="ml-2 w-4 h-4" />
+                    </CardFooter>
+                  )}
+                </Card>
               )
             )}
           </div>

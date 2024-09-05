@@ -7,7 +7,7 @@ import { marketingConfig } from "@/config/marketing";
 import { UserNav } from "@/components/templates/analytics/user-nav";
 import Link from "next/link";
 
-async function NavBar() {
+async function Header() {
   const session = await auth();
 
   if (session) {
@@ -52,4 +52,4 @@ async function NavBar() {
   );
 }
 
-export default NavBar;
+export default Header;

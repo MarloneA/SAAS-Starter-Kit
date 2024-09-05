@@ -7,7 +7,7 @@ import { techStack } from "@/lib/constants/landing-page";
 import Image from "next/image";
 import Link from "next/link";
 import { YoutubeButtonDialog } from "./youtube-dialog";
-import Dashboard from "@/app/(admin)/dashboard/page";
+import HeroImage from "./hero-image";
 
 export const Hero = () => {
   return (
@@ -50,7 +50,7 @@ export const Hero = () => {
             </div>
           </div>
         </H1>
-        <P className="!mt-0 mb-4 text-[#94a3b8]">
+        <P className="!mt-0 mb-4 dark:text-[#94a3b8] light:text-primary">
           A fullstack Nextjs, typescript, shadcn starter kit built to {"launch"}
           <br /> production level applications. Equipping you with a collection
           of common saas strategies <br /> and platform specific components to
@@ -71,7 +71,7 @@ export const Hero = () => {
             return (
               <div
                 key={index}
-                className="flex flex-col justify-center items-center bg-slate-900/5 hover:bg-slate-900/10 dark:hover:bg-white/10 dark:bg-white/5 backdrop-blur m-2 p-2 sm:p-4 md:p-6 rounded-lg w-32 transition cursor-default align-middle hover:scale-[1.02]"
+                className="flex flex-col justify-center items-center bg-background hover:bg-slate-900/10 dark:hover:bg-white/10 dark:bg-white/5 backdrop-blur m-2 p-2 sm:p-4 md:p-6 rounded-lg w-32 transition cursor-default align-middle hover:scale-[1.02]"
               >
                 <a rel="noreferrer" href={link} target="_blank">
                   <img
@@ -81,7 +81,7 @@ export const Hero = () => {
                     // width={40}
                     // height={40}
                   />
-                  <div className="sm:flex justify-center hidden opacity-50 mx-auto font-medium text-center text-muted-foreground text-xs truncate">
+                  <div className="sm:flex justify-center hidden opacity-50 mx-auto font-medium text-center text-muted-background text-xs truncate">
                     {name}
                   </div>
                 </a>
@@ -90,14 +90,7 @@ export const Hero = () => {
           })}
         </div>
 
-        <Image
-          src="/images/landing.png"
-          width={1330}
-          height={100}
-          alt="Logo"
-          className="border-4 m-10 border-black rounded-lg object-contain"
-        />
-        {/* <Dashboard /> */}
+       <HeroImage/>
       </div>
     </Section>
   );
