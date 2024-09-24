@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Welcome to the Starter Kit! This project is built with Next.js, Shadcn UI, and Clerk authentication. It provides a robust foundation for building web applications with modern front-end technologies and secure authentication mechanisms.
+Welcome to the Starter Kit! This project is built with Next.js, Shadcn UI, and Auth.js authentication. It provides a robust foundation for building web applications with modern front-end technologies and secure authentication mechanisms.
 
 ## Table of Contents
 
@@ -48,19 +48,6 @@ yarn install
 
 The configuration will
 
-#### Clerk Authentication
-
-> [!NOTE] Skip this section for now. This is still in the works
-
-This project requires [Clerk Authentication](https://clerk.com/) API setup before you begin.
-
-- Create an account if you don't have one already
-  - You can use GitHub or GitLab OAuth
-- Input your application name and select at minimum email and Google. Then click on "Create Application"
-  - This will build out your `<SignIn />` component
-- Copy the environment files (see [Environment Variables](#environment-variables) on where to place those values)
-  - If you followed along with the instructions for installing `package.json` dependencies, you won't need to install `@clerk/nextjs`
-
 ### Auth.js Setup
 
 Follow along with [the installation guide](https://authjs.dev/getting-started/installation).
@@ -73,18 +60,18 @@ npx auth secret
 
 ### Database setup
 
-This application uses Postgres and Prisma. You'll have to setup your `DATABASE_URL` within `schema.prisma`.
+This application uses Postgres and Prisma. You'll have to setup your `DATABASE_URL` within your `.env.local` file.
 
-#### Environment Variables
+- See: [Connect your database using TypeScript and PostgreSQL | Prisma Documentation](https://www.prisma.io/docs/getting-started/setup-prisma/start-from-scratch/relational-databases/connect-your-database-typescript-postgresql)
 
-Create a `.env.local` file in the root directory and add the following environment variables:
+### Environment Variables
+
+Create a `.env.local` file in the root directory. This is an example of what will be included in the env file.
 
 ```text
-NEXT_PUBLIC_CLERK_FRONTEND_API=<your-clerk-frontend-api>
-CLERK_API_KEY=<your-clerk-api-key>
+AUTH_SECRET=""
+DATABASE_URL=""
 ```
-
-Replace `<your-clerk-frontend-api>` and `<your-clerk-api-key>` with your actual Clerk credentials.
 
 ### Running the Development Server
 
@@ -102,8 +89,8 @@ Open your browser and navigate to `http://localhost:3000`. You should see the ap
 
 Here's an overview of the project structure:
 
-```
-starter-kit/
+```text
+SAAS-starter-kit/
 ├── public/             # Static assets
 ├── src/
 │   ├── components/     # UI components
@@ -126,17 +113,21 @@ starter-kit/
 
 - **Next.js**: A React framework for production.
 - **Shadcn UI**: A set of customizable UI components.
-- **Clerk Authentication**: Secure and easy-to-use authentication for your application.
+- **Auth.js**: Secure and easy-to-use authentication for your application.
 
 ## Usage
 
 ### Authentication
 
-This starter kit uses Clerk for authentication. Clerk provides a seamless way to add user authentication to your application. For more details on how to use Clerk, refer to the [Clerk documentation](https://clerk.dev/docs).
+This starter kit uses Auth.js for authentication. Auth.js provides a seamless way to add user authentication to your application.
+
+[Auth.js Documentation](https://authjs.dev/)
 
 ### UI Components
 
-Shadcn UI components are used to build the user interface. These components are highly customizable and can be tailored to fit your design requirements. For more details, refer to the [Shadcn UI documentation](https://shadcn.dev/docs).
+Shadcn UI components are used to build the user interface. These components are highly customizable and can be tailored to fit your design requirements.
+
+[Shadcn UI documentation](https://shadcn.dev/docs)
 
 ### Custom Hooks
 
@@ -148,7 +139,7 @@ React contexts are used to manage global state, such as user authentication stat
 
 ### Known Issues
 
-###### Error: Cannot access Image.propTypes on the server. You cannot dot into a client module from a server component. You can only pass the imported name through.
+#### Error: Cannot access Image.propTypes on the server. You cannot dot into a client module from a server component. You can only pass the imported name through.
 
 This typically happens when you try to use next js Image component directly with next-MDX, not sure why it happened but has been a thing since next 13.3
 
@@ -172,7 +163,7 @@ We welcome contributions! To contribute, follow these steps:
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more information.
+This project is licensed under the MIT License. See the [LICENSE](./LICENSE) file for more information.
 
 ---
 
