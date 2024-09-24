@@ -60,9 +60,36 @@ npx auth secret
 
 ### Database setup
 
-This application uses Postgres and Prisma. You'll have to setup your `DATABASE_URL` within your `.env.local` file.
+This application uses Postgres and Prisma. You'll have to setup your `DATABASE_URL` within your `.env` file.
+
+> [!NOTE] This is different to the environment variables you would setup with Next.js since that uses `.env.local`
 
 - See: [Connect your database using TypeScript and PostgreSQL | Prisma Documentation](https://www.prisma.io/docs/getting-started/setup-prisma/start-from-scratch/relational-databases/connect-your-database-typescript-postgresql)
+- Also, for a deeper dive into connection URLs, see [Connection URLs (Reference) | Prisma Documentation](https://www.prisma.io/docs/orm/reference/connection-urls)
+
+Then migrate the schema
+
+```sh
+npx prisma migrate dev --name init
+```
+
+You should see something like the following:
+
+```text
+Applying migration `20240627104047_init`
+Applying migration `20240627165126_update_user_records`
+Applying migration `20240826232012_add_tables`
+
+The following migration(s) have been applied:
+
+migrations/
+  └─ 20240627104047_init/
+    └─ migration.sql
+  └─ 20240627165126_update_user_records/
+    └─ migration.sql
+  └─ 20240826232012_add_tables/
+    └─ migration.sql
+```
 
 ### Environment Variables
 
@@ -70,6 +97,11 @@ Create a `.env.local` file in the root directory. This is an example of what wil
 
 ```text
 AUTH_SECRET=""
+```
+
+Create a `.env` for prisma setup
+
+```text
 DATABASE_URL=""
 ```
 
