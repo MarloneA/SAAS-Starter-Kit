@@ -50,6 +50,8 @@ The configuration will
 
 #### Clerk Authentication
 
+> [!NOTE] Skip this section for now. This is still in the works
+
 This project requires [Clerk Authentication](https://clerk.com/) API setup before you begin.
 
 - Create an account if you don't have one already
@@ -61,7 +63,17 @@ This project requires [Clerk Authentication](https://clerk.com/) API setup befor
 
 ### Auth.js Setup
 
-- ??
+Follow along with [the installation guide](https://authjs.dev/getting-started/installation).
+
+Otherwise, go ahead and run the following command.
+
+```sh
+npx auth secret
+```
+
+### Database setup
+
+This application uses Postgres and Prisma. You'll have to setup your `DATABASE_URL` within `schema.prisma`.
 
 #### Environment Variables
 

@@ -31,7 +31,7 @@ const featureText: FeatureText[] = [
     description:
       "Stay on top of your operations with our intuitive Application Dashboard. Monitor real-time data, track progress, and gain valuable insights all in one place.",
     cta: "Learn More",
-    img: "/images/landing.png",
+    img: "/images/landing-light.png",
   },
   {
     icon: <Coins className="w-6 h-6" />,

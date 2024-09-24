@@ -3,7 +3,8 @@
 import Image from "next/image";
 
 export default function HeroImage() {
-  const theme = localStorage.getItem("theme");
+  const localStorage = typeof window !== "undefined" ? window.localStorage : null;
+  const theme = localStorage ? localStorage.getItem("theme") : "light";
 
   if (theme === "light") {
     return (
