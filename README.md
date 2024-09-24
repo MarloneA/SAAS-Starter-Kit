@@ -22,31 +22,63 @@ To get started with this project, follow the instructions below.
 
 Ensure you have the following installed:
 
-- Node.js (v14.x or later)
-- npm or yarn
+- Node.js (v20.x or later)
+- Package manager for Node.js projects
+  - npm (suggested)
+  - yarn
 
 ### Installation
 
 Clone the repository:
 
-```bash
-git clone https://github.com/your-username/starter-kit.git
-cd starter-kit
+```sh
+git clone https://github.com/MarloneA/SAAS-Starter-Kit.git
+cd SAAS-Starter-Kit
 ```
 
 Install the dependencies:
 
-```bash
+```sh
 npm install
 # or
 yarn install
 ```
 
+### Configuration
+
+The configuration will
+
+#### Clerk Authentication
+
+This project requires [Clerk Authentication](https://clerk.com/) API setup before you begin.
+
+- Create an account if you don't have one already
+  - You can use GitHub or GitLab OAuth
+- Input your application name and select at minimum email and Google. Then click on "Create Application"
+  - This will build out your `<SignIn />` component
+- Copy the environment files (see [Environment Variables](#environment-variables) on where to place those values)
+  - If you followed along with the instructions for installing `package.json` dependencies, you won't need to install `@clerk/nextjs`
+
+### Auth.js Setup
+
+- ??
+
+#### Environment Variables
+
+Create a `.env.local` file in the root directory and add the following environment variables:
+
+```text
+NEXT_PUBLIC_CLERK_FRONTEND_API=<your-clerk-frontend-api>
+CLERK_API_KEY=<your-clerk-api-key>
+```
+
+Replace `<your-clerk-frontend-api>` and `<your-clerk-api-key>` with your actual Clerk credentials.
+
 ### Running the Development Server
 
 Start the development server:
 
-```bash
+```sh
 npm run dev
 # or
 yarn dev
@@ -64,7 +96,7 @@ starter-kit/
 ├── src/
 │   ├── components/     # UI components
 │   ├── actions/        # Next.js server actions
-│   ├── app/            # fullstack web + api 
+│   ├── app/            # fullstack web + api
 │   ├── lib/            # Utility functions
 │   ├── hooks/          # Custom React hooks
 │   └── contexts/       # React contexts
@@ -83,19 +115,6 @@ starter-kit/
 - **Next.js**: A React framework for production.
 - **Shadcn UI**: A set of customizable UI components.
 - **Clerk Authentication**: Secure and easy-to-use authentication for your application.
-
-## Configuration
-
-### Environment Variables
-
-Create a `.env.local` file in the root directory and add the following environment variables:
-
-```
-NEXT_PUBLIC_CLERK_FRONTEND_API=<your-clerk-frontend-api>
-CLERK_API_KEY=<your-clerk-api-key>
-```
-
-Replace `<your-clerk-frontend-api>` and `<your-clerk-api-key>` with your actual Clerk credentials.
 
 ## Usage
 
@@ -121,16 +140,13 @@ React contexts are used to manage global state, such as user authentication stat
 
 This typically happens when you try to use next js Image component directly with next-MDX, not sure why it happened but has been a thing since next 13.3
 
-*fix*: add this code under useMDXComponents custom components
-  
+_fix_: add this code under useMDXComponents custom components
+
 ```javascript
-Image: (props) => <Image {...props}/>
+Image: (props) => <Image {...props} />;
 ```
 
-
-
 Related to [github issue](https://github.com/hashicorp/next-mdx-remote/issues/405)
-
 
 ## Contributing
 

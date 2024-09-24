@@ -1,28 +1,28 @@
-import { ClassValue, clsx } from "clsx"
-import { twMerge } from "tailwind-merge"
+import { ClassValue, clsx } from "clsx";
+import { twMerge } from "tailwind-merge";
 
 // import { env } from "@/env.mjs"
 
 export function cn(...inputs: ClassValue[]) {
-  return twMerge(clsx(inputs))
+  return twMerge(clsx(inputs));
 }
 
 export function formatDate(input: string | number): string {
-  const date = new Date(input)
+  const date = new Date(input);
   return date.toLocaleDateString("en-US", {
     month: "long",
     day: "numeric",
     year: "numeric",
-  })
+  });
 }
 
 export function absoluteUrl(path: string) {
-  return `${process.env.NEXTAUTH_URL}/${path}`
+  return `${process.env.NEXTAUTH_URL}/${path}`;
 }
 
 export function getEmailInitials(email: string) {
   // Extract the part before the '@' symbol
-  let localPart = email.split('@')[0];
+  let localPart = email ? email.split("@")[0] : "";
 
   // Split the local part by any non-alphabetic characters
   let nameParts = localPart.split(/[^a-zA-Z0-9]/);
@@ -33,7 +33,7 @@ export function getEmailInitials(email: string) {
   }
 
   // Otherwise, take the first letter of the first two parts
-  let initials = '';
+  let initials = "";
   for (let i = 0; i < Math.min(2, nameParts.length); i++) {
     initials += nameParts[i][0].toUpperCase();
   }
