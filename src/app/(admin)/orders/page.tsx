@@ -75,10 +75,18 @@ import {
   TabsTrigger,
 } from "@/components/_ui/primitives/tabs";
 import { UserNav } from "@/components/templates/analytics/user-nav";
+import { getAllOrders, getOrderById } from "@/actions/dashboard";
+import { useState } from "react";
 
-export default function Orders() {
+export default async function Orders() {
+  const orders = await getAllOrders();
+
+  // const [currentOrder, setCurrentOrder] = useState(orders[0].orderId);
+
+  // const singleOrder = getOrderById(id);
+
   return (
-    <div className="flex flex-col sm:gap-4 sm:py-4 sm:pl-14">
+    <div className="flex flex-col sm:gap-4 sm:py-4">
       <header className="top-0 z-30 sm:static sticky flex items-center gap-4 sm:border-0 bg-background sm:bg-transparent px-4 sm:px-6 border-b h-14 sm:h-auto">
         <Sheet>
           <SheetTrigger asChild>
@@ -161,7 +169,6 @@ export default function Orders() {
             className="bg-background pl-8 rounded-lg w-full md:w-[200px] lg:w-[336px]"
           />
         </div>
-        <UserNav />
       </header>
       <main className="flex-1 items-start gap-4 md:gap-8 grid lg:grid-cols-3 xl:grid-cols-3 sm:px-6 sm:py-0 p-4">
         <div className="items-start gap-4 md:gap-8 grid lg:col-span-2 auto-rows-max">
@@ -184,12 +191,16 @@ export default function Orders() {
                 <CardTitle className="text-4xl">$1,329</CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="text-muted-foreground text-xs">
+                <div className="text-green-600 text-xs">
                   +25% from last week
                 </div>
               </CardContent>
               <CardFooter>
-                <Progress value={25} aria-label="25% increase" />
+                <Progress
+                  value={25}
+                  aria-label="25% increase"
+                  className="bg-green-600"
+                />
               </CardFooter>
             </Card>
             <Card x-chunk="dashboard-05-chunk-2">
@@ -198,12 +209,16 @@ export default function Orders() {
                 <CardTitle className="text-4xl">$5,329</CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="text-muted-foreground text-xs">
+                <div className="text-blue-500 text-xs">
                   +10% from last month
                 </div>
               </CardContent>
               <CardFooter>
-                <Progress value={12} aria-label="12% increase" />
+                <Progress
+                  value={12}
+                  aria-label="12% increase"
+                  className="bg-blue-500"
+                />
               </CardFooter>
             </Card>
           </div>
@@ -276,171 +291,38 @@ export default function Orders() {
                       </TableRow>
                     </TableHeader>
                     <TableBody>
-                      <TableRow className="bg-accent">
-                        <TableCell>
-                          <div className="font-medium">Liam Johnson</div>
-                          <div className="md:inline hidden text-muted-foreground text-sm">
-                            liam@example.com
-                          </div>
-                        </TableCell>
-                        <TableCell className="hidden sm:table-cell">
-                          Sale
-                        </TableCell>
-                        <TableCell className="hidden sm:table-cell">
-                          <Badge className="text-xs" variant="secondary">
-                            Fulfilled
-                          </Badge>
-                        </TableCell>
-                        <TableCell className="hidden md:table-cell">
-                          2023-06-23
-                        </TableCell>
-                        <TableCell className="text-right">$250.00</TableCell>
-                      </TableRow>
-                      <TableRow>
-                        <TableCell>
-                          <div className="font-medium">Olivia Smith</div>
-                          <div className="md:inline hidden text-muted-foreground text-sm">
-                            olivia@example.com
-                          </div>
-                        </TableCell>
-                        <TableCell className="hidden sm:table-cell">
-                          Refund
-                        </TableCell>
-                        <TableCell className="hidden sm:table-cell">
-                          <Badge className="text-xs" variant="outline">
-                            Declined
-                          </Badge>
-                        </TableCell>
-                        <TableCell className="hidden md:table-cell">
-                          2023-06-24
-                        </TableCell>
-                        <TableCell className="text-right">$150.00</TableCell>
-                      </TableRow>
-                      <TableRow>
-                        <TableCell>
-                          <div className="font-medium">Noah Williams</div>
-                          <div className="md:inline hidden text-muted-foreground text-sm">
-                            noah@example.com
-                          </div>
-                        </TableCell>
-                        <TableCell className="hidden sm:table-cell">
-                          Subscription
-                        </TableCell>
-                        <TableCell className="hidden sm:table-cell">
-                          <Badge className="text-xs" variant="secondary">
-                            Fulfilled
-                          </Badge>
-                        </TableCell>
-                        <TableCell className="hidden md:table-cell">
-                          2023-06-25
-                        </TableCell>
-                        <TableCell className="text-right">$350.00</TableCell>
-                      </TableRow>
-                      <TableRow>
-                        <TableCell>
-                          <div className="font-medium">Emma Brown</div>
-                          <div className="md:inline hidden text-muted-foreground text-sm">
-                            emma@example.com
-                          </div>
-                        </TableCell>
-                        <TableCell className="hidden sm:table-cell">
-                          Sale
-                        </TableCell>
-                        <TableCell className="hidden sm:table-cell">
-                          <Badge className="text-xs" variant="secondary">
-                            Fulfilled
-                          </Badge>
-                        </TableCell>
-                        <TableCell className="hidden md:table-cell">
-                          2023-06-26
-                        </TableCell>
-                        <TableCell className="text-right">$450.00</TableCell>
-                      </TableRow>
-                      <TableRow>
-                        <TableCell>
-                          <div className="font-medium">Liam Johnson</div>
-                          <div className="md:inline hidden text-muted-foreground text-sm">
-                            liam@example.com
-                          </div>
-                        </TableCell>
-                        <TableCell className="hidden sm:table-cell">
-                          Sale
-                        </TableCell>
-                        <TableCell className="hidden sm:table-cell">
-                          <Badge className="text-xs" variant="secondary">
-                            Fulfilled
-                          </Badge>
-                        </TableCell>
-                        <TableCell className="hidden md:table-cell">
-                          2023-06-23
-                        </TableCell>
-                        <TableCell className="text-right">$250.00</TableCell>
-                      </TableRow>
-                      <TableRow>
-                        <TableCell>
-                          <div className="font-medium">Liam Johnson</div>
-                          <div className="md:inline hidden text-muted-foreground text-sm">
-                            liam@example.com
-                          </div>
-                        </TableCell>
-                        <TableCell className="hidden sm:table-cell">
-                          Sale
-                        </TableCell>
-                        <TableCell className="hidden sm:table-cell">
-                          <Badge className="text-xs" variant="secondary">
-                            Fulfilled
-                          </Badge>
-                        </TableCell>
-                        <TableCell className="hidden md:table-cell">
-                          2023-06-23
-                        </TableCell>
-                        <TableCell className="text-right">$250.00</TableCell>
-                      </TableRow>
-                      <TableRow>
-                        <TableCell>
-                          <div className="font-medium">Olivia Smith</div>
-                          <div className="md:inline hidden text-muted-foreground text-sm">
-                            olivia@example.com
-                          </div>
-                        </TableCell>
-                        <TableCell className="hidden sm:table-cell">
-                          Refund
-                        </TableCell>
-                        <TableCell className="hidden sm:table-cell">
-                          <Badge className="text-xs" variant="outline">
-                            Declined
-                          </Badge>
-                        </TableCell>
-                        <TableCell className="hidden md:table-cell">
-                          2023-06-24
-                        </TableCell>
-                        <TableCell className="text-right">$150.00</TableCell>
-                      </TableRow>
-                      <TableRow>
-                        <TableCell>
-                          <div className="font-medium">Emma Brown</div>
-                          <div className="md:inline hidden text-muted-foreground text-sm">
-                            emma@example.com
-                          </div>
-                        </TableCell>
-                        <TableCell className="hidden sm:table-cell">
-                          Sale
-                        </TableCell>
-                        <TableCell className="hidden sm:table-cell">
-                          <Badge className="text-xs" variant="secondary">
-                            Fulfilled
-                          </Badge>
-                        </TableCell>
-                        <TableCell className="hidden md:table-cell">
-                          2023-06-26
-                        </TableCell>
-                        <TableCell className="text-right">$450.00</TableCell>
-                      </TableRow>
+                      {orders.map((order, index) => (
+                        <TableRow className="cursor-pointer" key={index}>
+                          <TableCell>
+                            <div className="font-medium">{order.name}</div>
+                            <div className="md:inline hidden text-muted-foreground text-sm">
+                              {order.email}
+                            </div>
+                          </TableCell>
+                          <TableCell className="hidden sm:table-cell">
+                            {order.type}
+                          </TableCell>
+                          <TableCell className="hidden sm:table-cell">
+                            <Badge
+                              className="text-xs"
+                              variant={order.statusVariant}
+                            >
+                              {order.status}
+                            </Badge>
+                          </TableCell>
+                          <TableCell className="hidden md:table-cell">
+                            {order.date}
+                          </TableCell>
+                          <TableCell className="text-right">
+                            {order.amount}
+                          </TableCell>
+                        </TableRow>
+                      ))}
                     </TableBody>
                   </Table>
                 </CardContent>
               </Card>
-            </TabsContent>
+            </TabsContent>{" "}
           </Tabs>
         </div>
         <div>

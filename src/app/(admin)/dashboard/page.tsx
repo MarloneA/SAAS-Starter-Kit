@@ -51,18 +51,8 @@ export const metadata: Metadata = {
 
 export default async function Dashboard() {
   return (
-    <div className="flex flex-col sm:gap-4 sm:py-4 sm:pl-14 max-w-[2160px] m-auto">
+    <div className="flex flex-col sm:gap-4 sm:py-4">
       <header className="top-0 z-30 sm:static sticky flex flex-col gap-4 sm:border-0 bg-background sm:bg-transparent border-b h-14 sm:h-auto">
-        <div className="border-b">
-          <div className="flex items-center px-4 h-16">
-            <TeamSwitcher />
-            <MainNav className="mx-6" />
-            <div className="flex items-center space-x-4 ml-auto">
-              <Search />
-              <UserNav />
-            </div>
-          </div>
-        </div>
         <div className="flex-1 space-y-4 p-8 pt-6">
           <div className="flex justify-between items-center space-y-2">
             <h2 className="font-bold text-3xl tracking-tight">Dashboard</h2>
@@ -203,7 +193,7 @@ export default async function Dashboard() {
                 </CardContent>
               </Card>
             </div>
-            <div className="gap-4 grid md:grid-cols-2 lg:grid-cols-7">
+            {/* <div className="gap-4 grid md:grid-cols-2 lg:grid-cols-7">
               <Card className="col-span-7">
                 <CardHeader>
                   <CardTitle>Overview</CardTitle>
@@ -330,7 +320,7 @@ export default async function Dashboard() {
                   <BarChartInteractiveAnalytics />
                 </CardContent>
               </Card>
-            </div>
+            </div> */}
           </TabsContent>
         </Tabs>
       </main>

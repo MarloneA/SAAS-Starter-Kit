@@ -1,15 +1,11 @@
-import React from "react";
-
 import Link from "next/link";
 import {
-  Camera,
   Database,
   Home,
   Mail,
   Package,
-  Package2,
-  Paperclip,
   Radio,
+  RollerCoaster,
   Settings,
   Sheet,
   ShoppingCart,
@@ -25,6 +21,12 @@ import {
 import { ChatBubbleIcon } from "@radix-ui/react-icons";
 import { auth } from "@/auth";
 import { redirect } from "next/navigation";
+import TeamSwitcher from "@/components/templates/analytics/team-switcher";
+import { Search } from "@/components/templates/analytics/search";
+import { UserNav } from "@/components/templates/analytics/user-nav";
+import { CalendarDateRangePicker } from "@/components/templates/analytics/date-range-picker";
+import { Button } from "@/components/_ui/primitives/button";
+import { MainNav } from "@/components/templates/analytics/main-nav";
 
 type Props = {
   children: React.ReactNode;
@@ -163,7 +165,20 @@ const OwnerLayout = async ({ children }: Props) => {
             </nav>
           </TooltipProvider>
         </aside>
-        {children}
+        <main className="flex flex-col sm:gap-4 sm:py-4 sm:pl-14 max-w-[1440px] mx-auto">
+          <header className="top-0 z-30 sm:static sticky flex flex-col gap-4 sm:border-0 bg-background sm:bg-transparent border-b h-14 sm:h-auto">
+            <div className="border-b">
+              <div className="flex items-center px-4 h-16">
+                <TeamSwitcher />
+                <MainNav className="mx-6" />
+                <div className="flex items-center space-x-4 ml-auto">
+                  <UserNav />
+                </div>
+              </div>
+            </div>
+          </header>
+          {children}
+        </main>
       </div>
     </div>
   );

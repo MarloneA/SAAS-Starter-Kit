@@ -59,7 +59,7 @@ import { UserNav } from "@/components/templates/analytics/user-nav";
 
 export default function Clients() {
   return (
-    <div className="flex flex-col sm:gap-4 sm:py-4 sm:pl-14">
+    <div className="flex flex-col sm:gap-4 sm:py-4">
       <header className="top-0 z-30 sm:static sticky flex items-center gap-4 sm:border-0 bg-background sm:bg-transparent px-4 sm:px-6 border-b h-14 sm:h-auto">
         <Breadcrumb className="md:flex hidden">
           <BreadcrumbList>
@@ -88,9 +88,8 @@ export default function Clients() {
             className="bg-background pl-8 rounded-lg w-full md:w-[200px] lg:w-[336px]"
           />
         </div>
-        <UserNav />
       </header>
-      <main className="flex-1 items-start gap-4 md:gap-8 grid sm:px-6 sm:py-0 p-4">
+      <main className="flex-1 min-w-[1380px] mx-auto items-start gap-4 md:gap-8 sm:px-6 sm:py-0 p-4">
         <Tabs defaultValue="all">
           <div className="flex items-center">
             <TabsList>

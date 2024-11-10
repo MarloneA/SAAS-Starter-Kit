@@ -31,7 +31,7 @@ const featureText: FeatureText[] = [
     description:
       "Stay on top of your operations with our intuitive Application Dashboard. Monitor real-time data, track progress, and gain valuable insights all in one place.",
     cta: "Learn More",
-    img: "/images/landing.png",
+    img: "/images/landing-dark.png",
   },
   {
     icon: <Coins className="w-6 h-6" />,
@@ -124,7 +124,7 @@ const Feature = () => {
           if {" you're"} not ready to commit you can get started for free.
         </P>
         <Button>
-          <Link href="#pricing">Try out Livery for free</Link>
+          <Link href="#pricing">Try out Livekit for free</Link>
         </Button>
       </Layout.Section>
       <Layout.Container className="not-prose max-w-7xl">
@@ -133,7 +133,7 @@ const Feature = () => {
             <Balancer>Build your Saas</Balancer>
           </h3>
           <h4 className="opacity-70 font-light text-2xl">
-            <Balancer>What to expect when building with Livery</Balancer>
+            <Balancer>What to expect when building with Livekit</Balancer>
           </h4>
 
           <div className="gap-6 grid md:grid-cols-2 mt-6 md:mt-12">

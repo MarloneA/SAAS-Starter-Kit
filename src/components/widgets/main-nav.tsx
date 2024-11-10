@@ -26,7 +26,7 @@ export function MainNav({ items, children }: MainNavProps) {
       <Link href="/" className="md:flex items-center space-x-2 hidden">
         <Icons.logo color="#b91c1c" />
         <H4 className="font-black">
-          <span className="text-red-700">LIVE</span>RY
+          <span className="text-red-700">LIVE</span>KIT
         </H4>
         {/* <span className="sm:inline-block hidden font-bold">
           {siteConfig.name}
@@ -59,17 +59,6 @@ export function MainNav({ items, children }: MainNavProps) {
         {showMobileMenu ? <Icons.close /> : <Icons.logo />}
         <span className="font-bold">Menu</span>
       </button>
-      {/* <nav>
-        <Link
-          href="/login"
-          className={cn(
-            buttonVariants({ variant: "secondary", size: "sm" }),
-            "px-4"
-          )}
-        >
-          Login
-        </Link>
-      </nav> */}
       {showMobileMenu && items && (
         <MobileNav items={items}>{children}</MobileNav>
       )}

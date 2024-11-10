@@ -90,7 +90,7 @@ export const Hero = () => {
           })}
         </div>
 
-       <HeroImage/>
+        <HeroImage />
       </div>
     </Section>
   );

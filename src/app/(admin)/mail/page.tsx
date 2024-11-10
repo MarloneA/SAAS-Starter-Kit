@@ -13,7 +13,7 @@ export default function MailPage() {
     : undefined;
 
   return (
-    <div className="flex flex-col sm:gap-4 sm:py-4 sm:pl-14 h-full">
+    <div className="flex flex-col sm:gap-4 h-full">
       <header className="top-0 z-30 sm:static sticky flex items-center gap-4 sm:border-0 bg-background sm:bg-transparent px-4 sm:px-6 border-b h-14 sm:h-auto"></header>
       <main className="sm:px-6 sm:py-0 p-4">
         <Mail

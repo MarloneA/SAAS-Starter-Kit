@@ -70,8 +70,8 @@ import {
 
 export default function ProductDetails() {
   return (
-    <div className="flex flex-col sm:gap-4 sm:py-4 sm:pl-14 h-full">
-      <header className="top-0 z-30 sm:static sticky flex items-center gap-4 sm:border-0 bg-background sm:bg-transparent px-4 sm:px-6 border-b h-14 sm:h-auto">
+    <div className="flex flex-col sm:gap-4 sm:py-4">
+       <header className="top-0 z-30 sm:static sticky flex items-center gap-4 sm:border-0 bg-background sm:bg-transparent px-4 sm:px-6 border-b h-14 sm:h-auto">
         <Sheet>
           <SheetTrigger asChild>
             <Button size="icon" variant="outline" className="sm:hidden">
@@ -145,39 +145,6 @@ export default function ProductDetails() {
             </BreadcrumbItem>
           </BreadcrumbList>
         </Breadcrumb>
-        <div className="relative flex-1 ml-auto md:grow-0">
-          <Search className="top-2.5 left-2.5 absolute w-4 h-4 text-muted-foreground" />
-          <Input
-            type="search"
-            placeholder="Search..."
-            className="bg-background pl-8 rounded-lg w-full md:w-[200px] lg:w-[336px]"
-          />
-        </div>
-        <DropdownMenu>
-          <DropdownMenuTrigger asChild>
-            <Button
-              variant="outline"
-              size="icon"
-              className="rounded-full overflow-hidden"
-            >
-              <Image
-                src="/placeholder-user.jpg"
-                width={36}
-                height={36}
-                alt="Avatar"
-                className="rounded-full overflow-hidden"
-              />
-            </Button>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent align="end">
-            <DropdownMenuLabel>My Account</DropdownMenuLabel>
-            <DropdownMenuSeparator />
-            <DropdownMenuItem>Settings</DropdownMenuItem>
-            <DropdownMenuItem>Support</DropdownMenuItem>
-            <DropdownMenuSeparator />
-            <DropdownMenuItem>Logout</DropdownMenuItem>
-          </DropdownMenuContent>
-        </DropdownMenu>
       </header>
       <main className="flex-1 items-start gap-4 md:gap-8 grid sm:px-6 sm:py-0 p-4">
         <div className="flex-1 gap-4 grid auto-rows-max mx-auto max-w-screen">
