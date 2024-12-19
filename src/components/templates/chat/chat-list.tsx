@@ -4,8 +4,12 @@ import React, { useRef, useEffect } from "react";
 import ChatBottombar from "./chat-bottombar";
 import { AnimatePresence, motion } from "framer-motion";
 import { ChatMessageList } from "@/components/widgets/chat/chat-message-list";
-import { ChatBubble, ChatBubbleAvatar, ChatBubbleMessage, ChatBubbleTimestamp } from "@/components/widgets/chat/chat-bubble";
-
+import {
+  ChatBubble,
+  ChatBubbleAvatar,
+  ChatBubbleMessage,
+  ChatBubbleTimestamp,
+} from "@/components/widgets/chat/chat-bubble";
 
 interface ChatListProps {
   messages: Message[];

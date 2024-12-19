@@ -22,14 +22,5 @@ export default function ChatLayout({
   const layout = cookies().get("react-resizable-panels:layout");
   const defaultLayout = layout ? JSON.parse(layout.value) : undefined;
 
-  return (
-    <main className="flex h-[calc(100dvh)] max-w-[1600px] m-auto flex-col p-4 gap-4">
-      <div className="flex z-10 border rounded-lg h-full text-sm">
-        {/* Page content */}
-        {children}
-      </div>
-      {/* Chat support component */}
-      <ChatSupport />
-    </main>
-  );
+  return <main className="flex flex-col">{children}</main>;
 }

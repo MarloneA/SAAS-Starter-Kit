@@ -35,12 +35,6 @@ export function MainNav({
       >
         Products
       </Link>
-      <Link
-        href="/settings"
-        className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
-      >
-        Settings
-      </Link>
     </nav>
   );
 }

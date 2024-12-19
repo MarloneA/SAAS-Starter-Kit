@@ -20,12 +20,12 @@ export function absoluteUrl(path: string) {
   return `${process.env.NEXTAUTH_URL}/${path}`
 }
 
-export function getEmailInitials(email: string) {
+export function getEmailInitials(email: string = "test@gmail.com") {
   // Extract the part before the '@' symbol
-  let localPart = email.split('@')[0];
+  let localPart = email?.split('@')[0];
 
   // Split the local part by any non-alphabetic characters
-  let nameParts = localPart.split(/[^a-zA-Z0-9]/);
+  let nameParts = localPart?.split(/[^a-zA-Z0-9]/);
 
   // If the local part contains only one section, use the first two characters
   if (nameParts.length === 1) {
@@ -35,7 +35,7 @@ export function getEmailInitials(email: string) {
   // Otherwise, take the first letter of the first two parts
   let initials = '';
   for (let i = 0; i < Math.min(2, nameParts.length); i++) {
-    initials += nameParts[i][0].toUpperCase();
+    initials += nameParts[i][0]?.toUpperCase();
   }
   return initials;
 }

@@ -61,7 +61,7 @@ export function Sidebar({ chats, isCollapsed, isMobile }: SidebarProps) {
           </div>
         </div>
       )}
-      <nav className="grid gap-1 px-2 group-[[data-collapsed=true]]:justify-center group-[[data-collapsed=true]]:px-2 overflow-scroll">
+      <nav className="grid gap-1 px-2 group-[[data-collapsed=true]]:justify-center group-[[data-collapsed=true]]:px-2 overflow-y-auto">
         {chats.map((chat, index) =>
           isCollapsed ? (
             <TooltipProvider key={index}>

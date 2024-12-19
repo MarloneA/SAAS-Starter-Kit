@@ -48,10 +48,10 @@ export function ChatLayout({
       direction="horizontal"
       onLayout={(sizes: number[]) => {
         document.cookie = `react-resizable-panels:layout=${JSON.stringify(
-          sizes,
+          sizes
         )}`;
       }}
-      className="h-full items-stretch"
+      className="max-h-screen items-stretch p-4"
     >
       <ResizablePanel
         defaultSize={defaultLayout[0]}
@@ -62,18 +62,18 @@ export function ChatLayout({
         onCollapse={() => {
           setIsCollapsed(true);
           document.cookie = `react-resizable-panels:collapsed=${JSON.stringify(
-            true,
+            true
           )}`;
         }}
         onExpand={() => {
           setIsCollapsed(false);
           document.cookie = `react-resizable-panels:collapsed=${JSON.stringify(
-            false,
+            false
           )}`;
         }}
         className={cn(
           isCollapsed &&
-            "min-w-[50px] md:min-w-[70px] transition-all duration-300 ease-in-out",
+            "min-w-[50px] md:min-w-[70px] transition-all duration-300 ease-in-out"
         )}
       >
         <Sidebar

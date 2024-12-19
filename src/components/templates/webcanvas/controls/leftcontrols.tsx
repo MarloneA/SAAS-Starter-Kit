@@ -1,5 +1,5 @@
 import { EnterIcon } from "@radix-ui/react-icons";
-import { Radio } from "lucide-react";
+import { Navigation2Off, Radio } from "lucide-react";
 import { UserNav } from "../../analytics/user-nav";
 import File from "@/components/_ui/icons/canvas/file";
 import ImageIcon from "@/components/_ui/icons/canvas/image";
@@ -73,7 +73,7 @@ export function LeftControls() {
           href="/dashboard"
           className="text-muted-foreground hover:text-foreground transition-colors"
         >
-          <EnterIcon className="h-6 w-6 stroke-current" />
+          <EnterIcon className="h-5 w-5 stroke-current" />
           <Tooltip>
             Back to Dashboard <span className="">(B)</span>
           </Tooltip>

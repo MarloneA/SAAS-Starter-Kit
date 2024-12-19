@@ -33,9 +33,6 @@ type Props = {
 
 const navItems = [
   { href: "/dashboard", icon: LayoutDashboardIcon, label: "Dashboard" },
-  // { href: "/orders", icon: ShoppingCart, label: "Orders" },
-  // { href: "/products", icon: Package, label: "Products" },
-  // { href: "/clients", icon: Users2, label: "Customers" },
   { href: "/mail", icon: Mail, label: "Email Client" },
   { href: "/canvas", icon: Sheet, label: "Canvas" },
   { href: "/messenger", icon: ChatBubbleIcon, label: "Chat" },
@@ -91,17 +88,6 @@ const OwnerLayout = async ({ children }: Props) => {
           </TooltipProvider>
         </aside>
         <main className="flex flex-col sm:gap-4 sm:py-4 sm:pl-14 max-w-[1440px] mx-auto">
-          <header className="top-0 z-30 sm:static sticky flex flex-col gap-4 sm:border-0 bg-background sm:bg-transparent border-b h-14 sm:h-auto">
-            <div className="border-b">
-              <div className="flex items-center px-4 h-16">
-                <TeamSwitcher />
-                <MainNav className="mx-6" />
-                <div className="flex items-center space-x-4 ml-auto">
-                  <UserNav />
-                </div>
-              </div>
-            </div>
-          </header>
           {children}
         </main>
       </div>

@@ -10,7 +10,7 @@ export default function MailPage() {
   const defaultLayout = layout ? JSON.parse(layout?.value) : undefined;
   const defaultCollapsed = collapsed
     ? collapsed?.value !== "undefined" && JSON.parse(collapsed?.value)
-    : undefined;
+    : false;
 
   return (
     <div className="flex flex-col sm:gap-4 h-full">
