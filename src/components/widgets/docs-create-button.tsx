@@ -24,7 +24,7 @@ export function DocsCreateButton({
   async function onClick() {
     setIsLoading(true);
 
-    const response = await fetch("/api/posts", {
+    const response = await fetch("/api/docs", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -52,12 +52,12 @@ export function DocsCreateButton({
       });
     }
 
-    const post = await response.json();
+    const doc = await response.json();
 
     // This forces a cache invalidation.
     router.refresh();
 
-    router.push(`/editor/${post.id}`);
+    router.push(`/editor/docs/${doc.id}`);
   }
 
   return (

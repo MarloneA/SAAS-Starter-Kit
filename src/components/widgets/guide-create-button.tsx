@@ -24,7 +24,7 @@ export function GuideCreateButton({
   async function onClick() {
     setIsLoading(true);
 
-    const response = await fetch("/api/posts", {
+    const response = await fetch("/api/guides", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -52,12 +52,12 @@ export function GuideCreateButton({
       });
     }
 
-    const post = await response.json();
+    const guide = await response.json();
 
     // This forces a cache invalidation.
     router.refresh();
 
-    router.push(`/editor/${post.id}`);
+    router.push(`/editor/guides/${guide.id}`);
   }
 
   return (

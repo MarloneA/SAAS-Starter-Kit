@@ -7,6 +7,6 @@ export const docCreateSchema = z.object({
 
 export const routeContextSchema = z.object({
   params: z.object({
-    postId: z.string(),
+    docId: z.string(),
   }),
 })

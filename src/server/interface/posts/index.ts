@@ -19,3 +19,7 @@ export interface PatchPostInterface {
   content?: string;
   published: boolean;
 }
+
+export interface PublishPostInterface {
+  published: boolean;
+}

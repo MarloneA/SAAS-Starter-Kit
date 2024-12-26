@@ -8,14 +8,15 @@ import { Button } from "@/components/_ui/primitives/button";
 
 interface PostItemProps {
   post: Pick<Post, "id" | "title" | "published" | "createdAt">;
+  type: "guides" | "posts" | "docs";
 }
 
-export function PostItem({ post }: PostItemProps) {
+export function PostItem({ post, type }: PostItemProps) {
   return (
     <div className="flex items-center justify-between p-4">
       <div className="grid gap-1">
         <Link
-          href={`/editor/${post.id}`}
+          href={`/editor/${type}/${post.id}`}
           className="font-semibold hover:underline"
         >
           {post.title}
@@ -28,6 +29,7 @@ export function PostItem({ post }: PostItemProps) {
       </div>
       <PostOperations
         post={{ id: post.id, title: post.title, published: post.published }}
+        type={type}
       />
     </div>
   );

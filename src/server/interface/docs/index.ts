@@ -19,3 +19,7 @@ export interface PatchDocInterface {
   content?: string;
   published: boolean;
 }
+
+export interface PublishDocInterface {
+  published: boolean;
+}

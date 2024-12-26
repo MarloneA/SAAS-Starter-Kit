@@ -7,6 +7,6 @@ export const guideCreateSchema = z.object({
 
 export const routeContextSchema = z.object({
   params: z.object({
-    postId: z.string(),
+    guideId: z.string(),
   }),
 })

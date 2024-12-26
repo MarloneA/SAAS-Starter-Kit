@@ -1,20 +1,20 @@
 import { notFound, redirect } from "next/navigation";
-import { Post, User } from "@prisma/client";
+import { User, Doc } from "@prisma/client";
 import { db } from "@/lib/db";
 import { Editor } from "@/components/widgets/editor";
 import { auth } from "@/auth";
 
-async function getPostForUser(postId: Post["id"], userId: User["id"]) {
-  return await db.post.findFirst({
+async function getPostForUser(docId: Doc["id"], userId: User["id"]) {
+  return await db.doc.findFirst({
     where: {
-      id: postId,
+      id: docId,
       authorId: userId,
     },
   });
 }
 
 interface EditorPageProps {
-  params: { postId: string };
+  params: { docId: string };
 }
 
 export default async function EditorPage({ params }: EditorPageProps) {
@@ -24,7 +24,7 @@ export default async function EditorPage({ params }: EditorPageProps) {
     redirect("/login");
   }
 
-  const post = await getPostForUser(params.postId, session.user.id);
+  const post = await getPostForUser(params.docId, session.user.id);
 
   if (!post) {
     notFound();
@@ -32,7 +32,8 @@ export default async function EditorPage({ params }: EditorPageProps) {
 
   return (
     <Editor
-      post={{
+      type="docs"
+      content={{
         id: post.id,
         title: post.title,
         content: post.content,

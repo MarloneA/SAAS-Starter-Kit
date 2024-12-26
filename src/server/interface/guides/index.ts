@@ -19,3 +19,7 @@ export interface PatchGuideInterface {
   content?: string;
   published: boolean;
 }
+
+export interface PublishGuideInterface {
+  published: boolean;
+}

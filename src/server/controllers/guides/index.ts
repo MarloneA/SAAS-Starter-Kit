@@ -1,7 +1,10 @@
 import { auth } from "@/auth";
 import { RequiresProPlanError } from "@/lib/exceptions";
-import { guideCreateSchema, routeContextSchema } from "@/lib/schemas/guide.schema";
-import { guidePatchSchema } from "@/lib/validations/guide";
+import {
+  guideCreateSchema,
+  routeContextSchema,
+} from "@/lib/schemas/guide.schema";
+import { guidePatchSchema, guidePublishSchema } from "@/lib/validations/guide";
 import { GuideService } from "@/server/services/guides";
 import { z } from "zod";
 
@@ -95,3 +98,27 @@ export async function updateGuideHandler(
   }
 }
 
+export async function publishGuideHandler(
+  req: Request,
+  context: z.infer<typeof routeContextSchema>
+) {
+  try {
+    // Validate route params.
+    const { params } = routeContextSchema.parse(context);
+
+    // Get the request body and validate it.
+    const json = await req.json();
+    const body = guidePublishSchema.parse(json);
+
+    // Call the service to update the post.
+    await GuideService.publishGuide(params.guideId, body);
+
+    return new Response(null, { status: 200 });
+  } catch (error) {
+    if (error instanceof z.ZodError) {
+      return new Response(JSON.stringify(error.issues), { status: 422 });
+    }
+
+    return new Response(JSON.stringify(error), { status: 500 });
+  }
+}

@@ -6,3 +6,7 @@ export const guidePatchSchema = z.object({
   // TODO: Type this properly from editorjs block types?
   content: z.any().optional(),
 })
+
+export const guidePublishSchema = z.object({
+  published: z.boolean(),
+});

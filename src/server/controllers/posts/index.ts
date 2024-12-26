@@ -1,7 +1,10 @@
 import { auth } from "@/auth";
 import { RequiresProPlanError } from "@/lib/exceptions";
-import { postCreateSchema, routeContextSchema } from "@/lib/schemas/post.schema";
-import { postPatchSchema } from "@/lib/validations/post";
+import {
+  postCreateSchema,
+  routeContextSchema,
+} from "@/lib/schemas/post.schema";
+import { postPatchSchema, postPublishSchem } from "@/lib/validations/post";
 import { PostService } from "@/server/services/posts";
 import { z } from "zod";
 
@@ -35,7 +38,7 @@ export async function createPostHandler(req: Request) {
 
     const post = await PostService.createPost(user.id, body);
 
-    return new Response(JSON.stringify(post));
+    return new Response(JSON.stringify(post), { status: 201 });
   } catch (error) {
     if (error instanceof z.ZodError) {
       return new Response(JSON.stringify(error.issues), { status: 422 });
@@ -45,7 +48,7 @@ export async function createPostHandler(req: Request) {
       return new Response("Requires Pro Plan", { status: 402 });
     }
 
-    return new Response(null, { status: 500 });
+    return new Response(JSON.stringify(error), { status: 500 });
   }
 }
 
@@ -95,3 +98,27 @@ export async function updatePostHandler(
   }
 }
 
+export async function publishPostHandler(
+  req: Request,
+  context: z.infer<typeof routeContextSchema>
+) {
+  try {
+    // Validate route params.
+    const { params } = routeContextSchema.parse(context);
+
+    // Get the request body and validate it.
+    const json = await req.json();
+    const body = postPublishSchem.parse(json);
+
+    // Call the service to update the post.
+    await PostService.publishPost(params.postId, body);
+
+    return new Response(null, { status: 200 });
+  } catch (error) {
+    if (error instanceof z.ZodError) {
+      return new Response(JSON.stringify(error.issues), { status: 422 });
+    }
+
+    return new Response(null, { status: 500 });
+  }
+}

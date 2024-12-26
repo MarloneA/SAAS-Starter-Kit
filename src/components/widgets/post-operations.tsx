@@ -25,8 +25,8 @@ import {
 import { toast } from "@/components/_ui/primitives/use-toast";
 import { Icons } from "@/components/_ui/icons";
 
-async function deletePost(postId: string) {
-  const response = await fetch(`/api/posts/${postId}`, {
+async function deletePost(postId: string, type: string) {
+  const response = await fetch(`/api/${type}/${postId}`, {
     method: "DELETE",
   });
 
@@ -41,8 +41,8 @@ async function deletePost(postId: string) {
   return true;
 }
 
-async function publishPost(postId: string) {
-  const response = await fetch(`/api/posts/${postId}`, {
+async function publishPost(postId: string, type: string) {
+  const response = await fetch(`/api/${type}/${postId}`, {
     method: "PATCH",
     headers: {
       "Content-Type": "application/json",
@@ -65,9 +65,10 @@ async function publishPost(postId: string) {
 
 interface PostOperationsProps {
   post: Pick<Post, "id" | "title" | "published">;
+  type: "guides" | "posts" | "docs";
 }
 
-export function PostOperations({ post }: PostOperationsProps) {
+export function PostOperations({ post, type }: PostOperationsProps) {
   const router = useRouter();
   const [showDeleteAlert, setShowDeleteAlert] = React.useState<boolean>(false);
   const [isDeleteLoading, setIsDeleteLoading] = React.useState<boolean>(false);
@@ -85,12 +86,16 @@ export function PostOperations({ post }: PostOperationsProps) {
           <span className="sr-only">Open</span>
         </DropdownMenuTrigger>
         <DropdownMenuContent align="end">
-          <DropdownMenuItem onSelect={() => setShowPublishAlert(true)}>
-            Publish
-          </DropdownMenuItem>
+          {post.published ? (
+            <p className="px-2 text-gray-400">Publish</p>
+          ) : (
+            <DropdownMenuItem onSelect={() => setShowPublishAlert(true)}>
+              Publish
+            </DropdownMenuItem>
+          )}
           <DropdownMenuSeparator />
           <DropdownMenuItem>
-            <Link href={`/editor/${post.id}`} className="flex w-full">
+            <Link href={`/editor/${type}/${post.id}`} className="flex w-full">
               Edit
             </Link>
           </DropdownMenuItem>
@@ -120,7 +125,7 @@ export function PostOperations({ post }: PostOperationsProps) {
                 event.preventDefault();
                 setIsDeleteLoading(true);
 
-                const deleted = await deletePost(post.id);
+                const deleted = await deletePost(post.id, type);
 
                 if (deleted) {
                   setIsDeleteLoading(false);
@@ -158,7 +163,7 @@ export function PostOperations({ post }: PostOperationsProps) {
                 event.preventDefault();
                 setIsPublishLoading(true);
 
-                const published = await publishPost(post.id);
+                const published = await publishPost(post.id, type);
 
                 if (published) {
                   setIsPublishLoading(false);

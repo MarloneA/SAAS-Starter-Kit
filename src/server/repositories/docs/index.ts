@@ -1,5 +1,11 @@
-import { db } from "@/lib/db"
-import { CreateDocInputInteface, CreateDocInterface, PatchDocInterface, DocInterface } from "@/server/interface/docs"
+import { db } from "@/lib/db";
+import {
+  CreateDocInputInteface,
+  CreateDocInterface,
+  PatchDocInterface,
+  DocInterface,
+  PublishDocInterface,
+} from "@/server/interface/docs";
 
 export class DocRepository {
   static async findDocsByUserId(userId: string): Promise<DocInterface[]> {
@@ -22,7 +28,10 @@ export class DocRepository {
     });
   }
 
-  static async createDoc(userId: string, body: CreateDocInputInteface): Promise<CreateDocInterface> {
+  static async createDoc(
+    userId: string,
+    body: CreateDocInputInteface
+  ): Promise<CreateDocInterface> {
     return await db.doc.create({
       data: {
         title: body.title,
@@ -43,7 +52,10 @@ export class DocRepository {
     });
   }
 
-  static async updateDoc(docId: string, body: PatchDocInterface): Promise<void> {
+  static async updateDoc(
+    docId: string,
+    body: PatchDocInterface
+  ): Promise<void> {
     await db.doc.update({
       where: {
         id: docId,
@@ -55,5 +67,18 @@ export class DocRepository {
       },
     });
   }
-}
 
+  static async publish(
+    docId: string,
+    body: PublishDocInterface
+  ): Promise<void> {
+    await db.doc.update({
+      where: {
+        id: docId,
+      },
+      data: {
+        published: body.published,
+      },
+    });
+  }
+}

@@ -14,7 +14,7 @@
     "@craftjs/core": "^0.2.10",
     "@editorjs/code": "^2.9.0",
     "@editorjs/editorjs": "^2.29.1",
-    "@editorjs/embed": "^2.7.4",
+    "@editorjs/embed": "^2.7.6",
     "@editorjs/header": "^2.8.1",
     "@editorjs/inline-code": "^1.5.0",
     "@editorjs/link": "^2.6.2",

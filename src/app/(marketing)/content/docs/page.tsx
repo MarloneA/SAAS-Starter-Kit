@@ -6,7 +6,6 @@ import { DashboardHeader } from "@/components/widgets/header";
 import { PostItem } from "@/components/widgets/post-item";
 import { DashboardShell } from "@/components/widgets/shell";
 import { auth } from "@/auth";
-import { GuideCreateButton } from "@/components/widgets/guide-create-button";
 import { DocsCreateButton } from "@/components/widgets/docs-create-button";
 
 export const metadata = {
@@ -47,7 +46,7 @@ export default async function DashboardPage() {
         {posts?.length ? (
           <div className="border rounded-md divide-y divide-border">
             {posts.map((post) => (
-              <PostItem key={post.id} post={post} />
+              <PostItem key={post.id} post={post} type="docs" />
             ))}
           </div>
         ) : (

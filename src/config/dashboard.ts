@@ -1,4 +1,4 @@
-import { DashboardConfig } from "@/lib/types"
+import { DashboardConfig } from "@/lib/types";
 
 export const dashboardConfig: DashboardConfig = {
   mainNav: [
@@ -15,7 +15,7 @@ export const dashboardConfig: DashboardConfig = {
   sidebarNav: [
     {
       title: "Posts",
-      href: "/content",
+      href: "/content/posts",
       icon: "post",
     },
     {
@@ -29,4 +29,4 @@ export const dashboardConfig: DashboardConfig = {
       icon: "settings",
     },
   ],
-}
+};

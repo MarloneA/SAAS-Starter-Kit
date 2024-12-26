@@ -43,7 +43,7 @@ export default async function DashboardPage() {
         {posts?.length ? (
           <div className="border rounded-md divide-y divide-border">
             {posts.map((post) => (
-              <PostItem key={post.id} post={post} />
+              <PostItem key={post.id} post={post} type="posts" />
             ))}
           </div>
         ) : (

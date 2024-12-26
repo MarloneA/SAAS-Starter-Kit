@@ -1,5 +1,11 @@
-import { db } from "@/lib/db"
-import { CreatePostInputInteface, CreatePostInterface, PatchPostInterface, PostInterface } from "@/server/interface/posts"
+import { db } from "@/lib/db";
+import {
+  CreatePostInputInteface,
+  CreatePostInterface,
+  PatchPostInterface,
+  PostInterface,
+  PublishPostInterface,
+} from "@/server/interface/posts";
 
 export class PostRepository {
   static async findPostsByUserId(userId: string): Promise<PostInterface[]> {
@@ -22,7 +28,10 @@ export class PostRepository {
     });
   }
 
-  static async createPost(userId: string, body: CreatePostInputInteface): Promise<CreatePostInterface> {
+  static async createPost(
+    userId: string,
+    body: CreatePostInputInteface
+  ): Promise<CreatePostInterface> {
     return await db.post.create({
       data: {
         title: body.title,
@@ -43,7 +52,10 @@ export class PostRepository {
     });
   }
 
-  static async updatePost(postId: string, body: PatchPostInterface): Promise<void> {
+  static async updatePost(
+    postId: string,
+    body: PatchPostInterface
+  ): Promise<void> {
     await db.post.update({
       where: {
         id: postId,
@@ -55,5 +67,18 @@ export class PostRepository {
       },
     });
   }
-}
 
+  static async publishPost(
+    postId: string,
+    body: PublishPostInterface
+  ): Promise<void> {
+    await db.post.update({
+      where: {
+        id: postId,
+      },
+      data: {
+        published: body.published,
+      },
+    });
+  }
+}

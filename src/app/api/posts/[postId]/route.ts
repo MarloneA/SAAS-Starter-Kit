@@ -1,5 +1,9 @@
-import * as z from "zod"
-import { deletePostHandler, updatePostHandler } from "@/server/controllers/posts";
+import * as z from "zod";
+import {
+  deletePostHandler,
+  publishPostHandler,
+  updatePostHandler,
+} from "@/server/controllers/posts";
 import { routeContextSchema } from "@/lib/schemas/post.schema";
 
 export async function DELETE(
@@ -9,9 +13,16 @@ export async function DELETE(
   return await deletePostHandler(req, context);
 }
 
-export async function PATCH(
+export async function PUT(
   req: Request,
   context: z.infer<typeof routeContextSchema>
 ) {
   return await updatePostHandler(req, context);
+}
+
+export async function PATCH(
+  req: Request,
+  context: z.infer<typeof routeContextSchema>
+) {
+  return await publishPostHandler(req, context);
 }

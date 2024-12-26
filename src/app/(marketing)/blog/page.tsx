@@ -34,8 +34,11 @@ export default async function BlogPage() {
         </div>
         {user && (
           <Button className="w-fit not-prose" variant="outline">
-            <Link className="flex items-center gap-1 group" href="/content">
-              manage posts
+            <Link
+              className="flex items-center gap-1 group"
+              href="/content/posts"
+            >
+              manage content
               <ArrowRight className="group-hover:rotate-45 w-4 transition-all" />
             </Link>
           </Button>

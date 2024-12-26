@@ -1,7 +1,7 @@
 import { auth } from "@/auth";
 import { RequiresProPlanError } from "@/lib/exceptions";
 import { docCreateSchema, routeContextSchema } from "@/lib/schemas/doc.schema";
-import { docPatchSchema } from "@/lib/validations/doc";
+import { docPatchSchema, docPublishSchema } from "@/lib/validations/doc";
 import { DocService } from "@/server/services/docs";
 import { z } from "zod";
 
@@ -92,6 +92,31 @@ export async function updateDocHandler(
     }
 
     return new Response(null, { status: 500 });
+  }
+}
+
+export async function publishDocHandler(
+  req: Request,
+  context: z.infer<typeof routeContextSchema>
+) {
+  try {
+    // Validate route params.
+    const { params } = routeContextSchema.parse(context);
+
+    // Get the request body and validate it.
+    const json = await req.json();
+    const body = docPublishSchema.parse(json);
+
+    // Call the service to update the post.
+    await DocService.publishDoc(params.docId, body);
+
+    return new Response(null, { status: 200 });
+  } catch (error) {
+    if (error instanceof z.ZodError) {
+      return new Response(JSON.stringify(error.issues), { status: 422 });
+    }
+
+    return new Response(JSON.stringify(error), { status: 500 });
   }
 }
 

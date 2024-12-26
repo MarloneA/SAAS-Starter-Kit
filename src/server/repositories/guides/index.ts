@@ -1,5 +1,11 @@
-import { db } from "@/lib/db"
-import { CreateGuideInputInteface, CreateGuideInterface, PatchGuideInterface, GuideInterface } from "@/server/interface/guides"
+import { db } from "@/lib/db";
+import {
+  CreateGuideInputInteface,
+  CreateGuideInterface,
+  PatchGuideInterface,
+  GuideInterface,
+  PublishGuideInterface,
+} from "@/server/interface/guides";
 
 export class GuideRepository {
   static async findGuidesByUserId(userId: string): Promise<GuideInterface[]> {
@@ -22,7 +28,10 @@ export class GuideRepository {
     });
   }
 
-  static async createGuide(userId: string, body: CreateGuideInputInteface): Promise<CreateGuideInterface> {
+  static async createGuide(
+    userId: string,
+    body: CreateGuideInputInteface
+  ): Promise<CreateGuideInterface> {
     return await db.guide.create({
       data: {
         title: body.title,
@@ -43,7 +52,10 @@ export class GuideRepository {
     });
   }
 
-  static async updateGuide(guideId: string, body: PatchGuideInterface): Promise<void> {
+  static async updateGuide(
+    guideId: string,
+    body: PatchGuideInterface
+  ): Promise<void> {
     await db.guide.update({
       where: {
         id: guideId,
@@ -55,5 +67,18 @@ export class GuideRepository {
       },
     });
   }
-}
 
+  static async publishGuide(
+    guideId: string,
+    body: PublishGuideInterface
+  ): Promise<void> {
+    await db.guide.update({
+      where: {
+        id: guideId,
+      },
+      data: {
+        published: body.published,
+      },
+    });
+  }
+}
