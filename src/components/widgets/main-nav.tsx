@@ -11,6 +11,7 @@ import { Icons } from "@/components/_ui/icons";
 import { MobileNav } from "@/components/widgets/mobile-nav";
 import { H4 } from "@/components/_ui/typography";
 import { NavMenuMore } from "./dropdown-main";
+import { ThemeToggle } from "./theme-toggle";
 
 interface MainNavProps {
   items?: MainNavItem[];
@@ -50,6 +51,7 @@ export function MainNav({ items, children }: MainNavProps) {
             </Link>
           ))}
           <NavMenuMore />
+          <ThemeToggle />
         </nav>
       ) : null}
       <button

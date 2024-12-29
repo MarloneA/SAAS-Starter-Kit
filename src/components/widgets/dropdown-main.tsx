@@ -20,36 +20,37 @@ const components: { title: string; href: string; description: string }[] = [
     title: "Changelog",
     href: "/changelog",
     description:
-      "A modal dialog that interrupts the user with important content and expects a response.",
+      "Stay updated with the latest improvements, features, and fixes.",
   },
   {
     title: "Showcase",
-    href: "/docs/primitives/hover-card",
+    href: "/showcase",
     description:
-      "For sighted users to preview content available behind a link.",
+      "Discover our portfolio of innovative projects built with this kit.",
   },
   {
     title: "Roadmap",
-    href: "/docs/primitives/progress",
+    href: "/roadmap",
     description:
-      "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
+      "Take a sneek peek into what's coming next in our future release cycles.",
   },
   {
     title: "Templates",
-    href: "/docs/primitives/scroll-area",
-    description: "Visually or semantically separates content.",
+    href: "/docs",
+    description:
+      "Visually appealing templates that can be used on top of our kit.",
   },
   {
     title: "Deployment",
-    href: "/docs/primitives/tabs",
+    href: "/docs",
     description:
-      "A set of layered sections of content—known as tab panels—that are displayed one at a time.",
+      "Ready to deploy your app check out the guidelines for best practices.",
   },
   {
     title: "Components",
-    href: "/docs/primitives/tooltip",
+    href: "/docs",
     description:
-      "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
+      "Explore the wide range of components that are available in our kit.",
   },
 ];
 

@@ -12,7 +12,7 @@ import { H2, H4 } from "@/components/_ui/typography";
 export default function Footer() {
   return (
     <footer>
-      <Section>
+      <Section className="">
         <Container className="gap-12 grid md:grid-cols-[1.5fr_0.5fr_0.5fr]">
           <div className="flex flex-col gap-6 not-prose">
             <Link href="/" className="md:flex items-center space-x-2 hidden">
@@ -58,7 +58,7 @@ export default function Footer() {
             </Button>
           </div>
           <p className="text-muted-foreground">
-            © <a href="#">Livekit</a>. All rights reserved. 2024.
+            © <a href="#">Livekit</a>. All rights reserved. 2025.
           </p>
         </Container>
       </Section>
